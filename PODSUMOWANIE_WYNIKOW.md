@@ -24,6 +24,9 @@ Poniżej znajduje się automatycznie wygenerowane zestawienie wyników dla **wsz
 | **llama-3.1-8b-instant** | consensus | round_robin | 0.8 | 198.8 | 0 | 0.4063 | 0.2269 |
 | **llama-3.1-8b-instant** | voting | round_robin | 0.7 | 170.0 | N/A | 0.3486 | 0.1661 |
 | **llama-3.1-8b-instant** | consensus | round_robin | 0.3 | 173.5 | 1 | 0.3274 | 0.1995 |
+| **TinyLlama-1.1B-Chat-v1.0** | voting | round_robin | 0.7 | 256.0 | N/A | 0.2327 | 0.104 |
+| **llama-3.1-8b-instant** | voting | round_robin | 0.7 | 203.7 | N/A | 0.4025 | 0.0921 |
+| **llama-3.1-8b-instant** | consensus | round_robin | 0.4 | 73.8 | 0 | 0.3884 | 0.1468 |
 
 ## 📝 Główne Wnioski Zespołu
 * **Wpływ Temperatury:** Przy temperaturze 1.5 wskaźnik Distinct-1 znacząco rośnie, modele stają się bardziej kreatywne, ale mogą gubić wątek.

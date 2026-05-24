@@ -17,3 +17,6 @@ debate_20260524_150702.json,local,Qwen/Qwen2.5-1.5B-Instruct,voting,round_robin,
 debate_20260524_164235.json,groq,llama-3.1-8b-instant,consensus,round_robin,0.8,198.8,0,0.4063,0.2269,"Uważam, że sztuczna inteligencja będzie wspierać i ułatwiać pracę programistów, a nie będzie ją zast..."
 debate_20260524_164834.json,groq,llama-3.1-8b-instant,voting,round_robin,0.7,170.0,N/A,0.3486,0.1661,"Dodawanie ananasa do pizzy nie powinno być prawnie zakazane na terenie Unii Europejskiej, ponieważ w..."
 debate_20260524_165008.json,groq,llama-3.1-8b-instant,consensus,round_robin,0.3,173.5,1,0.3274,0.1995,"Zalecamy wprowadzenie regulacji dotyczących etykietowania produktów, które zawierają ananasy, aby um..."
+debate_20260524_170816.json,local,TinyLlama/TinyLlama-1.1B-Chat-v1.0,voting,round_robin,0.7,256.0,N/A,0.2327,0.104,Tradicionalista: Jest to pytanie o tydzień debatę na temat zakazu dodawania ananasa do pizzy na tere...
+debate_20260524_170902.json,groq,llama-3.1-8b-instant,voting,round_robin,0.7,203.7,N/A,0.4025,0.0921,"Dodawanie ananasa do pizzy nie powinno być prawnie zakazane w Unii Europejskiej, ponieważ wolność wy..."
+debate_20260524_171015.json,groq,llama-3.1-8b-instant,consensus,round_robin,0.4,73.8,0,0.3884,0.1468,"""Odrzucam poprzednie stanowisko! W miejsce tego, proponuję wprowadzenie obligatoryjnej edukacji dla ..."
