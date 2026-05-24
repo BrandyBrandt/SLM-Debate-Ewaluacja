@@ -20,6 +20,10 @@ Poniżej znajduje się automatycznie wygenerowane zestawienie wyników dla **wsz
 | **llama-3.1-8b-instant** | judge | round_robin | 0.7 | 164.0 | N/A | 0.2131 | 0.0409 |
 | **llama-3.1-8b-instant** | voting | relay | 0.7 | 142.5 | N/A | 0.4021 | 0.1217 |
 | **llama-3.1-8b-instant** | voting | round_robin | 1.5 | 163.7 | N/A | 0.5499 | 0.193 |
+| **Qwen2.5-1.5B-Instruct** | voting | round_robin | 0.7 | 216.2 | N/A | 0.3979 | 0.3502 |
+| **llama-3.1-8b-instant** | consensus | round_robin | 0.8 | 198.8 | 0 | 0.4063 | 0.2269 |
+| **llama-3.1-8b-instant** | voting | round_robin | 0.7 | 170.0 | N/A | 0.3486 | 0.1661 |
+| **llama-3.1-8b-instant** | consensus | round_robin | 0.3 | 173.5 | 1 | 0.3274 | 0.1995 |
 
 ## 📝 Główne Wnioski Zespołu
 * **Wpływ Temperatury:** Przy temperaturze 1.5 wskaźnik Distinct-1 znacząco rośnie, modele stają się bardziej kreatywne, ale mogą gubić wątek.

@@ -13,3 +13,7 @@ debate_20260524_145700.json,local,TinyLlama/TinyLlama-1.1B-Chat-v1.0,voting,roun
 debate_20260524_150113.json,groq,llama-3.1-8b-instant,judge,round_robin,0.7,164.0,N/A,0.2131,0.0409,"W debacie o zastąpieniu programistów przez sztuczną inteligencję w ciągu 10 lat, uczestnicy debaty p..."
 debate_20260524_150224.json,groq,llama-3.1-8b-instant,voting,relay,0.7,142.5,N/A,0.4021,0.1217,"Sztuczna inteligencja nie zastąpi w pełni umiejętności i kreatywności programistów w ciągu 10 lat, a..."
 debate_20260524_150356.json,groq,llama-3.1-8b-instant,voting,round_robin,1.5,163.7,N/A,0.5499,0.193,"Oceniając wszystkie argumenty, uważam, że sztuczna inteligencja w przeciągu 10 lat zapewne automatyz..."
+debate_20260524_150702.json,local,Qwen/Qwen2.5-1.5B-Instruct,voting,round_robin,0.7,216.2,N/A,0.3979,0.3502,"Sztuczna inteligencja może zwiększyć efektywność i dynamiczność biznesu, ale nie jest konieczne jej ..."
+debate_20260524_164235.json,groq,llama-3.1-8b-instant,consensus,round_robin,0.8,198.8,0,0.4063,0.2269,"Uważam, że sztuczna inteligencja będzie wspierać i ułatwiać pracę programistów, a nie będzie ją zast..."
+debate_20260524_164834.json,groq,llama-3.1-8b-instant,voting,round_robin,0.7,170.0,N/A,0.3486,0.1661,"Dodawanie ananasa do pizzy nie powinno być prawnie zakazane na terenie Unii Europejskiej, ponieważ w..."
+debate_20260524_165008.json,groq,llama-3.1-8b-instant,consensus,round_robin,0.3,173.5,1,0.3274,0.1995,"Zalecamy wprowadzenie regulacji dotyczących etykietowania produktów, które zawierają ananasy, aby um..."
