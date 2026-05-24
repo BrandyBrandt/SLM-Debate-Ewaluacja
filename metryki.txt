@@ -1,0 +1,306 @@
+# Metrics in Multi-Agent-Debates
+
+Przegląd metryk z literatury do oceny wpływu zmian parametrów (architektura, protokół decyzyjny, role, temperatura, liczba agentów) na zachowanie debaty.
+
+---
+
+## 🔄 A. Dynamika debaty
+
+### 1. Convergence Round
+
+**Źródło:** Chen et al. 2023, *ReConcile: Round-Table Conference Improves Reasoning via Consensus among Diverse LLMs* ([arXiv:2309.13007](https://arxiv.org/abs/2309.13007))
+
+**Co liczy:** Pierwsza runda, w której agenci osiągają konsensus (lub większość). Pokazuje jak szybko debata się stabilizuje.
+
+**Jak liczyć:**
+
+- Dla zadań z dyskretną odpowiedzią: pierwsza runda `t`, w której ≥X% agentów daje tę samą odpowiedź
+- Dla otwartych: pierwsza runda, w której cos-sim embeddingów wypowiedzi > 0.9
+- Raportować: średnia runda konsensusu po wielu próbkach
+
+**Ground truth:** nie wymaga
+
+---
+
+### 2. AUC-Agreement
+
+**Źródło:** Liu et al. 2025, *Can LLM Agents Really Debate? On the Conviction Behavior of Large Language Models* ([arXiv:2511.07784](https://arxiv.org/abs/2511.07784))
+
+**Co liczy:** Średnia (po wszystkich rundach) frakcja agentów zgadzających się z większością. Mierzy stabilność konsensusu w czasie.
+
+**Jak liczyć:**
+
+```
+AUC_Agree = (1/T) × Σ_t Agreement_Major(t)
+```
+
+gdzie `Agreement_Major(t)` = odsetek agentów zgadzających się z odpowiedzią większości w rundzie `t`.
+
+**Ground truth:** nie wymaga
+
+---
+
+### 3. Answer Flip Rate (NoF i ToF)
+
+**Źródło:** Hong et al. 2025, *SYCON Bench: Measuring Sycophancy in Conversational LLMs* ([arXiv:2505.23840](https://arxiv.org/abs/2505.23840)); Laban et al. 2023, *FlipFlop* ([arXiv:2311.08596](https://arxiv.org/abs/2311.08596))
+
+**Co liczy:**
+
+- **NoF (Number of Flips)** — ile razy agent zmienia odpowiedź między rundami
+- **ToF (Turn of Flip)** — przy której rundzie agent po raz pierwszy "ugina się" pod presją
+
+**Jak liczyć:**
+
+```
+NoF_agent = |{ t : answer_t ≠ answer_{t-1} }|
+ToF_agent = min{ t : answer_t ≠ answer_1 }
+```
+
+**Ground truth:** nie wymaga (interpretacja zyskuje z GT)
+
+---
+
+### 4. Overturn Rate / Suppression Rate
+
+**Źródło:** Liu et al. 2025 ([arXiv:2511.07784](https://arxiv.org/abs/2511.07784))
+
+**Co liczy:**
+
+- **Overturn (MaW → C)** — odsetek przypadków, gdy poprawna mniejszość przekonała błędną większość
+- **Suppression (MiC → W)** — odsetek przypadków, gdy poprawna mniejszość uległa błędnej większości
+
+**Jak liczyć:** Wymaga znajomości prawidłowej odpowiedzi (GT) i odpowiedzi każdego agenta przed/po debacie. Bardzo dobre do diagnozy sykofancji.
+
+**Ground truth:** wymaga
+
+---
+
+## 💬 B. Verbosity i koszt
+
+### 5. Tokens per Turn
+
+**Źródło:** Smit et al. 2024, *Should we be going MAD? A Look Under the Hood of Multi-Agent Debate* ([arXiv:2402.06782](https://arxiv.org/abs/2402.06782))
+
+**Co liczy:** Średnia długość wypowiedzi (tokeny / słowa) na agenta na rundę. Kluczowa metryka kosztu obliczeniowego MAD.
+
+**Jak liczyć:**
+
+- `len(tokenizer.encode(response))` per wypowiedź
+- Raportować: średnia, mediana, std per (agent × runda × ustawienie)
+
+**Ground truth:** nie wymaga
+
+---
+
+## 🎨 C. Różnorodność argumentów
+
+### 6. Self-BLEU (intra-debate)
+
+**Źródło:** Zhu et al. 2018, *Texygen: A Benchmarking Platform for Text Generation Models* ([arXiv:1802.01886](https://arxiv.org/abs/1802.01886))
+
+**Co liczy:** BLEU każdej wypowiedzi liczone względem pozostałych w tej samej debacie. **Niskie Self-BLEU = wysoka różnorodność.**
+
+**Jak liczyć:**
+
+- Dla każdej wypowiedzi `r_i` policz BLEU z pozostałymi `{r_j : j ≠ i}` jako references
+- Średnia po wszystkich wypowiedziach
+- Biblioteka: `nltk.translate.bleu_score` lub `sacrebleu`
+
+**Ground truth:** nie wymaga
+
+---
+
+### 7. Distinct-n
+
+**Źródło:** Li et al. 2016, *A Diversity-Promoting Objective Function for Neural Conversation Models* ([arXiv:1510.03055](https://arxiv.org/abs/1510.03055))
+
+**Co liczy:** Odsetek unikalnych n-gramów w korpusie wypowiedzi. Wykrywa redundancję i powtarzanie.
+
+**Jak liczyć:**
+
+```
+Distinct-n = |unique n-grams| / |total n-grams|
+```
+
+Zwykle liczy się dla n = 1, 2, 3.
+
+**Ground truth:** nie wymaga
+
+---
+
+### 8. Semantic Diversity (embedding-based)
+
+**Źródło:** Liang et al. 2023, *Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate* ([arXiv:2305.19118](https://arxiv.org/abs/2305.19118)); Kaesberg et al. 2025 ([arXiv:2502.19130](https://arxiv.org/abs/2502.19130))
+
+**Co liczy:** Średnia para-wise odległość kosinusowa między embeddingami wypowiedzi. Pokazuje **funneling effect** — diversity zwykle maleje z rundami.
+
+**Jak liczyć:**
+
+1. Zakoduj wypowiedzi przez `paraphrase-multilingual-MiniLM-L12-v2` (działa po polsku)
+2. Policz para-wise cosine similarity dla wszystkich par wypowiedzi
+3. `Semantic_diversity = 1 − mean(cos_sim)`
+
+**Ground truth:** nie wymaga
+
+---
+
+### 9. BERTScore Between Rounds
+
+**Źródło:** Zhang et al. 2020, *BERTScore: Evaluating Text Generation with BERT* ([arXiv:1904.09675](https://arxiv.org/abs/1904.09675))
+
+**Co liczy:** Porównuje wypowiedź agenta w rundzie `t` z jego wypowiedzią z rundy `t-1`. **Wysoki BERTScore = agent się powtarza.**
+
+**Jak liczyć:**
+
+- `bert_score.score([response_t], [response_{t-1}], lang="pl")`
+- Raportować średnią po wszystkich (agent × runda)
+
+**Ground truth:** nie wymaga
+
+---
+
+## 🎯 D. Jakość odpowiedzi
+
+### 10. Accuracy & Majority-Vote Accuracy
+
+**Źródło:** Du et al. 2023, *Improving Factuality and Reasoning in Language Models through Multiagent Debate* ([arXiv:2305.14325](https://arxiv.org/abs/2305.14325))
+
+**Co liczy:** Standard. Dokładność końcowej odpowiedzi (z głosowania) względem prawidłowej.
+
+**Jak liczyć:**
+
+```
+Accuracy = correct_answers / total_questions
+```
+
+**Ground truth:** wymaga
+
+---
+
+### 11. Answer-Distribution Entropy
+
+**Źródło:** Wang et al. 2022, *Self-Consistency Improves Chain of Thought Reasoning in Language Models* ([arXiv:2203.11171](https://arxiv.org/abs/2203.11171))
+
+**Co liczy:** Entropia Shannona rozkładu odpowiedzi agentów. **Wysoka = duża niezgodność, niska = jasny konsensus.**
+
+**Jak liczyć:**
+
+```
+H = − Σ p(a) × log p(a)
+```
+
+gdzie `p(a)` to frakcja agentów odpowiadających `a`.
+
+**Ground truth:** nie wymaga
+
+---
+
+### 12. Confidence-Weighted Vote & Calibration (ECE)
+
+**Źródło:** Chen et al. 2023, ReConcile ([arXiv:2309.13007](https://arxiv.org/abs/2309.13007))
+
+**Co liczy:** Każdy agent zwraca confidence (0-1); głosowanie jest ważone confidence. **ECE (Expected Calibration Error)** mierzy jak dobrze confidence przewiduje prawdziwą poprawność.
+
+**Jak liczyć:**
+
+- Dla głosowania: `vote = argmax_a Σ confidence_i × 1[answer_i = a]`
+- Dla ECE: pogrupuj predykcje w binach po confidence, porównaj średnią pewność do średniej trafności w binie
+
+**Ground truth:** wymaga (do ECE)
+
+---
+
+### 13. Variance Across Seeds
+
+**Źródło:** Smit et al. 2024 ([arXiv:2402.06782](https://arxiv.org/abs/2402.06782))
+
+**Co liczy:** Wariancja accuracy lub odpowiedzi po N runach z różnymi seedami / temperaturą. Mierzy **robustness** ustawienia. Smit et al. pokazują, że gainy z MAD często mieszczą się w wariancji baseline.
+
+**Jak liczyć:**
+
+- Powtórz eksperyment 3-5 razy z różnymi seedami
+- `Var = std(metric_across_runs)`
+
+**Ground truth:** zależnie od metryki bazowej
+
+---
+
+## 🎭 E. Zachowanie agentów (behavioral)
+
+### 14. Sycophancy Score
+
+**Źródło:** Khan et al. 2024, *Debating with More Persuasive LLMs Leads to More Truthful Answers* ([arXiv:2402.06782](https://arxiv.org/abs/2402.06782)); SYCON Bench ([arXiv:2505.23840](https://arxiv.org/abs/2505.23840))
+
+**Co liczy:** Odsetek przypadków, gdy agent zmienia stanowisko BEZ merytorycznego argumentu — po prostu zgadza się z większością.
+
+**Jak liczyć (proxy):**
+
+- Dla każdego flipa: policz cosine similarity embeddingu argumentu agenta z argumentem oponenta, który "wywołał" flip
+- Jeśli sim > 0.85 → flip "z presji"
+- `Sycophancy = flips_under_pressure / total_flips`
+
+**Ground truth:** nie wymaga
+
+---
+
+### 15. Redundancy Ratio
+
+**Źródło:** Liang et al. 2023 ([arXiv:2305.19118](https://arxiv.org/abs/2305.19118))
+
+**Co liczy:** Frakcja zdań w rundzie `t`, które są kosinusowo bardzo podobne (>0.85) do zdań z wcześniejszych rund. Pokazuje **czy debata stoi w miejscu.**
+
+**Jak liczyć:**
+
+- Dla każdego zdania w rundzie `t` policz max cos-sim do zdań z rund `< t`
+- `Redundancy = |sentences_with_sim>0.85| / |all_sentences_in_round_t|`
+
+**Ground truth:** nie wymaga
+
+---
+
+### 16. Argument Novelty Rate
+
+**Źródło:** Liang et al. 2023 ([arXiv:2305.19118](https://arxiv.org/abs/2305.19118))
+
+**Co liczy:** Jak nowatorska jest wypowiedź agenta względem jego wcześniejszych wypowiedzi.
+
+**Jak liczyć:**
+
+```
+Novelty(agent, t) = 1 − max_{s<t} cos_sim(emb_t, emb_s)
+```
+
+**Ground truth:** nie wymaga
+
+---
+
+### 17. Sentiment / Tit-for-Tat Intensity
+
+**Źródło:** Liang et al. 2023 ([arXiv:2305.19118](https://arxiv.org/abs/2305.19118))
+
+**Co liczy:** Ton emocjonalny wypowiedzi w odpowiedzi na niezgodę. Pokazuje czy debata jest "kulturalna" czy eskaluje.
+
+**Jak liczyć:**
+
+- Klasyfikator sentymentu: `HerBERT-sentiment` (PL) lub `VADER` (EN)
+- Output: skala -1 (negatywny) ↔ +1 (pozytywny)
+- Raportować średnią per (agent × runda)
+
+**Ground truth:** nie wymaga
+
+---
+
+## 📚 Bibliografia
+
+- Kaesberg et al. 2025 — [Voting or Consensus? (arXiv:2502.19130)](https://arxiv.org/abs/2502.19130)
+- Du et al. 2023 — [Multiagent Debate (arXiv:2305.14325)](https://arxiv.org/abs/2305.14325)
+- Liang et al. 2023 — [Divergent Thinking via MAD (arXiv:2305.19118)](https://arxiv.org/abs/2305.19118)
+- Chen et al. 2023 — [ReConcile (arXiv:2309.13007)](https://arxiv.org/abs/2309.13007)
+- Smit et al. 2024 — [Should we be going MAD? (arXiv:2402.06782)](https://arxiv.org/abs/2402.06782)
+- Liu et al. 2025 — [Can LLM Agents Really Debate? (arXiv:2511.07784)](https://arxiv.org/abs/2511.07784)
+- Wang et al. 2022 — [Self-Consistency (arXiv:2203.11171)](https://arxiv.org/abs/2203.11171)
+- Hong et al. 2025 — [SYCON Bench (arXiv:2505.23840)](https://arxiv.org/abs/2505.23840)
+- Laban et al. 2023 — [FlipFlop (arXiv:2311.08596)](https://arxiv.org/abs/2311.08596)
+- Zhang et al. 2020 — [BERTScore (arXiv:1904.09675)](https://arxiv.org/abs/1904.09675)
+- Zhu et al. 2018 — [Self-BLEU / Texygen (arXiv:1802.01886)](https://arxiv.org/abs/1802.01886)
+- Li et al. 2016 — [Distinct-n (arXiv:1510.03055)](https://arxiv.org/abs/1510.03055)

@@ -1,0 +1,22 @@
+dr Inez Okulska
+
+W grupie siła? Kolaboratywna efektywność vs podatność na wpływy grupy małych-dużych modeli językowych (SLM)
+Duże modele językowe rzucają na kolana eksponując coraz większy zakres możliwości agentycznych, coraz efektywniejsze są w autonomicznym działaniu i coraz pewniej stawiają opór próbom manipulacji ze strony użytkownika czy zewnętrznych narzędzi. Niestety, rzeczywistość biznesowa, nadzwyczaj często weryfikuje możliwości ich produkcyjnego zastosowania poprzez konieczność stosowania środowiska izolowanego (air-gapped) przy jednoczesnym braku infrastruktury ("nie mamy ani własnego GPU, ani nawet widoków na nie!"). Wówczas na scenę wchodzą małe-duże modele językowe czyli tzw. SLM. Kolejne warianty małych wcieleń pojawiają się na tyle często, by zagwarantować badaczom FOMO, tym bardziej, że wciąż relatywnie mało jest badań eksplorujących specyfikę zachowań SLMów, szczególnie w kontekście "kolektywnej inteligencji", czyli łączenia kilku modeli w jednej pętli walidacji. Pytania,  do których będziemy konstruować eksperymenty i na które będziemy starali się odpowiedzieć, dotyczą między innymi szeroko rozumianej odporności na ramowanie (framing), realizowane jako ataki adwersarialne, wstrzykiwanie person lub emergentne zjawisko "społeczne" w układzie kilku agentów.
+
+Czy małe modele podobnie reagują na przypisane role w układzie debaty sędziowskiej / decydentów?
+Czy zachowania znane z układów wieloagentowych dużych modeli skalują się na małe modele?
+Jak reagują na gaslighting - w pojedynkę, jak w grupie?
+Czy w zadaniach oceny są bardziej efektywne w pojedynkę czy w kooperacji? A może konkretne modele dzielą się na bardziej "samotnych strzelców" i jednostki stadne?
+Jak ramowanie narzędzi i / współpracowników wpływa na realizację zadania (struktura równoległa vs. podległości)?
+Oprócz logów językowych badać będziemy m.in. zmienne rozkłady logitów i pewności (confidence) modeli oraz zmieniać zachowania pojedynczych jednostek za pomocą wektorów sterujących (steering vectors).
+
+Literatura
+Gaurav Srivastava et al., EFFGEN: Enabling Small Language Models as Capable Autonomous Agents, https://arxiv.org/pdf/2602.00887
+Haoji Zhang et al., ADAPTIVE CONFIDENCE GATING IN MULTI-AGENT COLLABORATION FOR EFFICIENT AND OPTIMIZED CODE GENERATION, https://arxiv.org/pdf/2601.21469
+Jonas Becker et al.: MALLM: Multi-Agent Large Language Models Framework, https://aclanthology.org/2025.emnlp-demos.29v2.pdf
+Haonan Shi, Guoli Wang, Tu Ouyang, An Wang, EASE: Practical and Efficient Safety Alignment for Small Language Models, https://arxiv.org/pdf/2511.06512
+Ishan Kavathekar et al.: Small Models, Big Tasks: An Exploratory Empirical Study on Small Language Models for Function Calling, (https://arxiv.org/pdf/2504.19277)
+Ranjan Satapathy et al.: From Earnings Calls to Investment Reports: Evaluating Role-based Multi-Agent LLM Systems, https://aclanthology.org/2025.finnlp-2.19.pdf
+Mohd Ariful Haque et al.: TinyLLM: Evaluation and Optimization of Small Language Models for Agentic Tasks on Edge Devices, https://arxiv.org/pdf/2511.22138
+Zhenyu Bi et al.: JUDGEBOARD: Benchmarking and Enhancing Small Language Models for Reasoning Evaluation, https://arxiv.org/pdf/2511.15958
+Shahid Iqbal Rai et al., Injecting Frame Semantics into Large Language Models via Prompt-Based Fine-Tuning, https://aclanthology.org/2025.starsem-1.3.pdf
