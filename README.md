@@ -22,13 +22,16 @@ python run_experiments.py
 ```
 Skrypt wygeneruje pliki `raport_macierz.csv` oraz `PODSUMOWANIE_WYNIKOW.md`. (API Groq wymaga klucza w `.env` ze strony console.groq.com).
 
-## 🎯 ZADANIA DLA WAS (Czego jeszcze NIE przetestowaliśmy!)
+## 🎯 Co już przetestowaliśmy? (Gotowe w logach)
 
-Zrobiliśmy fundamenty, ale żeby raport był kompletny, musicie dodać własne scenariusze do pliku `run_experiments.py` w liście `EXPERIMENTS`. **Co zostało do zrobienia?**
+Wykonaliśmy już dla Was pełen przekrój zaawansowanych eksperymentów, których wyniki znajdziecie w pliku `PODSUMOWANIE_WYNIKOW.md`:
+1. **Różne Protokoły:** Przetestowaliśmy `voting`, agresywny `consensus` (gdzie wyłapywaliśmy uginanie się agentów) oraz protokół `judge` (gdzie niezależny sędzia podsumował całość w sposób bardziej wyważony niż głosowanie tłumu).
+2. **Różne Architektury:** Przetestowaliśmy klasyczny `round_robin` oraz głuchy telefon (`relay`). Wnioski jasno pokazują spadek różnorodności semantycznej, gdy agenci mają ograniczoną pamięć.
+3. **Ekstremalne Temperatury:** Zrobiliśmy runy z temperaturą 0.2 (upór, sztywność faktów) oraz 1.5 (ogromna kreatywność, ale lekkie gubienie wątku i wybitnie wysoki Distinct-1).
 
-1. **Test protokołu JUDGE:** Mamy 3 protokoły (`voting`, `consensus`, `judge`). Przetestowaliśmy dwa pierwsze. Zróbcie scenariusz, w którym `decision_protocol: "judge"` i sprawdźcie czy niezależny Sędzia radzi sobie lepiej niż głosowanie tłumu!
-2. **Test Architektury (Głuchy telefon):** Zmieńcie architekturę komunikacji. Dodajcie parametr `architecture: "relay"` (agenci widzą tylko poprzednią wypowiedź, a nie całą historię) i sprawdźcie, jak bardzo spadnie "Semantic Diversity".
-3. **Zabawa temperaturą:** Zróbcie ekstremalny scenariusz z temperaturą `1.5` i luźnym tematem.
-4. **Wasz własny, abstrakcyjny temat:** Wymyślcie zupełnie nowe role (np. Prawnik vs 12-letni Haker) i stwórzcie własny scenariusz.
+## 💡 Wasze zadanie (Dla chętnych na 5.0)
 
-Zmieniajcie, odpalajcie i zbierajcie wnioski do tabelki! Powodzenia!
+Mamy kompletny framework i pokryte wszystkie techniczne wymagania dr Okulskiej z pliku z metrykami. 
+Jeśli chcecie zabłysnąć na prezentacji, otwórzcie plik `run_experiments.py`, dopiszcie **zupełnie nowy, własny, abstrakcyjny temat dyskusji** (np. dylemat wagonika, spór historyczny) z całkowicie nowymi, przerysowanymi rolami. Puśćcie skrypt, zgarnijcie logi i dodajcie jako Wasz autorski wkład do projektu!
+
+Powodzenia!

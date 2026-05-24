@@ -1,0 +1,15 @@
+Plik,Provider,Model,Protocol,Architecture,Temperature,Tokens/Turn,Total Flips,Distinct-1,Semantic Diversity,Final Answer
+debate_20260524_130611.json,local,TinyLlama/TinyLlama-1.1B-Chat-v1.0,voting,round_robin,0.7,233.3,N/A,0.1698,0.1081,Wpływ technologii:  Wpływ technologii na pracę programistów w ciągu 10 lat jest trudne do oceny. Jed...
+debate_20260524_130936.json,groq,llama-3.1-8b-instant,voting,round_robin,0.7,162.7,N/A,0.2822,0.0418,"Ocena, że sztuczna inteligencja nie zastąpi programistów w ciągu 10 lat, jest zbyt pesymistyczna, al..."
+debate_20260524_131959.json,local,TinyLlama/TinyLlama-1.1B-Chat-v1.0,voting,round_robin,0.7,256.0,N/A,0.2753,0.1887,Wersja fizyczna sztucznej inteligencji (AI) i merytorycznej inteligencji (ML) może wpłynąć na przysz...
+debate_20260524_133442.json,local,Qwen/Qwen2.5-1.5B-Instruct,voting,round_robin,0.7,232.8,N/A,0.356,0.1277,Sztuczna inteligencja (SI) może być gotowa do zastępowania niektórych funkcji programistów w ciągu 1...
+debate_20260524_135625.json,local,Qwen/Qwen2.5-1.5B-Instruct,consensus,round_robin,0.3,63.5,0,0.3795,0.1949,"AI może być bardzo efektywnym narzędziem w procesie programowania, ale nie zastąpi humanizmu w tym c..."
+debate_20260524_135740.json,groq,llama-3.1-8b-instant,voting,round_robin,1.1,202.0,N/A,0.4983,0.276,"Ananas na pizzy to niezależnie od opinii kulinarnego przeklęcia, ale raczej nowy kawałek sztuki, któ..."
+debate_20260524_142112.json,groq,llama-3.1-8b-instant,voting,round_robin,0.7,139.8,N/A,0.2734,0.1145,"Sztuczna inteligencja nie zastąpi programistów w ciągu 10 lat, ponieważ programiści będą nadal potrz..."
+debate_20260524_142251.json,groq,llama-3.1-8b-instant,consensus,round_robin,0.2,176.8,0,0.2393,0.1407,"Uważam, że sztuczna inteligencja może wspierać programistów w ich pracy, ale nie zastąpi ich w ciągu..."
+debate_20260524_144222.json,groq,llama-3.1-8b-instant,voting,round_robin,0.7,145.2,N/A,0.4056,0.1193,"Sztuczna inteligencja nie zastąpi programistów w ciągu 10 lat, ponieważ kreatywny proces programowan..."
+debate_20260524_144358.json,groq,llama-3.1-8b-instant,consensus,round_robin,0.2,177.8,0,0.2791,0.2096,"Nie uważam, że sztuczna inteligencja w ciągu 10 lat będzie w stanie całkowicie zastąpić programistów..."
+debate_20260524_145700.json,local,TinyLlama/TinyLlama-1.1B-Chat-v1.0,voting,round_robin,0.7,230.7,N/A,0.2676,0.26,"W konsekwencji, w środowisku rozwoju technologii, nie ma potrzeby zastąpienia programistów przez szt..."
+debate_20260524_150113.json,groq,llama-3.1-8b-instant,judge,round_robin,0.7,164.0,N/A,0.2131,0.0409,"W debacie o zastąpieniu programistów przez sztuczną inteligencję w ciągu 10 lat, uczestnicy debaty p..."
+debate_20260524_150224.json,groq,llama-3.1-8b-instant,voting,relay,0.7,142.5,N/A,0.4021,0.1217,"Sztuczna inteligencja nie zastąpi w pełni umiejętności i kreatywności programistów w ciągu 10 lat, a..."
+debate_20260524_150356.json,groq,llama-3.1-8b-instant,voting,round_robin,1.5,163.7,N/A,0.5499,0.193,"Oceniając wszystkie argumenty, uważam, że sztuczna inteligencja w przeciągu 10 lat zapewne automatyz..."
