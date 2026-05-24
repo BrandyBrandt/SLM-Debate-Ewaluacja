@@ -3,6 +3,56 @@ import glob
 import csv
 from metrics import DebateEvaluator
 
+def generate_retroactive_transcript(evaluator, json_file):
+    """Generuje czytelny transkrypt MD z pliku JSON (retroaktywnie)."""
+    base_name = os.path.splitext(os.path.basename(json_file))[0]
+    # Usunięcie 'debate_' z przodu jeśli jest, dla czystszej nazwy
+    if base_name.startswith("debate_"):
+        base_name = base_name[7:]
+    
+    transcript_file = f"results/transcript_{base_name}.md"
+    
+    # Pomijamy jeśli już istnieje
+    if os.path.exists(transcript_file):
+        return
+        
+    config = evaluator.config
+    debate_log = evaluator.debate_log
+    decision_result = evaluator.decision
+    final_answer = decision_result.get("answer", "")
+    decision_name = config.get("decision_protocol", "unknown")
+    
+    with open(transcript_file, "w", encoding="utf-8") as f:
+        f.write(f"# 🗣️ Transkrypt Debaty\n\n")
+        f.write(f"**Temat:** {config.get('topic', 'Brak tematu')}\n")
+        f.write(f"**Model:** {config.get('model_name', 'Brak')} ({config.get('provider', 'Brak')})\n")
+        f.write(f"**Protokół decyzyjny:** {decision_name}\n\n")
+        
+        f.write("## 🎭 Uczestnicy\n")
+        for a in config.get("agents", []):
+            f.write(f"* **{a.get('name', 'Nieznany')}:** _{a.get('system_prompt', 'Brak promptu')}_\n")
+            
+        f.write("\n## 💬 Przebieg Debaty\n")
+        current_round = 0
+        for entry in debate_log:
+            if entry.get('round', 0) != current_round:
+                current_round = entry.get('round', 0)
+                f.write(f"\n### 🔔 Runda {current_round}\n\n")
+            f.write(f"**[{entry.get('agent', 'Nieznany')}]** ({entry.get('tokens', '?')} tok.):\n{entry.get('text', '')}\n\n")
+            
+        f.write("## ⚖️ Ostateczna Decyzja\n")
+        if "metadata" in decision_result and "log" in decision_result["metadata"]:
+            f.write("### Log Konsensusu:\n")
+            for log_entry in decision_result["metadata"]["log"]:
+                glos = "TAK" if log_entry.get('agrees') else "NIE"
+                f.write(f"* {log_entry.get('agent', '')} (Runda {log_entry.get('round', '?')}): **{glos}**\n")
+            f.write("\n")
+            
+        f.write(f"> {final_answer}\n")
+        
+    print(f"  [+] Wygenerowano wsteczny transkrypt: {transcript_file}")
+
+
 def generate_full_report():
     print("Generowanie pełnego raportu ze wszystkich plików JSON...")
     files = glob.glob("results/debate_*.json")
@@ -28,6 +78,10 @@ def generate_full_report():
         for file in sorted(files):
             print(f"Przetwarzanie: {file}")
             evaluator = DebateEvaluator(file)
+            
+            # WSTECZNE GENEROWANIE TRANSKRYPTÓW
+            generate_retroactive_transcript(evaluator, file)
+            
             metrics = evaluator.evaluate_all()
             
             cfg = evaluator.config

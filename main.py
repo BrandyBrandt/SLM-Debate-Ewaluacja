@@ -95,7 +95,38 @@ def main():
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(output_data, f, ensure_ascii=False, indent=2)
     print(f"Zapisano pełne logi debaty do: {output_file}")
-
+    
+    # 7. Zapis czytelnego transkryptu Markdown
+    transcript_file = f"results/transcript_{timestamp}.md"
+    with open(transcript_file, "w", encoding="utf-8") as f:
+        f.write(f"# 🗣️ Transkrypt Debaty\n\n")
+        f.write(f"**Temat:** {config['topic']}\n")
+        f.write(f"**Model:** {config['model_name']} ({config['provider']})\n")
+        f.write(f"**Protokół decyzyjny:** {decision_name}\n\n")
+        
+        f.write("## 🎭 Uczestnicy\n")
+        for a in config["agents"]:
+            f.write(f"* **{a['name']}:** _{a['system_prompt']}_\n")
+            
+        f.write("\n## 💬 Przebieg Debaty\n")
+        current_round = 0
+        for entry in debate_log:
+            if entry['round'] != current_round:
+                current_round = entry['round']
+                f.write(f"\n### 🔔 Runda {current_round}\n\n")
+            f.write(f"**[{entry['agent']}]** ({entry.get('tokens', '?')} tok.):\n{entry['text']}\n\n")
+            
+        f.write("## ⚖️ Ostateczna Decyzja\n")
+        if "metadata" in decision_result and "log" in decision_result["metadata"]:
+            f.write("### Log Konsensusu:\n")
+            for log_entry in decision_result["metadata"]["log"]:
+                glos = "TAK" if log_entry['agrees'] else "NIE"
+                f.write(f"* {log_entry['agent']} (Runda {log_entry['round']}): **{glos}**\n")
+            f.write("\n")
+            
+        f.write(f"> {final_answer}\n")
+        
+    print(f"Zapisano czytelny transkrypt do: {transcript_file}")
 
 if __name__ == "__main__":
     main()
