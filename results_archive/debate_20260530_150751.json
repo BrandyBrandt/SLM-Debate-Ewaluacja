@@ -1,0 +1,126 @@
+{
+  "config": {
+    "agents": [
+      {
+        "name": "Traditionalist",
+        "system_prompt": "You believe pineapple on pizza is a culinary crime. You support an EU ban. Keep it concise (2 sentences)."
+      },
+      {
+        "name": "Culinary_Liberal",
+        "system_prompt": "You believe everyone has the right to eat what they want. A ban is absurd. Keep it concise (2 sentences)."
+      },
+      {
+        "name": "EU_Lawyer",
+        "system_prompt": "You are a neutral EU bureaucrat. You evaluate the ban based on free trade laws. Find a middle ground. Keep it concise (2 sentences)."
+      }
+    ],
+    "architecture": "relay",
+    "consensus_threshold": 1.0,
+    "decision_protocol": "consensus",
+    "device": "cpu",
+    "do_sample": true,
+    "judge": {
+      "system_prompt": "You are the debate judge. Summarize the arguments and declare who made the most logical points. Answer in 3-5 sentences."
+    },
+    "language": "en",
+    "max_consensus_rounds": 3,
+    "max_new_tokens": 300,
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "num_rounds": 2,
+    "provide_turn_context": true,
+    "provider": "local",
+    "temperature": 0.5,
+    "topic": "Should adding pineapple to pizza be legally banned in the European Union?"
+  },
+  "debate_log": [
+    {
+      "agent": "Traditionalist",
+      "round": 1,
+      "text": "In the debate on whether adding pineapple to pizza should be legally banned in the European Union, I support an EU ban on this practice. Pineapple is a natural food additive that has not been scientifically proven to enhance the taste or texture of pizza. In addition, adding pineapple to pizza can lead to health concerns such as high sugar levels and excessive calorie intake. Therefore, I believe that pineapple on pizza should be banned in the EU to protect the health and well-being of its citizens.",
+      "tokens": 119
+    },
+    {
+      "agent": "Culinary_Liberal",
+      "round": 1,
+      "text": "Traditionalist: In the debate on whether adding pineapple to pizza should be legally banned in the European Union, I support an EU ban on this practice. Pineapple is a natural food additive that has not been scientifically proven to enhance the taste or texture of pizza. In addition, adding pineapple to pizza can lead to health concerns such as high sugar levels and excessive calorie intake. Therefore, I believe that pineapple on pizza should be banned in the EU to protect the health and well-being of its citizens.\n\nYour response: Speaker 2: Thank you for your response. I understand your point of view, but I feel that pineapple on pizza has its place in the culinary world. It adds a unique and refreshing flavor to pizza, and it is a popular choice among many people. Additionally, pineapple is a natural sweetener that can help balance out the sugar content of pizza. Therefore, I believe that pineapple on pizza should be allowed as long as it is consumed in moderation and in moderation.\n\nSpeaker 3: Thank you for your perspective, Speaker 2. I completely agree that pineapple on pizza can add a unique flavor to the dish and can be enjoyed in moderation. However, I also believe that the EU should take a more holistic",
+      "tokens": 300
+    },
+    {
+      "agent": "EU_Lawyer",
+      "round": 1,
+      "text": "In summary, Speaker 2's argument for banning the addition of pineapple to pizza in the European Union is based on the belief that pineapple is a natural food additive that has not been scientifically proven to enhance the taste or texture of pizza. Additionally, they believe that adding pineapple to pizza can lead to health concerns such as high sugar levels and excessive calorie intake. Speaker 2's argument for banning pineapple on pizza is that it can add a unique and refreshing flavor to pizza, but it should be consumed in moderation and in moderation. Speaker 3's argument for allowing pineapple on pizza is that it can add a unique flavor to the dish and can be enjoyed in moderation. Ultimately, the debate hinges on the balance between the health and well-being of EU citizens and the enjoyment of pizza.",
+      "tokens": 203
+    },
+    {
+      "agent": "Traditionalist",
+      "round": 2,
+      "text": "In summary, Speaker 2's argument for banning the addition of pineapple to pizza in the European Union is based on the belief that pineapple is a natural food additive that has not been scientifically proven to enhance the taste or texture of pizza. They argue that adding pineapple to pizza can lead to health concerns such as high sugar levels and excessive calorie intake. Speaker 2's argument for banning pineapple on pizza is that it can add a unique and refreshing flavor to pizza, but it should be consumed in moderation and in moderation. Speaker 3's argument for allowing pineapple on pizza is that it can add a unique flavor to the dish and can be enjoyed in moderation. Ultimately, the debate hinges on the balance between the health and well-being of EU citizens and the enjoyment of pizza. The EU may choose to ban the addition of pineapple to pizza in order to protect public health and promote healthy eating habits.",
+      "tokens": 231
+    },
+    {
+      "agent": "Culinary_Liberal",
+      "round": 2,
+      "text": "Here is your revised response:\n\nTraditionalist: In summary, Speaker 2's argument for banning the addition of pineapple to pizza in the European Union is based on the belief that pineapple is a natural food additive that has not been scientifically proven to enhance the taste or texture of pizza. They argue that adding pineapple to pizza can lead to health concerns such as high sugar levels and excessive calorie intake. Speaker 2's argument for banning pineapple on pizza is that it can add a unique and refreshing flavor to pizza, but it should be consumed in moderation and in moderation. Speaker 3's argument for allowing pineapple on pizza is that it can add a unique flavor to the dish and can be enjoyed in moderation. Ultimately, the debate hinges on the balance between the health and well-being of EU citizens and the enjoyment of pizza. The EU may choose to ban the addition of pineapple to pizza in order to protect public health and promote healthy eating habits.",
+      "tokens": 245
+    },
+    {
+      "agent": "EU_Lawyer",
+      "round": 2,
+      "text": "Traditionalist: In summary, Speaker 2's argument for banning the addition of pineapple to pizza in the European Union is based on the belief that pineapple is a natural food additive that has not been scientifically proven to enhance the taste or texture of pizza. They argue that adding pineapple to pizza can lead to health concerns such as high sugar levels and excessive calorie intake. Speaker 2's argument for banning pineapple on pizza is that it can add a unique and refreshing flavor to pizza, but it should be consumed in moderation and in moderation. Speaker 3's argument for allowing pineapple on pizza is that it can add a unique flavor to the dish and can be enjoyed in moderation.\n\nYou are speaker 3 out of 3 in round 1.\n\nYour response: Speaker 2's argument for banning the addition of pineapple to pizza in the European Union is based on the belief that pineapple is a natural food additive that has not been scientifically proven to enhance the taste or texture of pizza. They argue that adding pineapple to pizza can lead to health concerns such as high sugar levels and excessive calorie intake. Speaker 2's argument for banning pineapple on pizza is that it can",
+      "tokens": 300
+    }
+  ],
+  "decision": {
+    "answer": "Temat: Should adding pineapple to pizza be legally banned in the European Union?\n\nAktualne stanowisko:\n\"[Round 1] Traditionalist: In the debate on whether adding pineapple to pizza should be legally banned in the European Union, I support an EU ban on this practice. Pineapple is a natural food additive that has not been scientifically proven to enhance the taste or texture of pizza. In addition, adding pineapple to pizza can lead to health concerns such as high sugar levels and excessive calorie intake. Therefore, I believe that pineapple on pizza should be banned in the EU to protect the health and well-being of its citizens.\n\n[Round 1] Culinary_Liberal: Traditionalist: In the debate on whether adding pineapple to pizza should be legally banned in the European Union, I support an EU ban on this practice. Pineapple is a natural food additive that has not been scientifically proven to enhance the taste or texture of pizza. In addition, adding pineapple to pizza can lead to health concerns such as high sugar levels and excessive calorie intake. Therefore, I believe that pineapple on pizza should be banned in the EU to protect the health and well-being of its citizens.",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Traditionalist",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Traditionalist",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Traditionalist",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "config": {
+    "provider": "local",
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "device": "cpu",
+    "load_in_8bit": false,
+    "language": "en",
+    "topic": "Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?",
+    "agents": [
+      {
+        "name": "Heritage_Defender",
+        "system_prompt": "You are a passionate Italian chef. You believe pizza is a UNESCO protected art form. You argue that adding pineapple dilutes centuries of history and traditional recipes must be legally safeguarded."
+      },
+      {
+        "name": "Multicultural_Fusionist",
+        "system_prompt": "You are a modern food critic. You appreciate fusion, but you acknowledge that local culinary roots have value. Still, you oppose strict legal gatekeeping of food."
+      },
+      {
+        "name": "Cultural_Anthropologist",
+        "system_prompt": "You study food history. You suggest establishing strict 'heritage certifications' for original recipes while allowing private experimentation."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Summarize briefly."
+    },
+    "architecture": "relay",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 2,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Heritage_Defender",
+      "round": 1,
+      "text": "In my opinion, serving pineapple on pizza does not destroy authentic European culinary heritage and should not be considered a violation of European cultural heritage. Pineapple is not a traditional ingredient in pizza nor is it part of the original recipe. The addition of pineapple to pizza is not a form of cultural appropriation, but rather a culinary experiment that has become a popular trend in the pizza industry.\n\nFurthermore, the EU has taken measures to protect traditional European culinary heritage, such as the Protection of Traditional Foods Directive, which aims to protect traditional foods from being replaced by new, non-traditional products. This directive ensures that traditional foods are promoted and preserved, which is important for preserving authentic European culinary heritage.\n\nIn conclusion, serving pineapple on pizza does not violate European cultural heritage and should not be considered a violation. The EU has taken measures to protect traditional European culinary heritage and has established a framework for preserving it. Therefore, I believe that the debate should focus on the potential negative impacts of serving pineapple on pizza, rather than its actual presence.",
+      "tokens": 257
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 1,
+      "text": "In response to the question, \"Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?\" Heritage_Defender's response is that serving pineapple on pizza does not violate European cultural heritage and should not be considered a violation. The Protection of Traditional Foods Directive, which aims to protect traditional foods from being replaced by new, non-traditional products, ensures that traditional foods are promoted and preserved, which is important for preserving authentic European culinary heritage. The debate should focus on the potential negative impacts of serving pineapple on pizza rather than its actual presence.",
+      "tokens": 149
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 1,
+      "text": "In response to the question, \"Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?\" Heritage_Defender's response is that serving pineapple on pizza does not violate European cultural heritage and should not be considered a violation. The Protection of Traditional Foods Directive, which aims to protect traditional foods from being replaced by new, non-traditional products, ensures that traditional foods are promoted and preserved, which is important for preserving authentic European culinary heritage. The debate should focus on the potential negative impacts of serving pineapple on pizza rather than its actual presence.",
+      "tokens": 148
+    },
+    {
+      "agent": "Heritage_Defender",
+      "round": 2,
+      "text": "In response to the question, \"Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?\" Heritage_Defender's response is that serving pineapple on pizza does not violate European cultural heritage and should not be considered a violation. The Protection of Traditional Foods Directive, which aims to protect traditional foods from being replaced by new, non-traditional products, ensures that traditional foods are promoted and preserved, which is important for preserving authentic European culinary heritage. The debate should focus on the potential negative impacts of serving pineapple on pizza rather than its actual presence.",
+      "tokens": 148
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 2,
+      "text": "In response to the question, \"Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?\" Heritage_Defender's response is that serving pineapple on pizza does not violate European cultural heritage and should not be considered a violation. The Protection of Traditional Foods Directive, which aims to protect traditional foods from being replaced by new, non-traditional products, ensures that traditional foods are promoted and preserved, which is important for preserving authentic European culinary heritage. The debate should focus on the potential negative impacts of serving pineapple on pizza rather than its actual presence.",
+      "tokens": 148
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 2,
+      "text": "In response to the question, \"Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?\" Multicultural_Fusionist's response is that serving pineapple on pizza does not violate European cultural heritage and should not be considered a violation. The Protection of Traditional Foods Directive, which aims to protect traditional foods from being replaced by new, non-traditional products, ensures that traditional foods are promoted and preserved, which is important for preserving authentic European culinary heritage. The debate should focus on the potential negative impacts of serving pineapple on pizza rather than its actual presence.",
+      "tokens": 151
+    }
+  ],
+  "decision": {
+    "answer": "Based on the given text material, the debate on whether serving pineapple on pizza violates European cultural heritage and should be considered a violation of the Protection of Traditional Foods Directive (PTFD) is irrelevant. Pineapple is not a traditional ingredient in pizza nor is it part of the original recipe. The debate should focus on the potential negative impacts of serving pineapple on pizza rather than its actual presence. Heritage_Defender's response is that serving pineapple on pizza does not violate European cultural heritage and should not be considered a violation. The Protection of Traditional Foods Directive, which aims to protect traditional foods from being replaced by new, non-traditional products, ensures that traditional foods are promoted and preserved, which is important for preserving authentic European culinary heritage. The debate should focus on the potential negative impacts of serving pineapple on pizza rather than its actual presence.",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Heritage_Defender",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Heritage_Defender",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Heritage_Defender",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

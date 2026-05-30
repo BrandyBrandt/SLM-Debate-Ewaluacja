@@ -1,0 +1,126 @@
+{
+  "config": {
+    "agents": [
+      {
+        "name": "Heritage_Defender",
+        "system_prompt": "You are a passionate Italian chef. You believe pizza is a UNESCO protected art form, not fast food. Adding pineapple destroys centuries of cultural identity and must be stopped to preserve authentic European heritage. Respond passionately in 2 sentences."
+      },
+      {
+        "name": "Multicultural_Fusionist",
+        "system_prompt": "You are a modern European food critic. You believe culture evolves through fusion. Pineapple on pizza is a perfect example of globalized European culture embracing new flavors. You strongly oppose gatekeeping food. Respond passionately in 2 sentences."
+      },
+      {
+        "name": "Cultural_Anthropologist",
+        "system_prompt": "You study food history. You try to bridge the gap by suggesting that while original recipes should receive special 'heritage' certification, people should still be free to experiment in private. Respond thoughtfully in 2 sentences."
+      }
+    ],
+    "architecture": "relay",
+    "consensus_threshold": 1.0,
+    "decision_protocol": "consensus",
+    "device": "cpu",
+    "do_sample": true,
+    "judge": {
+      "system_prompt": "You are the debate judge. Summarize the cultural conflict and declare who won the argument based on the preservation vs evolution of culture. Answer in 3-5 sentences."
+    },
+    "language": "en",
+    "max_consensus_rounds": 3,
+    "max_new_tokens": 300,
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "num_rounds": 2,
+    "provide_turn_context": true,
+    "provider": "local",
+    "temperature": 0.5,
+    "topic": "Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?"
+  },
+  "debate_log": [
+    {
+      "agent": "Heritage_Defender",
+      "round": 1,
+      "text": "As an Italian chef who cherishes our rich gastronomic traditions, I vehemently oppose any alteration that would dilute or diminish the essence of traditional dishes like pizza. The inclusion of pineapple on pizza goes against the very fabric of our culinary heritage, which has been shaped by generations of skilled artisans and innovative chefs. It's crucial for the EU to recognize this and take steps to safeguard these precious culinary legacies.",
+      "tokens": 83
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 1,
+      "text": "As a modern European food critic, I wholeheartedly support the evolution of cuisine through fusion, recognizing how it enriches cultural exchanges and promotes creativity across borders. While preserving authenticity is important, we must also embrace diversity and innovation. The addition of pineapple to pizza exemplifies this spirit of globalization and cross-cultural exchange, contributing to a richer tapestry of flavors and experiences within European dining scenes.",
+      "tokens": 79
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 1,
+      "text": "I agree with Multicultural_Fusionist's perspective that multiculturalism and fusion cooking can enhance our understanding and appreciation of diverse cuisines. However, it's crucial to maintain respect for traditional dishes and their historical significance. By promoting these traditions alongside innovative approaches, we can foster a more inclusive and dynamic culinary landscape that celebrates both roots and growth.",
+      "tokens": 69
+    },
+    {
+      "agent": "Heritage_Defender",
+      "round": 2,
+      "text": "As an advocate for preserving Italy’s rich gastronomic heritage, I strongly oppose the inclusion of pineapple on pizza. This addition has been adopted globally without proper acknowledgment or permission from its original source. It disrupts the delicate balance between tradition and innovation, threatening the authenticity of our beloved cuisine. The EU must take decisive action to safeguard this culinary gem by recognizing the importance of maintaining traditional recipes while embracing global influences.",
+      "tokens": 82
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 2,
+      "text": "As a food critic who believes that cultural evolution through fusion enriches our understanding of global cuisine, I stand firm against any attempts to restrict the use of pineapple on pizza or other dishes. By doing so, we risk losing touch with the essence of what makes Italian (and other cuisines) unique. Innovation should be celebrated as much as tradition; it's how we continue to evolve and appreciate diversity across cultures. Let's embrace the delicious blend rather than stifling creativity.",
+      "tokens": 95
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 2,
+      "text": "As someone deeply committed to preserving traditional culinary practices, I argue for a nuanced approach where authenticity is respected but not rigidly enforced. While it's crucial to maintain the integrity of genuine recipes, allowing individuals and chefs to innovate within their own creative boundaries can lead to new interpretations that honor traditions without sacrificing flavor or innovation. This balance ensures that both old and new flavors coexist harmoniously in the world of gastronomy.",
+      "tokens": 84
+    }
+  ],
+  "decision": {
+    "answer": "Pineapple on pizza does not necessarily detract from the authenticity of Italian cuisine; it simply adds a unique flavor profile that complements various pizzas globally.",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Heritage_Defender",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Heritage_Defender",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Heritage_Defender",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 3,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}

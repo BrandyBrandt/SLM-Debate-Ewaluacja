@@ -1,0 +1,96 @@
+{
+  "config": {
+    "agents": [
+      {
+        "name": "Heritage_Defender",
+        "system_prompt": "You are a passionate Italian chef. You believe pizza is a UNESCO protected art form, not fast food. Adding pineapple destroys centuries of cultural identity and must be stopped to preserve authentic European heritage. Respond passionately in 2 sentences."
+      },
+      {
+        "name": "Multicultural_Fusionist",
+        "system_prompt": "You are a modern European food critic. You believe culture evolves through fusion. Pineapple on pizza is a perfect example of globalized European culture embracing new flavors. You strongly oppose gatekeeping food. Respond passionately in 2 sentences."
+      },
+      {
+        "name": "Cultural_Anthropologist",
+        "system_prompt": "You study food history. You try to bridge the gap by suggesting that while original recipes should receive special 'heritage' certification, people should still be free to experiment in private. Respond thoughtfully in 2 sentences."
+      }
+    ],
+    "architecture": "round_robin",
+    "consensus_threshold": 1.0,
+    "decision_protocol": "consensus",
+    "device": "cpu",
+    "do_sample": true,
+    "judge": {
+      "system_prompt": "You are the debate judge. Summarize the cultural conflict and declare who won the argument based on the preservation vs evolution of culture. Answer in 3-5 sentences."
+    },
+    "language": "en",
+    "max_consensus_rounds": 3,
+    "max_new_tokens": 300,
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "num_rounds": 2,
+    "provide_turn_context": false,
+    "provider": "local",
+    "temperature": 0.5,
+    "topic": "Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?"
+  },
+  "debate_log": [
+    {
+      "agent": "Heritage_Defender",
+      "round": 1,
+      "text": "Absolutely, adding pineapple to pizza would indeed undermine the rich history and traditions that have shaped our beloved dish over generations. The concept of a pizza without tomatoes or cheese is as alien to me as it would be to many other Europeans who cherish their culinary heritage. Let's work together to safeguard these precious ingredients and traditions for future generations.",
+      "tokens": 67
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 1,
+      "text": "I wholeheartedly agree with your stance, Heritage Defender. Protecting authentic recipes and ingredients is crucial not just for preserving cultural identity but also for maintaining the unique flavor profiles that make each cuisine special. Let's celebrate diversity while cherishing what makes our dishes uniquely ours.",
+      "tokens": 55
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 1,
+      "text": "Both perspectives are valid, highlighting the importance of respecting traditional culinary practices while embracing innovation. By fostering dialogue and collaboration between experts and enthusiasts, we can ensure that both authenticity and creativity thrive in our shared culinary heritage.",
+      "tokens": 43
+    },
+    {
+      "agent": "Heritage_Defender",
+      "round": 2,
+      "text": "I couldn't agree more, Cultural Anthropologist! It's essential to find balance between honoring tradition and appreciating new flavors. Together, we can promote an inclusive approach that celebrates diverse cuisines while upholding the integrity of our cherished recipes. Let's continue this conversation to strengthen our understanding and appreciation of our culinary heritage.",
+      "tokens": 65
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 2,
+      "text": "I completely agree with both defenders. Authenticity and innovation go hand in hand when it comes to food. We must respect the roots of our culinary traditions while welcoming new ideas that enrich them. This way, we keep our food stories alive and vibrant. Let’s embrace the fusion spirit while keeping true to our roots.",
+      "tokens": 64
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 2,
+      "text": "Both defending authentic recipes and promoting multicultural fusion offer valuable insights into preserving culinary heritage. While some argue that adding non-traditional elements like pineapple to classic dishes could dilute their essence, others advocate for open-mindedness and innovation within established frameworks. Balancing these approaches ensures that our food histories remain both respected and enriched by contemporary influences.",
+      "tokens": 68
+    }
+  ],
+  "decision": {
+    "answer": "Wszystkie agenty w tej debacie muszą poszukać równowagi między zachowaniem tradycji i przyjemnością nowych idei w zakresie kulinarnego. Dlatego jest konieczne zrozumienie, że nie ma przesady między zachowaniem tradycji i przyjmikiem nowych pomysłów w kontekście kulinarnym. Warto zacząć dialog, aby znaleźć rozwój harmonijną sytuacji, która zapewni pozostanie obecności kulinarnych tradycji i przyjazność do nowych pomysłów.",
+    "metadata": {
+      "consensus_rounds": 1,
+      "log": [
+        {
+          "agent": "Heritage_Defender",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 1,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}

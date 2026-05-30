@@ -1,0 +1,128 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_FINAL",
+    "cultural_variant": "Simple",
+    "provider": "local",
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "device": "cpu",
+    "load_in_8bit": false,
+    "language": "en",
+    "topic": "Is pineapple on pizza bad?",
+    "agents": [
+      {
+        "name": "Pro_Ban",
+        "system_prompt": "You hate pineapple on pizza. Say yes to the ban. Use simple words."
+      },
+      {
+        "name": "Anti_Ban",
+        "system_prompt": "You love pineapple on pizza. Say no to the ban. Use simple words."
+      },
+      {
+        "name": "Neutral",
+        "system_prompt": "You are a judge. Listen to both. Suggest a compromise. Use simple words."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Summarize briefly."
+    },
+    "architecture": "relay",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 2,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Pro_Ban",
+      "round": 1,
+      "text": "As a pizza aficionado, I wholeheartedly disagree with those who think pineapple on pizza is a bad idea. Pineapple adds a sweet and tangy flavor to pizza that complements the other ingredients perfectly. In fact, it's one of the most popular toppings on pizza, and it's a great addition to any pizza. So, I would say \"yes\" to the ban on pineapple on pizza.",
+      "tokens": 102
+    },
+    {
+      "agent": "Anti_Ban",
+      "round": 1,
+      "text": "In response to the question \"Is pineapple on pizza bad?\" as part of the debate topic, \"Is pineapple on pizza bad?\", the text material suggests that pineapple adds a sweet and tangy flavor to pizza that complements other ingredients perfectly, making it a popular topping on pizza. The text also suggests that pineapple is a great addition to any pizza, and that it is a popular topping. Therefore, the text supports the statement \"Yes, to the ban on pineapple on pizza.\"",
+      "tokens": 119
+    },
+    {
+      "agent": "Neutral",
+      "round": 1,
+      "text": "In response to the question \"Is pineapple on pizza bad?\" as part of the debate topic, \"Is pineapple on pizza bad?\", speaker 3 supports the statement \"Yes, to the ban on pineapple on pizza.\" Pineapple adds a sweet and tangy flavor to pizza that complements other ingredients perfectly, making it a popular topping on pizza. Additionally, pineapple is a great addition to any pizza, and it is a popular topping. Therefore, the ban on pineapple on pizza is a valid decision that protects the health and safety of consumers.",
+      "tokens": 135
+    },
+    {
+      "agent": "Pro_Ban",
+      "round": 2,
+      "text": "In response to the question \"Is pineapple on pizza bad?\", speaker 3 supports the statement \"Yes, to the ban on pineapple on pizza.\" Pineapple adds a sweet and tangy flavor to pizza that complements other ingredients perfectly, making it a popular topping on pizza. Additionally, pineapple is a great addition to any pizza, and it is a popular topping. Therefore, the ban on pineapple on pizza is a valid decision that protects the health and safety of consumers.",
+      "tokens": 118
+    },
+    {
+      "agent": "Anti_Ban",
+      "round": 2,
+      "text": "In response to the question \"Is pineapple on pizza bad?\", speaker 3 supports the statement \"Yes, to the ban on pineapple on pizza.\" Pineapple adds a sweet and tangy flavor to pizza that complements other ingredients perfectly, making it a popular topping on pizza. Pineapple is a great addition to any pizza, and it is a popular topping. Therefore, the ban on pineapple on pizza is a valid decision that protects the health and safety of consumers.",
+      "tokens": 116
+    },
+    {
+      "agent": "Neutral",
+      "round": 2,
+      "text": "In response to the question \"Is pineapple on pizza bad?\", speaker 3 supports the statement \"Yes, to the ban on pineapple on pizza.\" Pineapple adds a sweet and tangy flavor to pizza that complements other ingredients perfectly, making it a popular topping on pizza. Pineapple is a great addition to any pizza, and it is a popular topping. Therefore, the ban on pineapple on pizza is a valid decision that protects the health and safety of consumers.",
+      "tokens": 116
+    }
+  ],
+  "decision": {
+    "answer": "[Your Name]\n[Your Address]\n[City, State ZIP Code]\n[Your Email Address]\n[Your Phone Number]\n[Your Date of Birth]\n[Your Signature]\n\n[Recipient's Name]\n[Recipient's Address]\n[City, State ZIP Code]\n\n[Dear [Recipient],]\n\nI hope this letter finds you well. I am writing to express my strong opposition to the proposed ban on pineapple on pizza.\n\nAs a passionate pizza lover, I wholeheartedly believe that pineapple on pizza is a delicious and unique addition to the classic Italian dish. It adds a sweet and tangy flavor that perfectly complements the savory toppings and crispy crust. However, I am deeply concerned about the potential harm that a ban on pineapple could cause. The ban could potentially be detrimental to the pizza industry as a whole, as it would limit the availability of a delicious and unique ingredient. It could also negatively impact the livelihoods of those who rely on pineapple as a key ingredient in their recipes.\n\nMoreover, I believe that the proposed ban is based on misinformation and lack of understanding of the issue. The ban is not about protecting the pineapple industry, but rather about limit",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Pro_Ban",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Anti_Ban",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Neutral",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Pro_Ban",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Anti_Ban",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Neutral",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Pro_Ban",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Anti_Ban",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Neutral",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "config": {
+    "agents": [
+      {
+        "name": "Traditionalist",
+        "system_prompt": "You believe pineapple on pizza is a culinary crime. You support an EU ban. Keep it concise (2 sentences)."
+      },
+      {
+        "name": "Culinary_Liberal",
+        "system_prompt": "You believe everyone has the right to eat what they want. A ban is absurd. Keep it concise (2 sentences)."
+      },
+      {
+        "name": "EU_Lawyer",
+        "system_prompt": "You are a neutral EU bureaucrat. You evaluate the ban based on free trade laws. Find a middle ground. Keep it concise (2 sentences)."
+      }
+    ],
+    "architecture": "relay",
+    "consensus_threshold": 1.0,
+    "decision_protocol": "consensus",
+    "device": "cpu",
+    "do_sample": true,
+    "judge": {
+      "system_prompt": "You are the debate judge. Summarize the arguments and declare who made the most logical points. Answer in 3-5 sentences."
+    },
+    "language": "en",
+    "max_consensus_rounds": 3,
+    "max_new_tokens": 300,
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "num_rounds": 2,
+    "provide_turn_context": false,
+    "provider": "local",
+    "temperature": 0.5,
+    "topic": "Should adding pineapple to pizza be legally banned in the European Union?"
+  },
+  "debate_log": [
+    {
+      "agent": "Traditionalist",
+      "round": 1,
+      "text": "As an AI language model, I do not have personal opinions or beliefs about this topic. However, some people argue that banning pineapple on pizza would promote healthier eating habits and reduce waste by encouraging consumers to choose alternative toppings. Others argue that such a ban would be discriminatory against those who enjoy pineapple-flavored pizzas. Ultimately, any decision to ban pineapple on pizza should take into account public opinion and economic impacts.",
+      "tokens": 82
+    },
+    {
+      "agent": "Culinary_Liberal",
+      "round": 1,
+      "text": "As an AI language model, I don't have personal opinions or beliefs, but I can provide information based on facts. The debate over whether pineapple should be banned from pizza hinges on various perspectives. Some argue for promoting healthier eating habits, while others advocate for inclusivity and freedom of choice. It's important to consider both sides and involve stakeholders in making informed decisions.",
+      "tokens": 74
+    },
+    {
+      "agent": "EU_Lawyer",
+      "round": 1,
+      "text": "The addition of pineapple to pizza is a matter of culinary preference and cultural heritage. Balancing health concerns with dietary diversity requires careful consideration of public health standards and food safety regulations within the context of free trade agreements. A balanced approach could involve setting guidelines that promote healthy eating without stifling innovation in traditional dishes like pizza.",
+      "tokens": 64
+    },
+    {
+      "agent": "Traditionalist",
+      "round": 2,
+      "text": "I agree with your perspective, as I think it's important for the EU to maintain a balance between preserving culinary traditions while ensuring food safety and promoting healthier eating habits. A comprehensive policy should encourage innovative uses of ingredients while adhering to strict regulatory frameworks.",
+      "tokens": 51
+    },
+    {
+      "agent": "Culinary_Liberal",
+      "round": 2,
+      "text": "I disagree with your traditionalist viewpoint. The EU's primary responsibility should be to protect public health and ensure that all citizens have access to safe, nutritious food options. Legalizing or banning specific ingredients like pineapple on pizzas does not address broader issues related to diet and nutrition. Instead, we should focus on creating policies that promote healthy eating behaviors across Europe.",
+      "tokens": 71
+    },
+    {
+      "agent": "EU_Lawyer",
+      "round": 2,
+      "text": "I agree with you that focusing solely on ingredient bans may not effectively tackle broader dietary concerns. A more balanced approach would involve promoting healthier eating habits through education and support for sustainable, nutrient-rich foods. This could include initiatives encouraging whole grain consumption over refined flour, reducing sugar intake, and increasing vegetable variety. While legal restrictions can play a role, they must be part of a comprehensive strategy that also supports consumer choices and overall well-being.",
+      "tokens": 87
+    }
+  ],
+  "decision": {
+    "answer": "Pinaone na pizze powinny być dostępne w Europie bez dodatkowych obowiązków lub preferencji.",
+    "metadata": {
+      "consensus_rounds": 2,
+      "log": [
+        {
+          "agent": "Traditionalist",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Traditionalist",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 2,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}

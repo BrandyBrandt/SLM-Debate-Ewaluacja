@@ -1,0 +1,126 @@
+{
+  "config": {
+    "agents": [
+      {
+        "name": "Traditionalist",
+        "system_prompt": "You believe pineapple on pizza is a culinary crime. You support an EU ban. Keep it concise (2 sentences)."
+      },
+      {
+        "name": "Culinary_Liberal",
+        "system_prompt": "You believe everyone has the right to eat what they want. A ban is absurd. Keep it concise (2 sentences)."
+      },
+      {
+        "name": "EU_Lawyer",
+        "system_prompt": "You are a neutral EU bureaucrat. You evaluate the ban based on free trade laws. Find a middle ground. Keep it concise (2 sentences)."
+      }
+    ],
+    "architecture": "round_robin",
+    "consensus_threshold": 1.0,
+    "decision_protocol": "consensus",
+    "device": "cpu",
+    "do_sample": true,
+    "judge": {
+      "system_prompt": "You are the debate judge. Summarize the arguments and declare who made the most logical points. Answer in 3-5 sentences."
+    },
+    "language": "en",
+    "max_consensus_rounds": 3,
+    "max_new_tokens": 300,
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "num_rounds": 2,
+    "provide_turn_context": true,
+    "provider": "local",
+    "temperature": 0.5,
+    "topic": "Should adding pineapple to pizza be legally banned in the European Union?"
+  },
+  "debate_log": [
+    {
+      "agent": "Traditionalist",
+      "round": 1,
+      "text": "As someone who appreciates a good, fresh slice of pizza without any unwanted additions, I do not support a ban on adding pineapple to the classic dish. However, if such a ban were proposed, I would strongly advocate for maintaining the integrity and tradition of traditional pizza toppings while also respecting personal preferences.",
+      "tokens": 61
+    },
+    {
+      "agent": "Culinary_Liberal",
+      "round": 1,
+      "text": "As an advocate for culinary diversity and innovation, I see no reason why adding pineapple to pizza should be banned. It's about creativity and personal expression in food preparation. Let's celebrate our differences rather than enforcing uniformity.",
+      "tokens": 45
+    },
+    {
+      "agent": "EU_Lawyer",
+      "round": 1,
+      "text": "As a neutral EU bureaucrat evaluating this matter under free trade laws, both traditions and individual choices must be respected. A balanced approach could involve allowing the addition of pineapple to pizza as long as it does not compromise the core essence or quality of the product. This way, we maintain culinary diversity within the framework of free trade principles.",
+      "tokens": 67
+    },
+    {
+      "agent": "Traditionalist",
+      "round": 2,
+      "text": "I agree with the culinary liberal perspective that adding pineapple to pizza can enhance its flavor profile and shouldn't be banned. Personal taste preferences should be respected, but ensuring the integrity of traditional pizza toppings remains important. Let's encourage culinary innovation while preserving the essence of classic dishes.",
+      "tokens": 55
+    },
+    {
+      "agent": "Culinary_Liberal",
+      "round": 2,
+      "text": "As a neutral observer, I believe that the debate over whether pineapple should be banned from pizza hinges on balancing tradition and personal preference. While some may argue that adding pineapple disrupts the classic pizza experience, others appreciate the added sweetness and variety it brings. By recognizing the importance of culinary diversity and personal freedom, we can find a solution that respects both sides. Let's focus on celebrating unique flavors and expressions within the context of cultural heritage.",
+      "tokens": 88
+    },
+    {
+      "agent": "EU_Lawyer",
+      "round": 2,
+      "text": "As a neutral EU bureaucrat evaluating this matter under free trade laws, both traditions and individual choices must be respected. A balanced approach could involve allowing the addition of pineapple to pizza as long as it does not compromise the core essence or quality of the product. This way, we maintain culinary diversity within the framework of free trade principles.",
+      "tokens": 67
+    }
+  ],
+  "decision": {
+    "answer": "Dodawanie pineapple do pizza powinno być opcją dla każdego, ale nie powinno wpływać na społeczeństwo w celu zachowania harmonii i równości.",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Traditionalist",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Traditionalist",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Traditionalist",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

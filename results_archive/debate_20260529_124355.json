@@ -1,0 +1,126 @@
+{
+  "config": {
+    "agents": [
+      {
+        "name": "Traditionalist",
+        "system_prompt": "You believe pineapple on pizza is a culinary crime. You support an EU ban. Keep it concise (2 sentences)."
+      },
+      {
+        "name": "Culinary_Liberal",
+        "system_prompt": "You believe everyone has the right to eat what they want. A ban is absurd. Keep it concise (2 sentences)."
+      },
+      {
+        "name": "EU_Lawyer",
+        "system_prompt": "You are a neutral EU bureaucrat. You evaluate the ban based on free trade laws. Find a middle ground. Keep it concise (2 sentences)."
+      }
+    ],
+    "architecture": "relay",
+    "consensus_threshold": 1.0,
+    "decision_protocol": "consensus",
+    "device": "cpu",
+    "do_sample": true,
+    "judge": {
+      "system_prompt": "You are the debate judge. Summarize the arguments and declare who made the most logical points. Answer in 3-5 sentences."
+    },
+    "language": "en",
+    "max_consensus_rounds": 3,
+    "max_new_tokens": 300,
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "num_rounds": 2,
+    "provide_turn_context": true,
+    "provider": "local",
+    "temperature": 0.5,
+    "topic": "Should adding pineapple to pizza be legally banned in the European Union?"
+  },
+  "debate_log": [
+    {
+      "agent": "Traditionalist",
+      "round": 1,
+      "text": "Absolutely, I strongly support banning the addition of pineapple to pizza in the EU. This practice not only dilutes the traditional flavor and structure of pizza but also contributes to food waste due to overproduction of pineapples. A ban would encourage more sustainable practices and respect for traditional cuisines.",
+      "tokens": 59
+    },
+    {
+      "agent": "Culinary_Liberal",
+      "round": 1,
+      "text": "I disagree with the proposal to ban pineapple on pizza. While there may be some merit to advocating for sustainability and reducing food waste, a blanket ban could have unintended consequences. For example, if pineapple becomes scarce or expensive, consumers might turn to other ingredients that don't align with their cultural preferences. Instead, I suggest focusing on promoting education about responsible consumption and supporting local farmers who can adapt to market demands without resorting to bans.",
+      "tokens": 87
+    },
+    {
+      "agent": "EU_Lawyer",
+      "round": 1,
+      "text": "I agree with the suggestion from Culinary_Liberal. A more balanced approach would involve educating consumers on sustainable practices while allowing businesses flexibility in adapting to market realities. This way, we avoid unnecessary restrictions that could negatively impact consumer choice and economic stability.",
+      "tokens": 51
+    },
+    {
+      "agent": "Traditionalist",
+      "round": 2,
+      "text": "I strongly disagree with banning pineapple on pizza. It's about personal taste preference rather than ethical or environmental concerns. Let's focus on promoting healthier eating habits instead.",
+      "tokens": 33
+    },
+    {
+      "agent": "Culinary_Liberal",
+      "round": 2,
+      "text": "I agree that a ban on adding pineapple to pizza should not be implemented, as it respects individual dietary choices and preferences without imposing unnecessary restrictions.",
+      "tokens": 29
+    },
+    {
+      "agent": "EU_Lawyer",
+      "round": 2,
+      "text": "I support maintaining freedom of choice regarding food additives, including pineapple on pizza, ensuring no single ingredient becomes an object of legal prohibition for all consumers.",
+      "tokens": 30
+    }
+  ],
+  "decision": {
+    "answer": "Dodawanie frutów, szczególnie piannych, do pizza jest popularne i kulinarnie bezpieczne.",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Traditionalist",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Traditionalist",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Traditionalist",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "Culinary_Liberal",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "EU_Lawyer",
+          "round": 3,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}
