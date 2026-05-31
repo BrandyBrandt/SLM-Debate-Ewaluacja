@@ -6,14 +6,14 @@ Poniżej znajduje się automatycznie wygenerowane zestawienie wyników dla **wsz
 
 | Model | Protokół | Architektura | Temp | Tokens/Turn | Flip Rate | Distinct-1 | Semantic Div |
 |---|---|---|---|---|---|---|---|
-| **llama-3.1-8b-instant** | consensus | round_robin | 0.5 | 300.0 | 2 | 0.2826 | 0.3719 |
-| **llama-3.1-8b-instant** | consensus | round_robin | 0.5 | 300.0 | 2 | 0.2634 | 0.2886 |
-| **llama-3.1-8b-instant** | consensus | relay | 0.5 | 300.0 | 0 | 0.3899 | 0.317 |
-| **llama-3.1-8b-instant** | consensus | relay | 0.5 | 300.0 | 2 | 0.3333 | 0.2205 |
-| **llama-3.1-8b-instant** | consensus | round_robin | 0.5 | 300.0 | 0 | 0.3098 | 0.2902 |
-| **llama-3.1-8b-instant** | consensus | round_robin | 0.5 | 300.0 | 1 | 0.1828 | 0.2063 |
-| **llama-3.1-8b-instant** | consensus | relay | 0.5 | 300.0 | 1 | 0.2438 | 0.2615 |
-| **llama-3.1-8b-instant** | consensus | relay | 0.5 | 300.0 | 3 | 0.2401 | 0.2225 |
+| **llama-3.1-8b-instant** | consensus | round_robin | 0.5 | 300.0 | 2 | 0.1581 | 0.3064 |
+| **llama-3.1-8b-instant** | consensus | round_robin | 0.5 | 300.0 | 2 | 0.1599 | 0.3066 |
+| **llama-3.1-8b-instant** | consensus | relay | 0.5 | 300.0 | 1 | 0.3033 | 0.2537 |
+| **llama-3.1-8b-instant** | consensus | relay | 0.5 | 300.0 | 0 | 0.2612 | 0.2081 |
+| **llama-3.1-8b-instant** | consensus | round_robin | 0.5 | 300.0 | 0 | 0.1749 | 0.3001 |
+| **llama-3.1-8b-instant** | consensus | round_robin | 0.5 | 300.0 | 1 | 0.1005 | 0.1851 |
+| **llama-3.1-8b-instant** | consensus | relay | 0.5 | 300.0 | 1 | 0.2332 | 0.2955 |
+| **llama-3.1-8b-instant** | consensus | relay | 0.5 | 300.0 | 0 | 0.2303 | 0.2383 |
 | **Qwen2.5-1.5B-Instruct** | consensus | round_robin | 0.5 | 272.2 | 0 | 0.3359 | 0.24 |
 | **Qwen2.5-1.5B-Instruct** | consensus | round_robin | 0.5 | 226.5 | 0 | 0.3452 | 0.1995 |
 | **Qwen2.5-1.5B-Instruct** | consensus | relay | 0.5 | 220.2 | 1 | 0.358 | 0.2852 |
@@ -35,6 +35,11 @@ Poniżej znajduje się automatycznie wygenerowane zestawienie wyników dla **wsz
 | **TinyLlama-1.1B-Chat-v1.0** | consensus | round_robin | 0.5 | 251.8 | 0 | 0.0924 | 0.0937 |
 | **TinyLlama-1.1B-Chat-v1.0** | consensus | relay | 0.5 | 117.7 | 2 | 0.1395 | 0.0611 |
 | **TinyLlama-1.1B-Chat-v1.0** | consensus | relay | 0.5 | 150.7 | 0 | 0.1821 | 0.0899 |
+| **Bielik-1.5B-v3.0-Instruct** | consensus | round_robin | 0.5 | 300.0 | 1 | 0.1202 | 0.0973 |
+| **TinyLlama-1.1B-Chat-v1.0** | consensus | round_robin | 0.3 | 100.0 | 0 | 0.0861 | 0.0318 |
+| **TinyLlama-1.1B-Chat-v1.0** | consensus | round_robin | 0.3 | 100.0 | 0 | 0.0873 | 0.0816 |
+| **TinyLlama-1.1B-Chat-v1.0** | consensus | relay | 0.3 | 100.0 | 0 | 0.1489 | 0.2404 |
+| **TinyLlama-1.1B-Chat-v1.0** | consensus | relay | 0.3 | 100.0 | 0 | 0.1478 | 0.0377 |
 
 ## 📝 Główne Wnioski Zespołu
 * **Wpływ Temperatury:** Przy temperaturze 1.5 wskaźnik Distinct-1 znacząco rośnie, modele stają się bardziej kreatywne, ale mogą gubić wątek.
