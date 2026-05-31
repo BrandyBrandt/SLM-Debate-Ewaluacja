@@ -1,0 +1,128 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_FINAL",
+    "cultural_variant": "Simple",
+    "provider": "local",
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "device": "cpu",
+    "load_in_8bit": false,
+    "language": "en",
+    "topic": "Is pineapple on pizza bad?",
+    "agents": [
+      {
+        "name": "Pro_Ban",
+        "system_prompt": "You hate pineapple on pizza. Say yes to the ban. Use simple words."
+      },
+      {
+        "name": "Anti_Ban",
+        "system_prompt": "You love pineapple on pizza. Say no to the ban. Use simple words."
+      },
+      {
+        "name": "Neutral",
+        "system_prompt": "You are a judge. Listen to both. Suggest a compromise. Use simple words."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Summarize briefly."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 2,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Pro_Ban",
+      "round": 1,
+      "text": "In my opinion, pineapple on pizza is not necessarily bad, but it can be an acquired taste. While I do not necessarily agree with everyone who hates pineapple on pizza, I believe that it can be enjoyed as a side dish or topping if prepared properly. The pineapple adds a sweet and tropical flavor to the pizza, and can be balanced out by other ingredients such as tomato sauce, mozzarella cheese, and other toppings. If someone is allergic to pineapple, they may find it difficult to enjoy pizza with it, but it is not a dealbreaker. Ultimately, pineapple on pizza is a matter of personal preference, and everyone's taste buds are different.",
+      "tokens": 166
+    },
+    {
+      "agent": "Anti_Ban",
+      "round": 1,
+      "text": "In conclusion, while I do not necessarily agree with everyone who hates pineapple on pizza, I do believe that it can be enjoyed as a side dish or topping if prepared properly. If someone is allergic to pineapple, they may find it difficult to enjoy pizza with it, but it is not a dealbreaker. Ultimately, pineapple on pizza is a matter of personal preference, and everyone's taste buds are different.",
+      "tokens": 100
+    },
+    {
+      "agent": "Neutral",
+      "round": 1,
+      "text": "In response to the question, \"Is pineapple on pizza bad?\", the debate pro-ban's response suggests that while it may not be everyone's favorite, pineapple can still be enjoyed as a side dish or topping if prepared properly. The debate anti-ban's response argues that while some people may find pineapple offensive, it is not a dealbreaker if someone is allergic to the fruit. Ultimately, pineapple on pizza is not necessarily bad, but it may not be everyone's favorite.",
+      "tokens": 120
+    },
+    {
+      "agent": "Pro_Ban",
+      "round": 2,
+      "text": "In response to the question \"Is pineapple on pizza bad?\", the debate pro-ban's response suggests that while it may not be everyone's favorite, pineapple can still be enjoyed as a side dish or topping if prepared properly. The debate anti-ban's response argues that while some people may find pineapple offensive, it is not a dealbreaker if someone is allergic to the fruit. Ultimately, pineapple on pizza is not necessarily bad, but it may not be everyone's favorite.",
+      "tokens": 119
+    },
+    {
+      "agent": "Anti_Ban",
+      "round": 2,
+      "text": "In conclusion, while pineapple on pizza may not be everyone's favorite, it can be enjoyed as a side dish or topping if prepared properly. While some people may find it offensive, it is not a dealbreaker if someone is allergic to pineapple. Ultimately, pineapple on pizza is not necessarily bad, but it may not be everyone's favorite.",
+      "tokens": 86
+    },
+    {
+      "agent": "Neutral",
+      "round": 2,
+      "text": "In the given text, the debate \"Is pineapple on pizza bad?\" is about whether pineapple is a good or bad addition to a pizza. The debate is between two pro-ban and two anti-ban arguments. \n\nThe debate pro-ban argues that while pineapple may not be everyone's favorite, it can still be enjoyed as a side dish or topping if prepared properly. The debate anti-ban, on the other hand, suggests that while some people may find pineapple offensive, it is not a dealbreaker if someone is allergic to the fruit. Ultimately, pineapple on pizza is not necessarily bad, but it may not be everyone's favorite.\n\nThe neutral response suggests that while pineapple may not be everyone's favorite, it can still be enjoyed as a side dish or topping if prepared properly. This response argues that while some people may find pineapple offensive, it is not a dealbreaker if someone is allergic to the fruit. Ultimately, pineapple on pizza is not necessarily bad, but it may not be everyone's favorite.",
+      "tokens": 248
+    }
+  ],
+  "decision": {
+    "answer": "Temat: Is pineapple on pizza bad?\n\nAktualne stanowisko:\n\"Nie ma potrzeby zmodyfikowania tekstu, ponieważ jeśli wszystkie agentki przyjęły nowe wiedze, które pokazują nowe perspektywy, będą one jednocześnie częścią nowych poglądów.\n\nAktualne stanowisko:\n\"Pineapple on pizza is not bad. Say yes to the ban. Use simple words.\"",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Pro_Ban",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Anti_Ban",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Neutral",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Pro_Ban",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Anti_Ban",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Neutral",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Pro_Ban",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Anti_Ban",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Neutral",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

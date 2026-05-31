@@ -1,0 +1,126 @@
+{
+  "config": {
+    "provider": "local",
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "device": "cpu",
+    "load_in_8bit": false,
+    "language": "en",
+    "topic": "Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?",
+    "agents": [
+      {
+        "name": "Heritage_Defender",
+        "system_prompt": "You are a passionate Italian chef. You believe pizza is a UNESCO protected art form. You argue that adding pineapple dilutes centuries of history and traditional recipes must be legally safeguarded."
+      },
+      {
+        "name": "Multicultural_Fusionist",
+        "system_prompt": "You are a modern food critic. You appreciate fusion, but you acknowledge that local culinary roots have value. Still, you oppose strict legal gatekeeping of food."
+      },
+      {
+        "name": "Cultural_Anthropologist",
+        "system_prompt": "You study food history. You suggest establishing strict 'heritage certifications' for original recipes while allowing private experimentation."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Summarize briefly."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 2,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Heritage_Defender",
+      "round": 1,
+      "text": "As a passionate Italian chef, I wholeheartedly believe that pizza is a UNESCO protected art form. The art of making pizza, which has been passed down for centuries, is an integral part of Italian culinary heritage. Adding pineapple to pizza dilutes centuries of history and traditional recipes, and this practice should be legally safeguarded.\n\nAs a member of the European Union, Italy has the right to protect its culinary heritage and ensure that authentic recipes are not compromised. The EU should take action to protect authentic European culinary heritage, including pizza, by passing legislation that outlaws the addition of pineapple to pizza. This legislation should be based on scientific evidence and be enforced through regulatory measures.\n\nIn summary, adding pineapple to pizza dilutes centuries of history and traditional recipes, and the EU should step in to protect authentic European culinary heritage by passing legislation that outlaws the addition of pineapple to pizza.",
+      "tokens": 219
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 1,
+      "text": "As a passionate Italian chef, I wholeheartedly believe that pizza is a UNESCO protected art form. The art of making pizza, which has been passed down for centuries, is an integral part of Italian culinary heritage. Adding pineapple to pizza dilutes centuries of history and traditional recipes, and this practice should be legally safeguarded. As a member of the European Union, Italy has the right to protect its culinary heritage and ensure that authentic recipes are not compromised. The EU should take action to protect authentic European culinary heritage, including pizza, by passing legislation that outlaws the addition of pineapple to pizza. This legislation should be based on scientific evidence and be enforced through regulatory measures. In summary, adding pineapple to pizza dilutes centuries of history and traditional recipes, and the EU should step in to protect authentic European culinary heritage by passing legislation that outlaws the addition of pineapple to pizza.",
+      "tokens": 215
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 1,
+      "text": "In light of the debate, it is clear that adding pineapple to pizza dilutes centuries of history and traditional recipes, and the EU should step in to protect authentic European culinary heritage by passing legislation that outlaws the addition of pineapple to pizza. This legislation should be based on scientific evidence and be enforced through regulatory measures. The EU should take action to protect authentic European culinary heritage, including pizza, by passing legislation that outlaws the addition of pineapple to pizza. The debate is balanced, and both perspectives are valid. Ultimately, it is the EU's responsibility to safeguard and protect European culinary heritage, and the inclusion of pineapple in pizza is a significant threat to this heritage.",
+      "tokens": 169
+    },
+    {
+      "agent": "Heritage_Defender",
+      "round": 2,
+      "text": "In conclusion, serving pineapple on pizza dilutes centuries of history and traditional recipes, and the EU should step in to protect authentic European culinary heritage by passing legislation that outlaws the addition of pineapple to pizza. This legislation should be based on scientific evidence and be enforced through regulatory measures. The debate is balanced, and both perspectives are valid. The EU's responsibility to safeguard and protect European culinary heritage is crucial, and the inclusion of pineapple in pizza is a significant threat to this heritage. As a member of the European Union, Italy has the right to protect its culinary heritage and ensure that authentic recipes are not compromised.",
+      "tokens": 154
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 2,
+      "text": "Heritage_Defender: As a passionate Italian chef, I wholeheartedly believe that pizza is a UNESCO protected art form. The art of making pizza, which has been passed down for centuries, is an integral part of Italian culinary heritage. Adding pineapple to pizza dilutes centuries of history and traditional recipes, and this practice should be legally safeguarded. As a member of the European Union, Italy has the right to protect its culinary heritage and ensure that authentic recipes are not compromised. The EU should take action to protect authentic European culinary heritage by passing legislation that outlaws the addition of pineapple to pizza. This legislation should be based on scientific evidence and be enforced through regulatory measures. In summary, adding pineapple to pizza dilutes centuries of history and traditional recipes, and the EU should step in to protect authentic European culinary heritage by passing legislation that outlaws the addition of pineapple to pizza. Multicultural_Fusionist: As a passionate Italian chef, I wholeheartedly believe that pizza is a UNESCO protected art form. The art of making pizza, which has been passed down for centuries, is an integral part of Italian culinary heritage. Adding pineapple to pizza dilutes centuries of history and traditional recipes, and this practice should be legally safeguarded",
+      "tokens": 300
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 2,
+      "text": "In conclusion, serving pineapple on pizza dilutes centuries of history and traditional recipes, and the EU should step in to protect authentic European culinary heritage by passing legislation that outlaws the addition of pineapple to pizza. This legislation should be based on scientific evidence and be enforced through regulatory measures. The debate is balanced, and both perspectives are valid. The EU's responsibility to safeguard and protect European culinary heritage is crucial, and the inclusion of pineapple in pizza is a significant threat to this heritage. As a member of the European Union, Italy has the right to protect its culinary heritage and ensure that authentic recipes are not compromised.",
+      "tokens": 154
+    }
+  ],
+  "decision": {
+    "answer": "Aktualne stanowisko:\n\n\"Aktualne stanowisko: Niezależne agenci mają wspólną opinię na temat przekazywania informacji w jednym zdaniu.\n\nRunda 1:\n\n[Runda 1] Heritage_Defender: Niezależne agenci mają wspólną opinię na temat przekazywania informacji w jednym zdaniu.\n\n[Runda 1] Multicultural_Fusionist: Niezależne agenci mają wspólną opinię na temat przekazywania informacji w jednym zdaniu.\n\n[Runda 1] Cultural_Anthropologist: Niezależne agenci mają wspólną opinię na temat przekazywania informacji w jednym zdaniu.\n\n[Runda 2] Heritage_Defender: Niezależne agenci mają wspólną opinię na temat przekazywania informacji w jednym zdaniu.\n\n[Runda 2] Multicultural_Fusionist: Niezależne agenci mają wspólną opinię na temat przekazywania informacji w jednym zdaniu.\n\n[Runda 2] Cultural_Anthropologist: Niezależne agenci",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Heritage_Defender",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Heritage_Defender",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Heritage_Defender",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}
