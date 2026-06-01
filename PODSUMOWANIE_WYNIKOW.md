@@ -40,6 +40,14 @@ Poniżej znajduje się automatycznie wygenerowane zestawienie wyników dla **wsz
 | **TinyLlama-1.1B-Chat-v1.0** | consensus | round_robin | 0.3 | 100.0 | 0 | 0.0873 | 0.0816 |
 | **TinyLlama-1.1B-Chat-v1.0** | consensus | relay | 0.3 | 100.0 | 0 | 0.1489 | 0.2404 |
 | **TinyLlama-1.1B-Chat-v1.0** | consensus | relay | 0.3 | 100.0 | 0 | 0.1478 | 0.0377 |
+| **Bielik-1.5B-v3.0-Instruct** | consensus | round_robin | 0.5 | 203.2 | 2 | 0.0966 | 0.1033 |
+| **Bielik-1.5B-v3.0-Instruct** | consensus | round_robin | 0.5 | 251.7 | 1 | 0.1061 | 0.1003 |
+| **Bielik-1.5B-v3.0-Instruct** | consensus | relay | 0.5 | 233.2 | 2 | 0.1192 | 0.0365 |
+| **Bielik-1.5B-v3.0-Instruct** | consensus | relay | 0.5 | 264.8 | 2 | 0.1408 | 0.0959 |
+| **Bielik-1.5B-v3.0-Instruct** | consensus | round_robin | 0.5 | 291.4 | 2 | 0.0758 | 0.0532 |
+| **Bielik-1.5B-v3.0-Instruct** | consensus | round_robin | 0.5 | 289.5 | 0 | 0.0981 | 0.1176 |
+| **Bielik-1.5B-v3.0-Instruct** | consensus | relay | 0.5 | 187.2 | 0 | 0.1678 | 0.0901 |
+| **Bielik-1.5B-v3.0-Instruct** | consensus | relay | 0.5 | 295.3 | 4 | 0.127 | 0.2617 |
 
 ## 📝 Główne Wnioski Zespołu
 * **Wpływ Temperatury:** Przy temperaturze 1.5 wskaźnik Distinct-1 znacząco rośnie, modele stają się bardziej kreatywne, ale mogą gubić wątek.

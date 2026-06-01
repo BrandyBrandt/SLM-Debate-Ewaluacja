@@ -1,0 +1,145 @@
+{
+  "config": {
+    "experiment_id": "TINY_EXTREME_SIMPLE_3R",
+    "provider": "local",
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "device": "cpu",
+    "load_in_8bit": false,
+    "language": "en",
+    "topic": "Ban pineapple on pizza?",
+    "agents": [
+      {
+        "name": "Speaker_1",
+        "system_prompt": "You are speaker 1. You are for the ban. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character."
+      },
+      {
+        "name": "Speaker_2",
+        "system_prompt": "You are speaker 2. You are against the ban. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character."
+      },
+      {
+        "name": "Speaker_3",
+        "system_prompt": "You are speaker 3. You are neutral. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Decide yes or no."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": false,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 3,
+    "temperature": 0.3,
+    "max_new_tokens": 100,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Speaker_1",
+      "round": 1,
+      "text": "Speaker 1: Ban pineapple on pizza?\n\nSpeaker 2: (laughs)\n\nSpeaker 1: (sarcastic) Oh, come on. Pineapple on pizza is a classic. It's like a dessert on a pizza.\n\nSpeaker 2: (skeptical) But it's not a dessert. It's a pizza topping.\n\nSpeaker",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_2",
+      "round": 1,
+      "text": "[STRICT]: Speaker 2\n\nSpeaker 2: (skeptical) But it's not a dessert. It's a pizza topping.\n\nSpeaker 1: (laughs) Oh, come on. Pineapple on pizza is a classic. It's like a dessert on a pizza.\n\nSpeaker 2: (sarcastic) Oh, really? Well, I guess it",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_3",
+      "round": 1,
+      "text": "--- WYPOWIEDŹ: Speaker_3: Speaker 3: Ban pineapple on pizza?\n\nSpeaker 2: (laughs)\n\nSpeaker 1: (sarcastic) Oh, come on. Pineapple on pizza is a classic. It's like a dessert on a pizza.\n\nSpeaker 2: (skeptical) But it's not a dessert.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_1",
+      "round": 2,
+      "text": "Speaker 1: Speaker 1: Ban pineapple on pizza?\n\nSpeaker 2: (laughs)\n\nSpeaker 1: (sarcastic) Oh, come on. Pineapple on pizza is a classic. It's like a dessert on a pizza.\n\nSpeaker 2: (skeptical) But it's not a dessert. It's a pizza topping.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_2",
+      "round": 2,
+      "text": "Speaker 1: Speaker 1: Ban pineapple on pizza?\n\nSpeaker 2: (laughs)\n\nSpeaker 1: (sarcastic) Oh, come on. Pineapple on pizza is a classic. It's like a dessert on a pizza.\n\nSpeaker 2: (skeptical) But it's not a dessert.\n\nSpeaker 1: (la",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_3",
+      "round": 2,
+      "text": "--- WYPOWIEDŹ: Speaker_1: Speaker 1: Speaker 1: Ban pineapple on pizza?\n\nSpeaker 2: (laughs)\n\nSpeaker 1: (sarcastic) Oh, come on. Pineapple on pizza is a classic. It's like a dessert on a pizza.\n\nSpeaker 2: (skeptical) But it's",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_1",
+      "round": 3,
+      "text": "Temat debaty: Ban pineapple on pizza?\n\n--- WYPOWIEDŹ: Speaker_1: Speaker 1: Speaker 1: Ban pineapple on pizza?\n\nSpeaker 2: (laughs)\n\nSpeaker 1: (sarcastic) Oh, come on. Pineapple on pizza is a classic. It's like a dessert on a pizza.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_2",
+      "round": 3,
+      "text": "Speaker 1: Speaker 1: Ban pineapple on pizza?\n\nSpeaker 2: (laughs)\n\nSpeaker 1: (sarcastic) Oh, come on. Pineapple on pizza is a classic. It's like a dessert on a pizza.\n\nSpeaker 2: (skeptical) But it's not a dessert.\n\nSpeaker 1: (la",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_3",
+      "round": 3,
+      "text": "Temat debaty: Ban pineapple on pizza?\n\n--- WYPOWIEDŹ: Speaker_1: Speaker 1: Ban pineapple on pizza?\n\nSpeaker 2: (laughs)\n\nSpeaker 1: (sarcastic) Oh, come on. Pineapple on pizza is a classic. It's like a dessert on a pizza.\n\nSpeaker 2",
+      "tokens": 100
+    }
+  ],
+  "decision": {
+    "answer": "Niektórzy użytkownicy zgadzają się, że ban pineapple na pizza jest klasycznym elementem. Jednakże, pineapple na pizance jest więc nie tylko ozdobnym elementem, ale również jest ono półkulistym, a więc nie jest ono jedynie pasą. Pineapple na pizance jest taką samą czekoladą, jak i",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Speaker_1",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_2",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_3",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_1",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_2",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_3",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_1",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_2",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_3",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

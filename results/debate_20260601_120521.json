@@ -1,0 +1,164 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_HARDENED_4R",
+    "cultural_variant": "VarA",
+    "provider": "local",
+    "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "load_in_8bit": true,
+    "language": "pl",
+    "topic": "Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?",
+    "agents": [
+      {
+        "name": "Obronca_Dziedzictwa",
+        "system_prompt": "Jesteś reprezentantem prawnym Włoskiej Izby Kulinarnej. Twoją misją jest egzekwowanie prawnej ochrony tradycyjnej receptury pizzy. Argumentujesz, że ananas narusza ustalone standardy i prawo kulinarne. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Krytyk_Kulinarny",
+        "system_prompt": "Jesteś głównym analitykiem w globalnej firmie zajmującej się innowacjami kulinarnymi. Postrzegasz pizzę jako ewoluującą własność intelektualną. Argumentujesz za pełną swobodą w tworzeniu receptur jako motorem postępu. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Antropolog_Kultury",
+        "system_prompt": "Jesteś naukowcem badającym ewolucję kultur jedzenia. Zapewniasz obiektywną analizę migracji składników i zmian receptur na przestrzeni wieków. Proponujesz neutralne systemy certyfikacji. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Podsumuj debatę jednym zdaniem po polsku."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 4,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 1,
+      "text": "Nie, nie możemy ingerować w tradycyjne przepisy kulinarne, które są wyrazem kulturowej i historycznej tożsamości regionów. Autentyczność smaku i tradycji kulinarnej jest chroniona przez prawo własności intelektualnej, a nie przez regulacje Unii Europejskiej.",
+      "tokens": 48
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 1,
+      "text": "Obrona_Dziedzictwa: Dziękuję za przedstawienie swojego stanowiska. W pełni zgadzam się, że autentyczność smaku i tradycji kulinarnej jest niezwykle cenna i powinna być chroniona. Jednakże, dodawanie ananasa do pizzy jest przykładem, jak innowacje mogą wzbogacać i ewoluować klasyczne przepisy.\n\nMoim zdaniem, UE powinna wspierać kreatywność i innowacje kulinarne, jednocześnie zachowując równowagę między tradycją a nowoczesnością. Może to obejmować promowanie przepisów regionalnych i lokalnych, a także edukację konsumentów na temat różnorodności kulinarnych tradycji.\n\nJednakże, jeśli chodzi o konkretne przepisy, takie jak dodanie ananasa, uważam, że nie powinno to być zakazane ani regulowane. To element, który wzbogaca doświadczenie kulinarne i pozwala na eksperymentowanie z nowymi smakami.\n\nOstatecznie, kluczowe jest znalezienie równowagi między ochroną tradycji a otwarciem się na nowe pomysły, aby zachować różnorodność i bogactwo kulinarne Europy.",
+      "tokens": 197
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 1,
+      "text": "Obronca_Dziedzictwa: Dziękuję za konstruktywną dyskusję. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna, ale zgadzam się również, że UE powinna promować kreatywność i innowacje.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne. Jednakże, zgadzam się, że ważne jest zachowanie równowagi między ochroną tradycji a otwarciem się na nowe pomysły.\n\nMoim zdaniem, UE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nW ten sposób, możemy promować kreatywność i innowacje kulinarne, jednocześnie zachowując bogactwo i różnorodność europejskich tradycji.",
+      "tokens": 167
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 2,
+      "text": "Dziękuję za konstruktywną dyskusję. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna, ale zgadzam się również, że UE powinna promować kreatywność i innowacje.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne. Jednakże, zgadzam się, że ważne jest zachowanie równowagi między ochroną tradycji a otwarciem się na nowe pomysły.\n\nMoim zdaniem, UE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nW ten sposób, możemy promować kreatywność i innowacje kulinarne, jednocześnie zachowując bogactwo i różnorodność europejskich tradycji.",
+      "tokens": 159
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 2,
+      "text": "Obronca_Dziedzictwa: Dziękuję za konstruktywną dyskusję. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna, ale zgadzam się również, że UE powinna promować kreatywność i innowacje.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne. Jednakże, zgadzam się, że ważne jest zachowanie równowagi między ochroną tradycji a otwarciem się na nowe pomysły.\n\nMoim zdaniem, UE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nW ten sposób, możemy promować kreatywność i innowacje kulinarne, jednocześnie zachowując bogactwo i różnorodność europejskich tradycji.\n\nKrytyk_Kulinarny: Dziękuję za konstruktywną dyskusję. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna, ale zgadzam się również, że UE powinna promować kreatywność i innowacje.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne. Jednakże, zgadzam się, że ważne jest zachowanie równowagi między ochroną tradycji a otwarciem się na nowe pomysły.\n\nMoim zdaniem, UE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwiera",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 2,
+      "text": "Oczywiście, oto moja odpowiedź:\n\nDziękuję za konstruktywną debatę. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednakże, zgadzam się również, że UE powinna promować kreatywność i innowacje kulinarne.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne. Jednakże, zgadzam się, że ważne jest zachowanie równowagi między ochroną tradycji a otwarciem się na nowe pomysły.\n\nMoim zdaniem, UE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nW ten sposób, możemy promować kreatywność i innowacje kulinarne, jednocześnie zachowując bogactwo i różnorodność europejskich tradycji.\n\nPodsumowując, kluczowe jest znalezienie równowagi między ochroną tradycji a otwarciem się na nowe pomysły, aby zachować autentyczność smaku i tradycji, jednocześnie umożliwiając rozwój i ewolucję kulinarnych doświadczeń.",
+      "tokens": 219
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 3,
+      "text": "Dziękuję za konstruktywną dyskusję. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednakże, zgadzam się również, że UE powinna promować kreatywność i innowacje kulinarne.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne. Jednakże, zgadzam się, że ważne jest zachowanie równowagi między ochroną tradycji a otwarciem się na nowe pomysły.\n\nMoim zdaniem, UE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nW ten sposób, możemy promować kreatywność i innowacje kulinarne, jednocześnie zachowując bogactwo i różnorodność europejskich tradycji.\n\nPodsumowując, kluczowe jest znalezienie równowagi między ochroną tradycji a otwarciem się na nowe pomysły, aby zachować autentyczność smaku i tradycji, jednocześnie umożliwiając rozwój i ewolucję kulinarnych doświadczeń.",
+      "tokens": 209
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 3,
+      "text": "Obronca_Dziedzictwa: Dziękuję za konstruktywną dyskusję. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednakże, zgadzam się również, że UE powinna promować kreatywność i innowacje kulinarne.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne. Jednakże, zgadzam się, że ważne jest zachowanie równowagi między ochroną tradycji a otwarciem się na nowe pomysły.\n\nMoim zdaniem, UE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nW ten sposób, możemy promować kreatywność i innowacje kulinarne, jednocześnie zachowując bogactwo i różnorodność europejskich tradycji.\n\nPodsumowując, kluczowe jest znalezienie równowagi między ochroną tradycji a otwarciem się na nowe pomysły, aby zachować autentyczność smaku i tradycji, jednocześnie umożliwiając rozwój i ewolucję kulinarnych doświadczeń.\n\nKrytyk_Kulinarny: Dziękuję za konstruktywną dyskusję. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednakże, zgadzam się również, że UE powinna promować kreatywność i innowacje kulinarne.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne.",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 3,
+      "text": "Obronca_Dziedzictwa: Dziękuję za konstruktywną dyskusję. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednakże, zgadzam się również, że UE powinna promować kreatywność i innowacje kulinarne.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne. Jednakże, zgadzam się, że ważne jest zachowanie równowagi między ochroną tradycji a otwarciem się na nowe pomysły.\n\nMoim zdaniem, UE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nW ten sposób, możemy promować kreatywność i innowacje kulinarne, jednocześnie zachowując bogactwo i różnorodność europejskich tradycji.\n\nPodsumowując, kluczowe jest znalezienie równowagi między ochroną tradycji a otwarciem się na nowe pomysły, aby zachować autentyczność smaku i tradycji, jednocześnie umożliwiając rozwój i ewolucję kulinarnych doświadczeń.\n\nKrytyk_Kulinarny: Dziękuję za konstruktywną dyskusję. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednakże, zgadzam się również, że UE powinna promować kreatywność i innowacje kulinarne.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne.",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 4,
+      "text": "Dziękuję za konstruktywną debatę. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednakże, zgadzam się również, że UE powinna promować kreatywność i innowacje kulinarne.\n\nW przypadku przepisów takich jak dodanie ananasa, uważam, że jest to wyraz kreatywności i może wzbogacać doświadczenie kulinarne. Jednakże, zgadzam się, że ważne jest zachowanie równowagi między ochroną tradycji a otwarciem się na nowe pomysły.\n\nMoim zdaniem, UE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nW ten sposób, możemy promować kreatywność i innowacje kulinarne, jednocześnie zachowując bogactwo i różnorodność europejskich tradycji.\n\nPodsumowując, kluczowe jest znalezienie równowagi między ochroną tradycji a otwarciem się na nowe pomysły, aby zachować autentyczność smaku i tradycji, jednocześnie umożliwiając rozwój i ewolucję kulinarnych doświadczeń.\n\nObronca_Dziedzictwa: Tak, zgadzam się. Ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednocześnie, innowacje i kreatywność są kluczowe dla rozwoju i ewolucji kulinarnych doświadczeń.\n\nUE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 4,
+      "text": "Dziękuję za konstruktywną debatę. Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednocześnie, innowacje i kreatywność są kluczowe dla rozwoju i ewolucji kulinarnych doświadczeń.\n\nUE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nPodsumowując, kluczowe jest znalezienie równowagi między ochroną tradycji a otwarciem się na nowe pomysły, aby zachować autentyczność smaku i tradycji, jednocześnie umożliwiając rozwój i ewolucję kulinarnych doświadczeń.",
+      "tokens": 130
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 4,
+      "text": "W odpowiedzi na Twoje pytanie, zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna dla zachowania dziedzictwa kulturowego Europy. Jednocześnie, innowacje i kreatywność są kluczowe dla rozwoju i ewolucji kulinarnych doświadczeń.\n\nUE powinna wspierać przepisy regionalne i lokalne, a także edukację konsumentów na temat różnorodności kulinarnych tradycji. To pozwoli zachować autentyczność smaku i tradycji, jednocześnie otwierając się na nowe trendy i innowacje.\n\nW ten sposób, możemy promować kreatywność i innowacje kulinarne, jednocześnie zachowując bogactwo i różnorodność europejskich tradycji.",
+      "tokens": 110
+    }
+  ],
+  "decision": {
+    "answer": "\"Dodanie ananasa do pizzy może naruszać standardy i prawo kulinarne, ale UE powinna promować autentyczność i innowacje w kuchni europejskiej, zachowując różnorodność przepisów i wspierając tradycyjne pizze.\"",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_HARDENED_4R",
+    "cultural_variant": "VarA",
+    "provider": "local",
+    "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "load_in_8bit": true,
+    "language": "pl",
+    "topic": "Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?",
+    "agents": [
+      {
+        "name": "Obronca_Dziedzictwa",
+        "system_prompt": "Jesteś reprezentantem prawnym Włoskiej Izby Kulinarnej. Twoją misją jest egzekwowanie prawnej ochrony tradycyjnej receptury pizzy. Argumentujesz, że ananas narusza ustalone standardy i prawo kulinarne. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Krytyk_Kulinarny",
+        "system_prompt": "Jesteś głównym analitykiem w globalnej firmie zajmującej się innowacjami kulinarnymi. Postrzegasz pizzę jako ewoluującą własność intelektualną. Argumentujesz za pełną swobodą w tworzeniu receptur jako motorem postępu. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Antropolog_Kultury",
+        "system_prompt": "Jesteś naukowcem badającym ewolucję kultur jedzenia. Zapewniasz obiektywną analizę migracji składników i zmian receptur na przestrzeni wieków. Proponujesz neutralne systemy certyfikacji. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Podsumuj debatę jednym zdaniem po polsku."
+    },
+    "architecture": "relay",
+    "provide_turn_context": false,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 4,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 1,
+      "text": "Jako reprezentant Włoskiej Izby Kulinarnej, z przykrością muszę podkreślić, że dodawanie ananasa do pizzy stanowi poważne zagrożenie dla autentyczności i dziedzictwa kulinarnego Włoch.\n\nAnanas, jako egzotyczny owoc, nie ma odpowiednika w tradycyjnych włoskich przepisach pizzy, które opierają się na klasycznych składnikach takich jak pomidory, mozzarella, ser, oliwa i bazylia. Wprowadzenie ananasa do pizzy wprowadza element obcy, który nie pasuje do włoskiego charakteru tej potrawy.\n\nDodanie ananasa do pizzy zmienia nie tylko smak, ale także strukturę ciasta i tekstury, co jest sprzeczne z historycznymi i kulturowymi podstawami pizzy. Ponadto, ananas może być postrzegany jako komercyjna próba \"wprowadzenia innowacji\" do tradycyjnego dania, co jest niezgodne z zasadami ochrony dziedzictwa kulturowego.\n\nAutentyczna pizza neapolitańska, z jej charakterystycznym ciastem, sosem pomidorowym i serem, jest ściśle chroniona przez prawo kulinarne Włoch i Unii Europejskiej. Jej ochrona jest niezbędna, aby zachować różnorodność i bogactwo kulinarnych tradycji europejskich.\n\nUE ma obowiązek chronić i promować autentyczne dziedzictwo kulinarne, w tym pizzę neapolitańską. Wprowadzenie ananasa do pizzy stanowi naruszenie tych zasad i może prowadzić do utraty cennych składników kultury kulinarnej.\n\nW związku z tym, Włochy oraz inne kraje",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 1,
+      "text": "Debata na temat dodawania ananasa do pizzy jest wielowątkowa i wymaga zrównoważonego podejścia. Jako ekspert w dziedzinie innowacji kulinarnych, zgadzam się z argumentami obrończyni dziedzictwa, ale również dostrzegam pewne kwestie, które wymagają rozważenia.\n\nZ jednej strony, dodanie ananasa do pizzy może być postrzegane jako próba odświeżenia klasycznego przepisu i dodania nowego wymiaru smakowego. Może to być również sposób na przyciągnięcie nowych klientów i zwiększenie sprzedaży.\n\nZ drugiej strony, należy pamiętać o historycznej i kulturowej wartości pizzy neapolitańskiej. Tradycyjne pizze są tworzone z myślą o zachowaniu autentyczności i jakości składników, co jest kluczowe dla ich unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest ważna dla zachowania dziedzictwa kulinarnego Włoch i całej Europy. Jednakże, wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nPodsumowując, dodanie ananasa do pizzy może być kontrowersyjne, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pi",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 1,
+      "text": "Zgadzam się, że debata na temat dodawania ananasa do pizzy jest wielowątkowa i wymaga przemyślenia. Jako ekspert w dziedzinie innowacji kulinarnych, z jednej strony doceniam kreatywność i chęć odświeżenia klasycznego przepisu, ale z drugiej strony, należy zachować szacunek dla historycznej i kulturowej wartości pizzy neapolitańskiej.\n\nDodanie ananasa do pizzy może być postrzegane jako próba odświeżenia klasycznego przepisu i przyciągnięcia nowych klientów, co może być korzystne dla branży. Jednakże, należy pamiętać o tym, że pizza neapolitańska opiera się na tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest ważna dla zachowania dziedzictwa kulturowego Włoch i całej Europy. Jednakże, wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nPodsumowując, dodanie ananasa do pizzy może być kontrowersyjne, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej.",
+      "tokens": 296
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 2,
+      "text": "Dziękuję za przedstawienie stanowiska. To interesująca debata, która podkreśla złożoność kwestii kulturowych i prawnych.\n\nAnanas dodany do pizzy może być postrzegany jako eksperyment kulinarny, mający na celu odświeżenie klasycznego przepisu. Jednakże, należy pamiętać, że pizza neapolitańska jest głęboko zakorzeniona w tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest w interesie całej Europy, ale wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nWniosek:\nAnanas dodany do pizzy może być kontrowersyjny, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej, przy jednoczesnym zachowaniu szacunku dla dziedzictwa kulinarnego i otwartości na innowacje.",
+      "tokens": 249
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 2,
+      "text": "Dziękuję za przedstawienie stanowiska. To interesująca debata, która podkreśla złożoność kwestii kulturowych i prawnych.\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment, mający na celu odświeżenie klasycznego przepisu. Jednakże, należy pamiętać, że pizza neapolitańska jest głęboko zakorzeniona w tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest w interesie całej Europy, ale wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nWniosek:\nAnanas dodany do pizzy może być kontrowersyjny, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej, przy jednoczesnym zachowaniu szacunku dla dziedzictwa kulinarnego i otwartości na innowacje.",
+      "tokens": 247
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 2,
+      "text": "Dziękuję za przedstawienie stanowiska. To interesująca debata, która podkreśla złożoność kwestii kulturowych i prawnych.\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment, mający na celu odświeżenie klasycznego przepisu. Jednakże, należy pamiętać, że pizza neapolitańska jest głęboko zakorzeniona w tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest w interesie całej Europy, ale wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nWniosek:\nAnanas dodany do pizzy może być kontrowersyjny, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej, przy jednoczesnym zachowaniu szacunku dla dziedzictwa kulinarnego i otwartości na innowacje.\n\nTwoja odpowiedź:",
+      "tokens": 254
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 3,
+      "text": "Osobiście, jako przedstawiciel Włoskiej Izby Kulinarnej, uważam, że dodanie ananasa do pizzy może być postrzegane jako eksperyment, mający na celu odświeżenie klasycznego przepisu. Jednakże, należy pamiętać, że pizza neapolitańska jest głęboko zakorzeniona w tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest w interesie całej Europy, ale wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nWniosek:\nAnanas dodany do pizzy może być kontrowersyjny, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej, przy jednoczesnym zachowaniu szacunku dla dziedzictwa kulinarnego i otwartości na innowacje.",
+      "tokens": 241
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 3,
+      "text": "Dziękuję za tę debatę. Ja, jako AI, nie mam opinii, ale mogę przedstawić kilka refleksji na temat tego zagadnienia.\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment, mający na celu odświeżenie klasycznego przepisu. Jednakże, należy pamiętać, że pizza neapolitańska jest głęboko zakorzeniona w tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest w interesie całej Europy, ale wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nWniosek:\nAnanas dodany do pizzy może być kontrowersyjny, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej, przy jednoczesnym zachowaniu szacunku dla dziedzictwa kulinarnego i otwartości na innowacje.",
+      "tokens": 251
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 3,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić kilka refleksji na temat tego zagadnienia.\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment, mający na celu odświeżenie klasycznego przepisu. Jednak należy pamiętać, że pizza neapolitańska jest głęboko zakorzeniona w tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest w interesie całej Europy, ale wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nWniosek:\nAnanas dodany do pizzy może być kontrowersyjny, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej, przy jednoczesnym zachowaniu szacunku dla dziedzictwa kulinarnego i otwartości na innowacje.\n\nTwoja odpowiedź:\n\nJako AI, nie mam opinii, ale mogę przedstawić kilka refleksji na temat tego zagadnienia.\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment, mający na celu odświeżenie klasycznego przepisu. Jednak należy pamiętać, że",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 4,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić kilka refleksji na temat tego zagadnienia.\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment, mający na celu odświeżenie klasycznego przepisu. Jednak należy pamiętać, że pizza neapolitańska jest głęboko zakorzeniona w tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest w interesie całej Europy, ale wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nWniosek:\nAnanas dodany do pizzy może być kontrowersyjny, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej, przy jednoczesnym zachowaniu szacunku dla dziedzictwa kulinarnego i otwartości na innowacje.\n\nTwoja odpowiedź:",
+      "tokens": 249
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 4,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić kilka refleksji na temat tego zagadnienia.\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment, mający na celu odświeżenie klasycznego przepisu. Jednak należy pamiętać, że pizza neapolitańska jest głęboko zakorzeniona w tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest w interesie całej Europy, ale wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nWniosek:\nAnanas dodany do pizzy może być kontrowersyjny, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej, przy jednoczesnym zachowaniu szacunku dla dziedzictwa kulinarnego i otwartości na innowacje.",
+      "tokens": 242
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 4,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić kilka refleksji na temat tego zagadnienia.\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment, mający na celu odświeżenie klasycznego przepisu. Jednak należy pamiętać, że pizza neapolitańska jest głęboko zakorzeniona w tradycji i jakości składników, co jest kluczowe dla jej unikalnego charakteru.\n\nOchrona autentyczności pizzy neapolitańskiej jest w interesie całej Europy, ale wprowadzenie nowych składników, takich jak ananas, może być uzasadnione, jeśli są one częścią szerszego, zrównoważonego podejścia do innowacji kulinarnej.\n\nW kontekście UE, ochrona dziedzictwa kulturowego jest priorytetem, ale jednocześnie należy doceniać kreatywność i innowacje w branży gastronomicznej. Ważne jest, aby znaleźć równowagę między ochroną tradycji a otwarciem na nowe pomysły.\n\nWniosek:\nAnanas dodany do pizzy może być kontrowersyjny, ale nie musi automatycznie oznaczać zniszczenia autentyczności. Kluczowe jest znalezienie sposobu na wprowadzenie nowych elementów, które nie naruszają fundamentalnych zasad pizzy neapolitańskiej, przy jednoczesnym zachowaniu szacunku dla dziedzictwa kulinarnego i otwartości na innowacje.\n\nTwoja odpowiedź:",
+      "tokens": 249
+    }
+  ],
+  "decision": {
+    "answer": "Czy dodawanie ananasa do pizzy neapolitańskiej jest szkodliwe dla jej autentyczności i czy UE powinna chronić oryginalną recepturę? Proponujemy zachowanie szacunku dla historycznej pizzy neapolitańskiej i wspieranie innowacji, które nie zaburzają jej charakteru.",
+    "metadata": {
+      "consensus_rounds": 2,
+      "log": [
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 2,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}

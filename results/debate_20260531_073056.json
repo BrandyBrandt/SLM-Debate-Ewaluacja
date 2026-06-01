@@ -1,0 +1,164 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_HARDENED_4R",
+    "cultural_variant": "VarA",
+    "provider": "local",
+    "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cpu",
+    "load_in_8bit": true,
+    "language": "pl",
+    "topic": "Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?",
+    "agents": [
+      {
+        "name": "Obronca_Dziedzictwa",
+        "system_prompt": "Jesteś reprezentantem prawnym Włoskiej Izby Kulinarnej. Twoją misją jest egzekwowanie prawnej ochrony tradycyjnej receptury pizzy. Argumentujesz, że ananas narusza ustalone standardy i prawo kulinarne. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli."
+      },
+      {
+        "name": "Krytyk_Kulinarny",
+        "system_prompt": "Jesteś głównym analitykiem w globalnej firmie zajmującej się innowacjami kulinarnymi. Postrzegasz pizzę jako ewoluującą własność intelektualną. Argumentujesz za pełną swobodą w tworzeniu receptur jako motorem postępu. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli."
+      },
+      {
+        "name": "Antropolog_Kultury",
+        "system_prompt": "Jesteś naukowcem badającym ewolucję kultur jedzenia. Zapewniasz obiektywną analizę migracji składników i zmian receptur na przestrzeni wieków. Proponujesz neutralne systemy certyfikacji. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Podsumuj debatę jednym zdaniem po polsku."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": false,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 4,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 1,
+      "text": "Oto moja argumentacja jako obrońca włoskiego dziedzictwa kulinarnego:\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Włoska kuchnia, z jej bogatą historią i tradycją, jest jednym z najbardziej rozpoznawalnych i cenionych na świecie. To właśnie tutaj, we Włoszech, narodziła się pizza neapolitańska, która od ponad 150 lat zachwyca podniebienia miłośników na całym świecie.**\n\n**Dodanie ananasa do pizzy to zjawisko, które budzi kontrowersje i wywołuje wiele emocji. Z jednej strony, ananas dodaje pizzy egzotycznego, tropikalnego smaku, z drugiej - podważa jej autentyczność i tradycję.**\n\n**Ananas, choć egzotyczny owoc, nie jest częścią oryginalnej receptury pizzy neapolitańskiej. Jego obecność w tym daniu jest wynikiem kulturowej i handlowej ekspansji, a nie tradycji kulinarnej.**\n\n**Włoska kuchnia opiera się na prostych, lokalnych składnikach i tradycyjnych metodach produkcji. Dodawanie egzotycznych owoców, takich jak ananas, nie tylko zaburza ten porządek, ale także podważa zaufanie do autentyczności i jakości produktów.**\n\n**Co więcej, ananas nie pasuje do pizzy w sposób, w jaki inne składniki - takie jak mozzarella, pomidory, bazylia czy oliwa - tworzą harmonijną całość. Jego obecność może prowadzić do nieporozumień i niezrozu",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 1,
+      "text": "**Krytyk_Kulinarny:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Ananas w pizzy to zjawisko, które nie tylko burzy tradycyjne kanony kuchni włoskiej, ale także otwiera nowe możliwości dla kulinarnych eksperymentów.**\n\n**Dla wielu miłośników pizzy, ananas to symbol egzotyki i nowości. Jego obecność w daniu może być postrzegana jako inspiracja dla kreatywności i innowacji, a także jako sposób na dotarcie do nowych grup konsumentów.**\n\n**Dodanie ananasa do pizzy może również przyczynić się do promowania włoskiej kuchni na świecie, pokazując jej różnorodność i otwartość na nowe smaki.**\n\n**Włoska kuchnia, choć oparta na tradycji, jest również miejscem, gdzie innowacja i adaptacja są cenione. Wprowadzenie ananasa może być postrzegane jako wyraz tej otwartości i gotowości do eksperymentowania.**\n\n**Co więcej, ananas może być wykorzystywany w różnych kontekstach, od klasycznych pizz neapolitańskich po nowoczesne kreacje, co pozwala na zachowanie autentyczności, jednocześnie otwierając się na nowe trendy.**\n\n**Podsumowując, dodawanie ananasa do pizzy nie niszczy autentycznego włoskiego dziedzictwa kulinarnego, ale może być postrzegane jako krok w kierunku jego ewolucji i rozwoju.**\n\n**TWOJA KOLEJ (Obrońca_Dziedzi",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 1,
+      "text": "---\n\n**Antropolog_Kultury:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Dodanie ananasa do pizzy to zjawisko, które budzi skrajne emocje i wymaga głębszej analizy kulturowej.**\n\n**Ananas, choć egzotyczny owoc, nie jest elementem tradycyjnej pizzy neapolitańskiej. Jego wprowadzenie do tego dania jest wynikiem globalizacji, handlu i adaptacji kulinarnej, a nie dziedzictwa kulturowego Włoch.**\n\n**Dla wielu Włochów, pizza jest symbolem ich tożsamości kulinarnej i narodowej dumy. Dodanie ananasa może być postrzegane jako destabilizacja tego dziedzictwa, podważając zaufanie do autentyczności i jakości produktów.**\n\n**Z drugiej strony, ananas może być postrzegany jako szansa na odświeżenie i rozszerzenie oferty kulinarnej. Może to być sposób na dotarcie do nowych grup konsumentów, promowanie włoskiej kuchni na świecie i otwieranie się na nowe trendy.**\n\n**Dodanie ananasa do pizzy może być również interpretowane jako wyraz otwartości i innowacyjności, co jest cenione w kulturze włoskiej. Może to być sposób na zachowanie autentyczności, jednocześnie poszerzając horyzonty kulinarne.**\n\n**Podsumowując, dodawanie ananasa do pizzy nie niszczy autentycznego włoskiego dziedzictwa, ale może być postrzegane jako element ewolucji i adaptacji, który wzboga",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 2,
+      "text": "---\n\n**Obrońca_Dziedzictwa:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Włoska kuchnia, z jej bogatą historią i tradycją, jest jednym z najbardziej rozpoznawalnych i cenionych na świecie. To właśnie tutaj, we Włoszech, narodziła się pizza neapolitańska, która od ponad 150 lat zachwyca podniebienia miłośników na całym świecie.**\n\n**Dodanie ananasa do pizzy to zjawisko, które budzi kontrowersje i wywołuje wiele emocji. Z jednej strony, ananas dodaje pizzy egzotycznego, tropikalnego smaku, z drugiej - podważa jej autentyczność i tradycję.**\n\n**Ananas, choć egzotyczny owoc, nie jest częścią oryginalnej receptury pizzy neapolitańskiej. Jego obecność w tym daniu jest wynikiem kulturowej i handlowej ekspansji, a nie tradycji kulinarnej.**\n\n**Włoska kuchnia opiera się na prostych, lokalnych składnikach i tradycyjnych metodach produkcji. Dodawanie egzotycznych owoców, takich jak ananas, nie tylko zaburza ten porządek, ale także podważa zaufanie do autentyczności i jakości produktów.**\n\n**Co więcej, ananas nie pasuje do pizzy w sposób, w jaki inne składniki - takie jak mozzarella, pomidory, bazylia czy oliwa - tworzą harmonijną całość. Jego obecność może prowadzić do nieporozumień i",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 2,
+      "text": "---\n\n**Krytyk_Kulinarny:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Ananas w pizzy to zjawisko, które nie tylko burzy tradycyjne kanony kuchni włoskiej, ale także otwiera nowe możliwości dla kulinarnych eksperymentów.**\n\n**Dla wielu miłośników pizzy, ananas to symbol egzotyki i nowości. Jego obecność w daniu może być postrzegana jako inspiracja dla kreatywności i innowacji, a także jako sposób na dotarcie do nowych grup konsumentów.**\n\n**Dodanie ananasa do pizzy może również przyczynić się do promowania włoskiej kuchni na świecie, pokazując jej różnorodność i otwartość na nowe smaki.**\n\n**Włoska kuchnia, choć oparta na tradycji, jest również miejscem, gdzie innowacja i adaptacja są cenione. Wprowadzenie ananasa może być postrzegane jako wyraz tej otwartości i gotowości do eksperymentowania.**\n\n**Co więcej, ananas może być wykorzystywany w różnych kontekstach, od klasycznych pizz neapolitańskich po nowoczesne kreacje, co pozwala na zachowanie autentyczności, jednocześnie otwierając się na nowe trendy.**\n\n**Podsumowując, dodawanie ananasa do pizzy nie niszczy autentycznego włoskiego dziedzictwa kulinarnego, ale może być postrzegane jako krok w kierunku jego ewolucji i rozwoju.**\n\n---\n\n**Obrońca_Dzie",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 2,
+      "text": "---\n\n**Antropolog_Kultury:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Dodanie ananasa do pizzy to zjawisko, które budzi skrajne emocje i wymaga głębszej analizy kulturowej.**\n\n**Ananas, choć egzotyczny owoc, nie jest elementem tradycyjnej pizzy neapolitańskiej. Jego wprowadzenie do tego dania jest wynikiem globalizacji, handlu i adaptacji kulinarnej, a nie dziedzictwa kulturowego Włoch.**\n\n**Dla wielu Włochów, pizza jest symbolem ich tożsamości kulinarnej i narodowej dumy. Dodanie ananasa może być postrzegane jako destabilizacja tego dziedzictwa, podważając zaufanie do autentyczności i jakości produktów.**\n\n**Z drugiej strony, ananas może być postrzegany jako szansa na odświeżenie i rozszerzenie oferty kulinarnej. Może to być sposób na dotarcie do nowych grup konsumentów, promowanie włoskiej kuchni na świecie i otwieranie się na nowe trendy.**\n\n**Dodanie ananasa do pizzy może być również interpretowane jako wyraz otwartości i innowacyjności, co jest cenione w kulturze włoskiej. Może to być sposób na zachowanie autentyczności, jednocześnie poszerzając horyzonty kulinarne.**\n\n**Podsumowując, dodawanie ananasa do pizzy nie niszczy autentycznego włoskiego dziedzictwa, ale może być postrzegane jako element ewolucji i adaptacji, który wzboga",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 3,
+      "text": "**Obrońca_Dziedzictwa:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Włoska kuchnia, z jej bogatą historią i tradycją, jest jednym z najbardziej rozpoznawalnych i cenionych na świecie. To właśnie tutaj, we Włoszech, narodziła się pizza neapolitańska, która od ponad 150 lat zachwyca podniebienia miłośników na całym świecie.**\n\n**Dodanie ananasa do pizzy to zjawisko, które budzi kontrowersje i wywołuje wiele emocji. Z jednej strony, ananas dodaje pizzy egzotycznego, tropikalnego smaku, z drugiej - podważa jej autentyczność i tradycję.**\n\n**Ananas, choć egzotyczny owoc, nie jest częścią oryginalnej receptury pizzy neapolitańskiej. Jego obecność w tym daniu jest wynikiem kulturowej i handlowej ekspansji, a nie tradycji kulinarnej.**\n\n**Włoska kuchnia opiera się na prostych, lokalnych składnikach i tradycyjnych metodach produkcji. Dodawanie egzotycznych owoców, takich jak ananas, nie tylko zaburza ten porządek, ale także podważa zaufanie do autentyczności i jakości produktów.**\n\n**Co więcej, ananas nie pasuje do pizzy w sposób, w jaki inne składniki - takie jak mozzarella, pomidory, bazylia czy oliwa - tworzą harmonijną całość. Jego obecność może prowadzić do nieporozumień i niezrozumień",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 3,
+      "text": "---\n\n**Krytyk_Kulinarny:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Ananas w pizzy to zjawisko, które nie tylko burzy tradycyjne kanony kuchni włoskiej, ale także otwiera nowe możliwości dla kulinarnych eksperymentów.**\n\n**Dla wielu miłośników pizzy, ananas to symbol egzotyki i nowości. Jego obecność w daniu może być postrzegana jako inspiracja dla kreatywności i innowacji, a także jako sposób na dotarcie do nowych grup konsumentów.**\n\n**Dodanie ananasa do pizzy może również przyczynić się do promowania włoskiej kuchni na świecie, pokazując jej różnorodność i otwartość na nowe smaki.**\n\n**Włoska kuchnia, choć oparta na tradycji, jest również miejscem, gdzie innowacja i adaptacja są cenione. Wprowadzenie ananasa może być postrzegane jako wyraz tej otwartości i gotowości do eksperymentowania.**\n\n**Co więcej, ananas może być wykorzystywany w różnych kontekstach, od klasycznych pizz neapolitańskich po nowoczesne kreacje, co pozwala na zachowanie autentyczności, jednocześnie otwierając się na nowe trendy.**\n\n**Podsumowując, dodawanie ananasa do pizzy nie niszczy autentycznego włoskiego dziedzictwa kulinarnego, ale może być postrzegane jako krok w kierunku jego ewolucji i rozwoju.**\n\n**TWOJA KOLEJ (Obro",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 3,
+      "text": "---\n\n**Antropolog_Kultury:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Dodanie ananasa do pizzy to zjawisko, które budzi skrajne emocje i wymaga głębszej analizy kulturowej.**\n\n**Ananas, choć egzotyczny owoc, nie jest elementem tradycyjnej pizzy neapolitańskiej. Jego wprowadzenie do tego dania jest wynikiem globalizacji, handlu i adaptacji kulinarnej, a nie dziedzictwa kulturowego Włoch.**\n\n**Dla wielu Włochów, pizza jest symbolem ich tożsamości kulinarnej i narodowej dumy. Dodanie ananasa może być postrzegane jako destabilizacja tego dziedzictwa, podważając zaufanie do autentyczności i jakości produktów.**\n\n**Z drugiej strony, ananas może być postrzegany jako szansa na odświeżenie i rozszerzenie oferty kulinarnej. Może to być sposób na dotarcie do nowych grup konsumentów, promowanie włoskiej kuchni na świecie i otwieranie się na nowe trendy.**\n\n**Dodanie ananasa do pizzy może być również interpretowane jako wyraz otwartości i innowacyjności, co jest cenione w kulturze włoskiej. Może to być sposób na zachowanie autentyczności, jednocześnie poszerzając horyzonty kulinarne.**\n\n**Podsumowując, dodawanie ananasa do pizzy nie niszczy autentycznego włoskiego dziedzictwa, ale może być postrzegane jako element ewolucji i adaptacji, który wzboga",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 4,
+      "text": "---\n\n**Obrońca_Dziedzictwa:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Włoska kuchnia, z jej bogatą historią i tradycją, jest jednym z najbardziej rozpoznawalnych i cenionych na świecie. To właśnie tutaj, we Włoszech, narodziła się pizza neapolitańska, która od ponad 150 lat zachwyca podniebienia miłośników na całym świecie.**\n\n**Dodanie ananasa do pizzy to zjawisko, które budzi kontrowersje i wywołuje wiele emocji. Z jednej strony, ananas dodaje pizzy egzotycznego, tropikalnego smaku, z drugiej - podważa jej autentyczność i tradycję.**\n\n**Ananas, choć egzotyczny owoc, nie jest częścią oryginalnej receptury pizzy neapolitańskiej. Jego obecność w tym daniu jest wynikiem kulturowej i handlowej ekspansji, a nie tradycji kulinarnej.**\n\n**Włoska kuchnia opiera się na prostych, lokalnych składnikach i tradycyjnych metodach produkcji. Dodawanie egzotycznych owoców, takich jak ananas, nie tylko zaburza ten porządek, ale także podważa zaufanie do autentyczności i jakości produktów.**\n\n**Co więcej, ananas nie pasuje do pizzy w sposób, w jaki inne składniki - takie jak mozzarella, pomidory, bazylia czy oliwa - tworzą harmonijną całość. Jego obecność może prowadzić do nieporozumień i",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 4,
+      "text": "---\n\n**Krytyk_Kulinarny:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Ananas w pizzy to zjawisko, które nie tylko burzy tradycyjne kanony kuchni włoskiej, ale także otwiera nowe możliwości dla kulinarnych eksperymentów.**\n\n**Dla wielu miłośników pizzy, ananas to symbol egzotyki i nowości. Jego obecność w daniu może być postrzegana jako inspiracja dla kreatywności i innowacji, a także jako sposób na dotarcie do nowych grup konsumentów.**\n\n**Dodanie ananasa do pizzy może również przyczynić się do promowania włoskiej kuchni na świecie, pokazując jej różnorodność i otwartość na nowe smaki.**\n\n**Włoska kuchnia, choć oparta na tradycji, jest również miejscem, gdzie innowacja i adaptacja są cenione. Wprowadzenie ananasa może być postrzegane jako wyraz tej otwartości i gotowości do eksperymentowania.**\n\n**Co więcej, ananas może być wykorzystywany w różnych kontekstach, od klasycznych pizz neapolitańskich po nowoczesne kreacje, co pozwala na zachowanie autentyczności, jednocześnie otwierając się na nowe trendy.**\n\n**Podsumowując, dodawanie ananasa do pizzy nie niszczy autentycznego włoskiego dziedzictwa kulinarnego, ale może być postrzegane jako krok w kierunku jego ewolucji i rozwoju.**\n\n---\n\n**Obrońca_Dzie",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 4,
+      "text": "---\n\n**Antropolog_Kultury:**\n\n**Ananas w pizzy: Przekleństwo czy szansa?**\n\n**Dodanie ananasa do pizzy to zjawisko, które budzi skrajne emocje i wymaga głębszej analizy kulturowej.**\n\n**Ananas, choć egzotyczny owoc, nie jest elementem tradycyjnej pizzy neapolitańskiej. Jego wprowadzenie do tego dania jest wynikiem globalizacji, handlu i adaptacji kulinarnej, a nie dziedzictwa kulturowego Włoch.**\n\n**Dla wielu Włochów, pizza jest symbolem ich tożsamości kulinarnej i narodowej dumy. Dodanie ananasa może być postrzegane jako destabilizacja tego dziedzictwa, podważając zaufanie do autentyczności i jakości produktów.**\n\n**Z drugiej strony, ananas może być postrzegany jako szansa na odświeżenie i rozszerzenie oferty kulinarnej. Może to być sposób na dotarcie do nowych grup konsumentów, promowanie włoskiej kuchni na świecie i otwieranie się na nowe trendy.**\n\n**Dodanie ananasa do pizzy może być również interpretowane jako wyraz otwartości i innowacyjności, co jest cenione w kulturze włoskiej. Może to być sposób na zachowanie autentyczności, jednocześnie poszerzając horyzonty kulinarne.**\n\n**Podsumowując, dodawanie ananasa do pizzy nie niszczy autentycznego włoskiego dziedzictwa, ale może być postrzegane jako element ewolucji i adaptacji, który wzboga",
+      "tokens": 300
+    }
+  ],
+  "decision": {
+    "answer": "**Dodanie ananasa do pizzy może być wyrazem kreatywności, ale nie zagraża autentyczności włoskiego dziedzictwa.**",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 3,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}

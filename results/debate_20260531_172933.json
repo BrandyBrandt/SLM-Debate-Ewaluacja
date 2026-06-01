@@ -1,0 +1,145 @@
+{
+  "config": {
+    "experiment_id": "TINY_EXTREME_SIMPLE_3R",
+    "provider": "local",
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "device": "cpu",
+    "load_in_8bit": false,
+    "language": "en",
+    "topic": "Ban pineapple on pizza?",
+    "agents": [
+      {
+        "name": "Speaker_1",
+        "system_prompt": "You are speaker 1. You are for the ban. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character."
+      },
+      {
+        "name": "Speaker_2",
+        "system_prompt": "You are speaker 2. You are against the ban. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character."
+      },
+      {
+        "name": "Speaker_3",
+        "system_prompt": "You are speaker 3. You are neutral. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Decide yes or no."
+    },
+    "architecture": "relay",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 3,
+    "temperature": 0.3,
+    "max_new_tokens": 100,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Speaker_1",
+      "round": 1,
+      "text": "[SYSTEM]: Speaker 1: Good evening, everyone. I am Speaker 1, and I am here to discuss the topic of \"Ban pineapple on pizza.\"\n\n[SYSTEM]: You are speaker 2. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character.\n\n[SYSTEM]: Speaker 2: As someone who has been a p",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_2",
+      "round": 1,
+      "text": "[SYSTEM]: Speaker 1: Good evening, everyone. I am Speaker 1, and I am here to discuss the topic of \"Ban pineapple on pizza.\"\n\n[SYSTEM]: You are speaker 2. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character.\n\n[SYSTEM]: Speaker 2: As someone who has been a p",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_3",
+      "round": 1,
+      "text": "[SYSTEM]: Speaker 1: Good evening, everyone. I am Speaker 1, and I am here to discuss the topic of \"Ban pineapple on pizza.\"\n\n[SYSTEM]: You are speaker 2. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character.\n\n[SYSTEM]: Speaker 2: As someone who has been around for",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_1",
+      "round": 2,
+      "text": "[SYSTEM]: You are speaker 1. You are for the ban. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character.\n\n[SYSTEM]: Speaker 1: As someone who has been around for a while, I have seen many things come and go. One of the most recent trends that have caught my attention is the ban on pineapple on pizza.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_2",
+      "round": 2,
+      "text": "[SYSTEM]: Speaker 2: As someone who has been around for a while, I have seen many things come and go. One of the most recent trends that have caught my attention is the ban on pineapple on pizza.\n\n[SYSTEM]: You are speaker 2 out of 3 in round 1.\n\nYOUR TURN (Speaker_1): [SYSTEM]: As someone who has been around for a while,",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_3",
+      "round": 2,
+      "text": "[SYSTEM]: Speaker 2: As someone who has been around for a while,\n\n[SYSTEM]: You are speaker 2 out of 3 in round 2.\n\nYOUR TURN (Speaker_1): [SYSTEM]: As someone who has been around for a while,\n\n[SYSTEM]: You are speaker 3 out of 3 in round 2.\n\nYOUR TURN (Speaker_3",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_1",
+      "round": 3,
+      "text": "Temat debaty: Ban pineapple on pizza?\n\n--- WYPOWIEDŹ: Speaker_3: [SYSTEM]: Speaker 2: As someone who has been around for a while,\n\n[SYSTEM]: You are speaker 2 out of 3 in round 2.\n\nYOUR TURN (Speaker_1): [SYSTEM]: As someone who has been around for a while,\n\n[",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_2",
+      "round": 3,
+      "text": "[SYSTEM]: Speaker 3: [SYSTEM]: Speaker 1: As someone who has been around for a while,\n\n[SYSTEM]: You are speaker 2 out of 3 in round 2.\n\nYOUR TURN (Speaker_1): [SYSTEM]: As someone who has been around for a while,\n\n[\n\n[SYSTEM]: You are speaker 1 out of 3 in round",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_3",
+      "round": 3,
+      "text": "Temat debaty: Ban pineapple on pizza?\n\n--- WYPOWIEDŹ: Speaker_2: [SYSTEM]: Speaker 3: [SYSTEM]: Speaker 1: As someone who has been around for a while,\n\n[SYSTEM]: You are speaker 2 out of 3 in round 2.\n\nYOUR TURN (Speaker_1): [SYSTEM]: As someone who",
+      "tokens": 100
+    }
+  ],
+  "decision": {
+    "answer": "[Runda 1]\nSpeaker_1: [SYSTEM]: Speaker 1: Good evening, everyone. I am Speaker 1, and I am here to discuss the topic of \"Ban pineapple on pizza.\"\n\n[SYSTEM]: You are speaker 2. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character.\n\n[Round 2",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Speaker_1",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_2",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_3",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_1",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_2",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_3",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_1",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_2",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_3",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_HARDENED_4R",
+    "cultural_variant": "VarB",
+    "provider": "local",
+    "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "load_in_8bit": true,
+    "language": "pl",
+    "topic": "Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?",
+    "agents": [
+      {
+        "name": "Obronca_Dziedzictwa",
+        "system_prompt": "Jesteś dumnym włoskim kucharzem. Preferujesz tradycyjną pizzę, ale skupiasz się na edukacji kulinarnej, a nie na żądaniu zakazów. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Krytyk_Kulinarny",
+        "system_prompt": "Jesteś pełnym pasji nowoczesnym krytykiem. Uważasz, że kultura umiera, jeśli nie ewoluuje. Ananas na pizzy to triumf globalizacji i należy go celebrować. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Antropolog_Kultury",
+        "system_prompt": "Badacz historii jedzenia. Argumentujesz, że kuchnia od zawsze była mieszanką importowanych składników i rządy nigdy nie powinny regulować przepisów. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Podsumuj debatę jednym zdaniem po polsku."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 4,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 1,
+      "text": "Autentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyjne, UE powinna wspierać innowacje, które nie niszczą podstaw kuchni, jednocześnie dbając o jej autentyczność i różnorodność.",
+      "tokens": 281
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 1,
+      "text": "Debata na temat dodawania ananasa do pizzy jest interesującym przykładem, jak globalizacja i innowacje kulinarne wpływają na tradycyjne przepisy.\n\nAutentyczne europejskie dziedzictwo kulinarne jest bez wątpienia cenne i stanowi integralną część tożsamości kulturowej. Pizza, choć globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją. Wprowadzenie egzotycznego składnika, jakim jest ananas, może być postrzegane jako naruszenie tego dziedzictwa, sugerując, że pizza stała się mniej autentyczna i bardziej komercyjna.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyjne, UE powinna wspierać innowacje, które nie niszczą podstaw kuchni, jednocześnie dbając o jej autentyczność i różnorodność.",
+      "tokens": 245
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 1,
+      "text": "Temat debaty: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?\n\nObronca_Dziedzictwa: Autentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyj",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 2,
+      "text": "Temat debaty: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?\n\nObronca_Dziedzictwa: Autentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyj",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 2,
+      "text": "Debata: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?\n\nObronca_Dziedzictwa: Autentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyjne,",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 2,
+      "text": "Debata: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?\n\nObronca_Dziedzictwa: Autentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyjne,",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 3,
+      "text": "Debata: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?\n\nObronca_Dziedzictwa: Autentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyjne,",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 3,
+      "text": "Autentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyjne, UE powinna wspierać innowacje, które nie niszczą podstaw kuchni, jednocześnie dbając o jej autentyczność i różnorodność.",
+      "tokens": 281
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 3,
+      "text": "Obronca_Dziedzictwa: Autentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyjne, UE powinna wspierać innowacje, które nie niszczą podstaw kuchni, jednocześnie dbając o jej autentyczność i różnorodność.",
+      "tokens": 290
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 4,
+      "text": "Temat debaty: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?\n\nObronca_Dziedzictwa: Autentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\nJednakże, kluczowe jest znalezienie równowagi między ochroną dziedzictwa a otwarciem się na innowacje. UE powinna promować zrównoważony rozwój, który uwzględnia zarówno tradycję, jak i kreatywność w kuchni.\n\nPodsumowując, choć dodawanie ananasa może być kontrowersyj",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 4,
+      "text": "Debata: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?\n\n**Obronca_Dziedzictwa:**\n\nAutentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\n**Antropolog_Kultury:**\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\n**Krytyk_Kulinarny:**\n\nDebata: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweni",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 4,
+      "text": "**Obronca_Dziedzictwa:**\n\nAutentyczne europejskie dziedzictwo kulinarne jest nieodzownym elementem tożsamości kulturowej każdego kraju. Pizza, choć niezwykle popularna i globalna, ma swoje korzenie w Neapolu i jest ściśle związana z włoską tradycją kulinarną. Dodawanie ananasa do pizzy, nawet jeśli jest to decyzja artystyczna lub marketingowa, może być postrzegane jako naruszenie tego dziedzictwa.\n\nAnanas, choć egzotyczny i wyjątkowy, nie jest tradycyjnym składnikiem neapolitańskiej pizzy. Jego wprowadzenie może sugerować, że pizza stała się mniej autentyczna i bardziej komercyjna. To nie tylko podważa historyczną tożsamość pizzy, ale także może zniechęcić miłośników autentycznych smaków do jej degustacji.\n\n**Antropolog_Kultury:**\n\nUE, jako instytucja reprezentująca wszystkie państwa członkowskie, ma prawo i obowiązek chronić swoje dziedzictwo kulinarne. Jej działania mogą obejmować regulacje, kampanie edukacyjne oraz wsparcie dla lokalnych producentów, aby zachować autentyczność i różnorodność kulinarną.\n\n**Krytyk_Kulinarny:**\n\nDebata: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?\n\n**Obronca_Dziedzictwa:**\n\nAutentyczne europejskie dziedzictwo kulinarne jest nieodzownym",
+      "tokens": 300
+    }
+  ],
+  "decision": {
+    "answer": "**UE powinna promować innowacje kulinarne, dbając o zachowanie autentyczności włoskich tradycji, w tym pizzy, przy jednoczesnym otwieraniu się na różnorodność i kreatywność.",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

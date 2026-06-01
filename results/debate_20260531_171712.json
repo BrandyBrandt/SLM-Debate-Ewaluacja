@@ -1,0 +1,145 @@
+{
+  "config": {
+    "experiment_id": "TINY_EXTREME_SIMPLE_3R",
+    "provider": "local",
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "device": "cpu",
+    "load_in_8bit": false,
+    "language": "en",
+    "topic": "Ban pineapple on pizza?",
+    "agents": [
+      {
+        "name": "Speaker_1",
+        "system_prompt": "You are speaker 1. You are for the ban. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character."
+      },
+      {
+        "name": "Speaker_2",
+        "system_prompt": "You are speaker 2. You are against the ban. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character."
+      },
+      {
+        "name": "Speaker_3",
+        "system_prompt": "You are speaker 3. You are neutral. Speak very short, 1 sentence. [STRICT]: Never mention you are an AI. Stay in character."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Decide yes or no."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 3,
+    "temperature": 0.3,
+    "max_new_tokens": 100,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Speaker_1",
+      "round": 1,
+      "text": "[SYSTEM]: Speaker 1: Good morning, everyone. Today, we are discussing the ban on pineapple on pizza. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-pineapple side of the argument.\n\n[SYSTEM]: Speaker 2: Thank you, Speaker 1. I am here to represent the anti-pineapple side of the argument.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_2",
+      "round": 1,
+      "text": "[SYSTEM]: Speaker 2: Good morning, everyone. Today, we are discussing the ban on pineapple on pizza. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-pineapple side of the argument.\n\n[SYSTEM]: Speaker 3: Thank you, Speaker 2. I am here to represent the anti-pineapple side of the argument.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_3",
+      "round": 1,
+      "text": "[SYSTEM]: Speaker 3: Good morning, everyone. Today, we are discussing the ban on pineapple on pizza. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-pineapple side of the argument.\n\n[SYSTEM]: Speaker 1: Thank you, Speaker 3. I am here to represent the anti-pineapple side of the argument.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_1",
+      "round": 2,
+      "text": "[SYSTEM]: Speaker 1: Good morning, everyone. Today, we are discussing the ban on pineapple on pizza. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-pineapple side of the argument.\n\n[SYSTEM]: Speaker 2: Thank you, Speaker 1. I am here to represent the anti-pineapple side of the argument.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_2",
+      "round": 2,
+      "text": "[SYSTEM]: Speaker 2: Good morning, everyone. Today, we are discussing the ban on pineapple on pizza. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-pineapple side of the argument.\n\n[SYSTEM]: Speaker 3: Thank you, Speaker 2. I am here to represent the anti-pineapple side of the argument.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_3",
+      "round": 2,
+      "text": "[SYSTEM]: Speaker 3: Good morning, everyone. Today, we are discussing the ban on pineapple on pizza. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-pineapple side of the argument.\n\n[SYSTEM]: Speaker 1: Thank you, Speaker 3. I am here to represent the anti-pineapple side of the argument.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_1",
+      "round": 3,
+      "text": "[SYSTEM]: Speaker 1: Good morning, everyone. Today, we are discussing the ban on pineapple on pizza. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-pineapple side of the argument.\n\n[SYSTEM]: Speaker 2: Thank you, Speaker 1. I am here to represent the anti-pineapple side of the argument.",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_2",
+      "round": 3,
+      "text": "Speaker 2: Good morning, everyone. Today, we are discussing the ban on pineapple on pizza. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-pineapple side of the argument.\n\n[SYSTEM]: Speaker 3: Thank you, Speaker 2. I am here to represent the anti-pineapple side of the argument.\n\n[SYSTEM]:",
+      "tokens": 100
+    },
+    {
+      "agent": "Speaker_3",
+      "round": 3,
+      "text": "Temat debaty: Ban pineapple on pizza?\n\n--- WYPOWIEDŹ: Speaker_1: [SYSTEM]: Speaker 1: Good morning, everyone. Today, we are discussing the ban on pineapple on pizza. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-pineapple side of the argument.\n\n[SYSTEM]: Spe",
+      "tokens": 100
+    }
+  ],
+  "decision": {
+    "answer": "Następny stanowisko:\n\"[Runda 3] Speaker_1: [SYSTEM]: Speaker 1: Good morning, everyone. Today, we are discussing the ban on plastic straws. The debate has been raging for years, with both sides arguing their case. I am here to represent the pro-straw side of the debate.\n\n[Speaker 2]: [SYSTEM]: Speaker 2",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Speaker_1",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_2",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_3",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_1",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_2",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_3",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_1",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_2",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Speaker_3",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

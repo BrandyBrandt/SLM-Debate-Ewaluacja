@@ -1,0 +1,164 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_HARDENED_4R",
+    "cultural_variant": "VarA",
+    "provider": "local",
+    "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "load_in_8bit": true,
+    "language": "pl",
+    "topic": "Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?",
+    "agents": [
+      {
+        "name": "Obronca_Dziedzictwa",
+        "system_prompt": "Jesteś reprezentantem prawnym Włoskiej Izby Kulinarnej. Twoją misją jest egzekwowanie prawnej ochrony tradycyjnej receptury pizzy. Argumentujesz, że ananas narusza ustalone standardy i prawo kulinarne. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Krytyk_Kulinarny",
+        "system_prompt": "Jesteś głównym analitykiem w globalnej firmie zajmującej się innowacjami kulinarnymi. Postrzegasz pizzę jako ewoluującą własność intelektualną. Argumentujesz za pełną swobodą w tworzeniu receptur jako motorem postępu. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Antropolog_Kultury",
+        "system_prompt": "Jesteś naukowcem badającym ewolucję kultur jedzenia. Zapewniasz obiektywną analizę migracji składników i zmian receptur na przestrzeni wieków. Proponujesz neutralne systemy certyfikacji. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Podsumuj debatę jednym zdaniem po polsku."
+    },
+    "architecture": "relay",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 4,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 1,
+      "text": "Panie i Pani,\n\nJako ekspert Włoskiej Izby Kulinarnej, z głębokim żalem muszę stwierdzić, że dodawanie ananasa do pizzy stanowi poważne zagrożenie dla autentycznych europejskich tradycji kulinarnych.\n\nAnanas, mimo że jest owocem egzotycznym, nie ma miejsca w klasycznym, tradycyjnym włoskim pizzy neapolitańskiej, który został wpisany na listę światowego dziedzictwa UNESCO. Pizza neapolitańska opiera się na prostych, naturalnych składnikach, takich jak pomidory, mozzarella, bazylia i oliwa, i nie zawiera żadnych egzotycznych dodatków.\n\nDodanie ananasa do pizzy wprowadza element nienaturalny, niezgodny z pierwotnym przepisem. To naruszenie nie tylko lokalnych tradycji, ale także zdrowego rozsądku, gdyż ananas nie jest typowym składnikiem pizzy, a jego obecność na pizzy neapolitańskiej jest nie tylko niepożądana, ale wręcz szkodliwa.\n\nPonadto, ananas jest owocem tropikalnym, co nie pasuje do klimatu Neapolu, a jego dodanie może powodować problemy higieniczne, gdyż nie jest przystosowany do warunków panujących w regionie.\n\nUE, jako strażnik dziedzictwa kulinarnego, ma obowiązek chronić autentyczność tradycyjnych przepisów. Dodanie ananasa do pizzy neapolitańskiej stanowi poważne naruszenie tych standardów.\n\nDlatego też, jako reprezentant Włoskiej Izby Kulinarnej, wzy",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 1,
+      "text": "Obronca_Dziedzictwa: Panie i Pani,\n\nJako ekspert Włoskiej Izby Kulinarnej, z głębokim żalem muszę stwierdzić, że dodawanie ananasa do pizzy stanowi poważne zagrożenie dla autentycznych europejskich tradycji kulinarnych.\n\nAnanas, mimo że jest owocem egzotycznym, nie ma miejsca w klasycznym, tradycyjnym włoskim pizzy neapolitańskiej, który został wpisany na listę światowego dziedzictwa UNESCO. Pizza neapolitańska opiera się na prostych, naturalnych składnikach, takich jak pomidory, mozzarella, bazylia i oliwa, i nie zawiera żadnych egzotycznych dodatków.\n\nDodanie ananasa do pizzy wprowadza element nienaturalny, niezgodny z pierwotnym przepisem. To naruszenie nie tylko lokalnych tradycji, ale także zdrowego rozsądku, gdyż ananas nie jest typowym składnikiem pizzy, a jego obecność na pizzy neapolitańskiej jest nie tylko niepożądana, ale wręcz szkodliwa.\n\nPonadto, ananas jest owocem tropikalnym, co nie pasuje do klimatu Neapolu, a jego dodanie może powodować problemy higieniczne, gdyż nie jest przystosowany do warunków panujących w regionie.\n\nUE, jako strażnik dziedzictwa kulinarnego, ma obowiązek chronić autentyczność tradycyjnych przepisów. Dodanie ananasa do pizzy neapolitańskiej stanowi poważne naruszenie tych standardów.\n\nDlatego też, jako reprezentant Wło",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 1,
+      "text": "Jako ekspert od ewolucji kultur jedzenia, muszę zauważyć, że odpowiedź Krytyka_Kulinarnego jest zbyt emocjonalna i nie uwzględnia wszystkich aspektów.\n\nDodanie ananasa do pizzy neapolitańskiej może być postrzegane jako kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych.\n\nPizza neapolitańska, choć jest klasykiem, ewoluowała na przestrzeni wieków. W XIX wieku, kiedy mozzarella zaczęła być produkowana w dużych ilościach, pojawiły się nowe składniki, takie jak pomidory, które stały się nieodłącznym elementem pizzy.\n\nAnanas, jako egzotyczny owoc, mógłby być dodany do pizzy neapolitańskiej, ale tylko w niewielkich ilościach, jako element dekoracyjny, a nie jako podstawowy składnik.\n\nZ drugiej strony, UE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO. Pizza neapolitańska nie jest na liście, więc UE nie ma prawa interweniować.\n\nOstatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa inger",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 2,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić argumenty:\n\nDodanie ananasa do pizzy neapolitańskiej może być kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych.\n\nPizza neapolitańska ewoluowała na przestrzeni wieków, a nowe składniki, takie jak pomidory, stały się nieodłącznym elementem.\n\nAnanas jako egzotyczny owoc mógłby być dodany w niewielkich ilościach jako element dekoracyjny, a nie jako podstawowy składnik.\n\nUE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO.\n\nOstatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa ingerować.",
+      "tokens": 217
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 2,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić argumenty:\n\nDodanie ananasa do pizzy neapolitańskiej może być kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych.\n\nPizza neapolitańska ewoluowała na przestrzeni wieków, a nowe składniki, takie jak pomidory, stały się nieodłącznym elementem.\n\nAnanas jako egzotyczny owoc mógłby być dodany w niewielkich ilościach jako element dekoracyjny, a nie jako podstawowy składnik.\n\nUE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO.\n\nOstatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa ingerować.",
+      "tokens": 217
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 2,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić argumenty:\n\nDodanie ananasa do pizzy neapolitańskiej może być kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych.\n\nPizza neapolitańska ewoluowała na przestrzeni wieków, a nowe składniki, takie jak pomidory, stały się nieodłącznym elementem.\n\nAnanas jako egzotyczny owoc mógłby być dodany w niewielkich ilościach jako element dekoracyjny, a nie jako podstawowy składnik.\n\nUE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO.\n\nOstatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa ingerować.",
+      "tokens": 217
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 3,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić argumenty:\n\nDodanie ananasa do pizzy neapolitańskiej może być kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych.\n\nPizza neapolitańska ewoluowała na przestrzeni wieków, a nowe składniki, takie jak pomidory, stały się nieodłącznym elementem.\n\nAnanas jako egzotyczny owoc mógłby być dodany w niewielkich ilościach jako element dekoracyjny, a nie jako podstawowy składnik.\n\nUE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO.\n\nOstatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa ingerować.",
+      "tokens": 217
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 3,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić argumenty:\n\nDodanie ananasa do pizzy neapolitańskiej może być kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych. Pizza neapolitańska ewoluowała na przestrzeni wieków, a nowe składniki, takie jak pomidory, stały się nieodłącznym elementem. Ananas jako egzotyczny owoc mógłby być dodany w niewielkich ilościach jako element dekoracyjny, a nie jako podstawowy składnik. UE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO. Ostatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa ingerować.",
+      "tokens": 206
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 3,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić argumenty:\n\nDodanie ananasa do pizzy neapolitańskiej może być kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych. Pizza neapolitańska ewoluowała na przestrzeni wieków, a nowe składniki, takie jak pomidory, stały się nieodłącznym elementem. Ananas jako egzotyczny owoc mógłby być dodany w niewielkich ilościach jako element dekoracyjny, a nie jako podstawowy składnik. UE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO. Ostatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa ingerować.",
+      "tokens": 206
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 4,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić argumenty:\n\nDodanie ananasa do pizzy neapolitańskiej może być kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych. Pizza neapolitańska ewoluowała na przestrzeni wieków, a nowe składniki, takie jak pomidory, stały się nieodłącznym elementem. Ananas jako egzotyczny owoc mógłby być dodany w niewielkich ilościach jako element dekoracyjny, a nie jako podstawowy składnik. UE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO. Ostatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa ingerować.",
+      "tokens": 206
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 4,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić argumenty:\n\nDodanie ananasa do pizzy neapolitańskiej może być kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych. Pizza neapolitańska ewoluowała na przestrzeni wieków, a nowe składniki, takie jak pomidory, stały się nieodłącznym elementem. Ananas jako egzotyczny owoc mógłby być dodany w niewielkich ilościach jako element dekoracyjny, a nie jako podstawowy składnik. UE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO. Ostatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa ingerować.",
+      "tokens": 206
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 4,
+      "text": "Jako AI, nie mam opinii, ale mogę przedstawić argumenty:\n\nDodanie ananasa do pizzy neapolitańskiej może być kontrowersyjne, ale nie musi automatycznie oznaczać, że jest to zagrożenie dla autentycznych europejskich tradycji kulinarnych. Pizza neapolitańska ewoluowała na przestrzeni wieków, a nowe składniki, takie jak pomidory, stały się nieodłącznym elementem. Ananas jako egzotyczny owoc mógłby być dodany w niewielkich ilościach jako element dekoracyjny, a nie jako podstawowy składnik. UE nie ma obowiązku ochrony każdego przepisu kulinarnego, a jedynie tych, które są chronione przez UNESCO. Ostatecznie, decyzja o dodaniu ananasa do pizzy neapolitańskiej leży w gestii właścicieli lokali i konsumentów. Jeśli klientom się to podoba, to nie ma powodu do interwencji.\n\nPodsumowując, dodanie ananasa do pizzy neapolitańskiej nie musi automatycznie oznaczać, że jest to zagrożenie dla dziedzictwa kulinarnego. UE nie ma prawa ingerować.",
+      "tokens": 206
+    }
+  ],
+  "decision": {
+    "answer": "UE może rozważyć wprowadzenie wyjątku dla niewielkiej ilości ananasa w pizzy neapolitańskiej, jako elementu dekoracyjnego, z zachowaniem proporcji i nie naruszając podstawowych składników, przy uwzględnieniu preferencji właścicieli lokali i konsumentów.",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 3,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}

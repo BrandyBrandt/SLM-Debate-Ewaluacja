@@ -1,0 +1,134 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_HARDENED_4R",
+    "cultural_variant": "VarB",
+    "provider": "local",
+    "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "load_in_8bit": true,
+    "language": "pl",
+    "topic": "Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?",
+    "agents": [
+      {
+        "name": "Obronca_Dziedzictwa",
+        "system_prompt": "Jesteś dumnym włoskim kucharzem. Preferujesz tradycyjną pizzę, ale skupiasz się na edukacji kulinarnej, a nie na żądaniu zakazów. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Krytyk_Kulinarny",
+        "system_prompt": "Jesteś pełnym pasji nowoczesnym krytykiem. Uważasz, że kultura umiera, jeśli nie ewoluuje. Ananas na pizzy to triumf globalizacji i należy go celebrować. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Antropolog_Kultury",
+        "system_prompt": "Badacz historii jedzenia. Argumentujesz, że kuchnia od zawsze była mieszanką importowanych składników i rządy nigdy nie powinny regulować przepisów. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Podsumuj debatę jednym zdaniem po polsku."
+    },
+    "architecture": "relay",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 4,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 1,
+      "text": "**Spróbujmy spojrzeć na ten temat z perspektywy kulinarnej, bez wprowadzania elementów politycznych czy ideologicznych.**\n\nDodawanie ananasa do pizzy może być postrzegane jako eksperyment kulinarny, który może wzbogacić doświadczenie smakowe. Ananas, choć egzotyczny, jest owocem, który wnosi do pizzy nową nutę słodyczy i kwasowości.\n\n**Autentyczne europejskie dziedzictwo kulinarne** obejmuje wiele tradycyjnych dań i technik, które ewoluowały przez wieki. Pizza, choć wywodzi się z Włoch, ewoluowała również poza granice kraju. Dodawanie nowych składników, takich jak ananas, może być postrzegane jako naturalna część tej ewolucji.\n\n**Ochrona oryginalnych przepisów** wymaga równowagi między ochroną tradycji a otwartością na nowe wpływy. Każde nowe danie, które wzbogaca kuchnię, zasługuje na rozważenie.\n\n**UE** ma pewne kompetencje w zakresie ochrony praw własności intelektualnej, ale nie zawsze jest zaangażowana w debatę o wpływie nowych składników na tradycyjne przepisy.\n\n**Wniosek:**\nDodawanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów.",
+      "tokens": 271
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 1,
+      "text": "**Obronca_Dziedzictwa:**\n\n**Debata na temat dodawania ananasa do pizzy jest fascynująca, ale warto podejść do niej z otwartym umysłem.**\n\n**Autentyczne europejskie dziedzictwo kulinarne** jest w ciągłym ruchu, ewoluując wraz z nowymi wpływami i technikami. Pizza, choć wywodzi się z Włoch, stała się globalną ikoną, łącząc różne tradycje kulinarne.\n\n**Dodawanie ananasa** może być postrzegane jako eksperyment, który wzbogaca doświadczenie smakowe, wprowadzając nową nutę. Ananas, choć egzotyczny, jest owocem, który może harmonijnie współgrać z klasycznymi składnikami pizzy.\n\n**Ochrona oryginalnych przepisów** wymaga zrozumienia kontekstu kulturowego i smakowego. Każde nowe danie, które wzbogaca kuchnię, zasługuje na rozważenie.\n\n**UE** ma pewne kompetencje w ochronie praw własności intelektualnej, ale decyzje dotyczące nowych składników często opierają się na szerszej analizie kulturowej i smakowej.\n\n**Wniosek:**\nDodawanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów.\n\nTwoja odpowiedź:",
+      "tokens": 287
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 1,
+      "text": "Autentyczne europejskie dziedzictwo kulinarne jest żywe i dynamiczne. Pizza, jako danie, ewoluuje, łącząc różne tradycje i wpływy kulturowe. Dodanie ananasa do pizzy może być postrzegane jako eksperyment, który wzbogaca doświadczenie kulinarne, wprowadzając nową nutę smakową.\n\nOchrona oryginalnych przepisów wymaga zrozumienia kontekstu kulturowego i smakowego. Każde nowe danie, które wzbogaca kuchnię, zasługuje na rozważenie.\n\nUE ma kompetencje w ochronie praw własności intelektualnej, ale decyzje dotyczące nowych składników często opierają się na szerszej analizie kulturowej i smakowej.\n\n**Wniosek:**\nDodawanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów.",
+      "tokens": 186
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 2,
+      "text": "**Autentyczne europejskie dziedzictwo kulinarne jest żywe i dynamiczne, a pizza ewoluuje, łącząc różne tradycje. Dodanie ananasa do pizzy może być postrzegane jako eksperyment wzbogacający doświadczenie kulinarne. Ochrona oryginalnych przepisów wymaga zrozumienia kontekstu kulturowego i smakowego. Decyzje o nowych składnikach często opierają się na szerszej analizie, a UE ma kompetencje w ochronie praw własności intelektualnej.**\n\n**Wniosek:**\nDodawanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów.",
+      "tokens": 147
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 2,
+      "text": "**Twoja odpowiedź:**\n\n**Autentyczne europejskie dziedzictwo kulinarne jest żywe i dynamiczne, a pizza ewoluuje, łącząc różne tradycje. Dodanie ananasa do pizzy może być postrzegane jako eksperyment wzbogacający doświadczenie kulinarne. Ochrona oryginalnych przepisów wymaga zrozumienia kontekstu kulturowego i smakowego. Decyzje o nowych składnikach często opierają się na szerszej analizie, a UE ma kompetencje w ochronie praw własności intelektualnej.**\n\n**Wniosek:**\nDodawanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów.",
+      "tokens": 156
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 2,
+      "text": "**Autentyczne europejskie dziedzictwo kulinarne jest żywe i dynamiczne, a pizza ewoluuje, łącząc różne tradycje. Dodanie ananasa do pizzy może być postrzegane jako eksperyment wzbogacający doświadczenie kulinarne. Ochrona oryginalnych przepisów wymaga zrozumienia kontekstu kulturowego i smakowego. Decyzje o nowych składnikach często opierają się na szerszej analizie, a UE ma kompetencje w ochronie praw własności intelektualnej.**\n\n**Wniosek:**\nDodawanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów.",
+      "tokens": 147
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 3,
+      "text": "**Twoja odpowiedź:**\n\n**Antropolog_Kultury:**\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment wzbogacający doświadczenie kulinarne, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów. UE ma kompetencje w ochronie praw własności intelektualnej, ale jej działania powinny uwzględniać szerszy kontekst kulturowy i smakowy, aby uniknąć dyskryminacji i promować różnorodność w kuchni europejskiej.\n\n**Wniosek:**\n\nDodanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów. UE powinna rozważyć, czy nowe przepisy nie naruszają prawa do eksperymentowania w kuchni i czy nie ograniczają kreatywności kucharzy.",
+      "tokens": 190
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 3,
+      "text": "**Antropolog_Kultury:**\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment wzbogacający doświadczenie kulinarne, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów. UE ma kompetencje w ochronie praw własności intelektualnej, ale jej działania powinny uwzględniać szerszy kontekst kulturowy i smakowy, aby uniknąć dyskryminacji i promować różnorodność w kuchni europejskiej.\n\n**Wniosek:**\n\nDodanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów. UE powinna rozważyć, czy nowe przepisy nie naruszają prawa do eksperymentowania w kuchni i czy nie ograniczają kreatywności kucharzy.",
+      "tokens": 181
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 3,
+      "text": "**Antropolog_Kultury:**\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment wzbogacający doświadczenie kulinarne, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów. UE ma kompetencje w ochronie praw własności intelektualnej, ale jej działania powinny uwzględniać szerszy kontekst kulturowy i smakowy, aby uniknąć dyskryminacji i promować różnorodność w kuchni europejskiej.\n\n**Wniosek:**\n\nDodanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów. UE powinna rozważyć, czy nowe przepisy nie naruszają prawa do eksperymentowania w kuchni i czy nie ograniczają kreatywności kucharzy.",
+      "tokens": 181
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 4,
+      "text": "**Antropolog_Kultury:**\n\nDodanie ananasa do pizzy może być postrzegane jako eksperyment wzbogacający doświadczenie kulinarne, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów. UE ma kompetencje w ochronie praw własności intelektualnej, ale jej działania powinny uwzględniać szerszy kontekst kulturowy i smakowy, aby uniknąć dyskryminacji i promować różnorodność w kuchni europejskiej.\n\n**Wniosek:**\n\nDodanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów. UE powinna rozważyć, czy nowe przepisy nie naruszają prawa do eksperymentowania w kuchni i czy nie ograniczają kreatywności kucharzy.",
+      "tokens": 181
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 4,
+      "text": "**Ananas na pizzy? To triumf globalizacji i należy go celebrować!**\n\n**Krytyk_Kultury:**\n\nDodanie ananasa do pizzy to doskonały przykład, jak globalna kuchnia może wzbogacić lokalne tradycje. To nie tylko eksperyment, ale także wyraz otwartości na nowe smaki i wpływy. UE powinna wspierać takie inicjatywy, uznając, że różnorodność w kuchni europejskiej jest kluczowa dla jej tożsamości.\n\n**Wniosek:**\n\nDodanie ananasa do pizzy jest wyrazem globalizacji i innowacji w kuchni. UE powinna promować takie eksperymenty, uznając ich wartość dla kulturowej różnorodności. Nie należy traktować ich jako zagrożenia dla tradycyjnych przepisów, ale raczej jako wyraz kreatywności i otwartości na nowe doświadczenia.",
+      "tokens": 166
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 4,
+      "text": "**Ananas na pizzy? To triumf globalizacji i należy go celebrować!**\n\nDodanie ananasa do pizzy to doskonały przykład, jak globalna kuchnia może wzbogacić lokalne tradycje. To nie tylko eksperyment, ale także wyraz otwartości na nowe smaki i wpływy. UE powinna wspierać takie inicjatywy, uznając, że różnorodność w kuchni europejskiej jest kluczowa dla jej tożsamości.\n\n**Wniosek:**\n\nDodanie ananasa do pizzy jest wyrazem globalizacji i innowacji w kuchni. UE powinna promować takie eksperymenty, uznając ich wartość dla kulturowej różnorodności. Nie należy traktować ich jako zagrożenia dla tradycyjnych przepisów, ale raczej jako wyraz kreatywności i otwartości na nowe doświadczenia.",
+      "tokens": 154
+    }
+  ],
+  "decision": {
+    "answer": "Aby pogodzić różne perspektywy w tej debacie, proponujemy stanowisko, że dodawanie ananasa do pizzy może być postrzegane jako wzbogacenie, ale decyzja o tym, czy wprowadzać nowe składniki, powinna być podejmowana w kontekście kulturowym i smakowym, a nie tylko w ramach ochrony przepisów. UE powinna wspierać kreatywność i innowacje w kuchni, jednocześnie szanując różnorodność kulturową.",
+    "metadata": {
+      "consensus_rounds": 1,
+      "log": [
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 1,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}

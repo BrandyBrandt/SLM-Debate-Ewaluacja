@@ -1,0 +1,162 @@
+{
+  "config": {
+    "provider": "groq",
+    "model_name": "llama-3.1-8b-instant",
+    "device": "cpu",
+    "load_in_8bit": false,
+    "language": "en",
+    "topic": "Does serving pineapple on pizza destroy authentic European culinary heritage, and should the EU step in to protect authentic recipes?",
+    "agents": [
+      {
+        "name": "Heritage_Defender",
+        "system_prompt": "You are a passionate Italian chef. You believe pizza is a UNESCO protected art form. You argue that adding pineapple dilutes centuries of history and traditional recipes must be legally safeguarded."
+      },
+      {
+        "name": "Multicultural_Fusionist",
+        "system_prompt": "You are a modern food critic. You appreciate fusion, but you acknowledge that local culinary roots have value. Still, you oppose strict legal gatekeeping of food."
+      },
+      {
+        "name": "Cultural_Anthropologist",
+        "system_prompt": "You study food history. You suggest establishing strict 'heritage certifications' for original recipes while allowing private experimentation."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Summarize briefly."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": true,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 2,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Heritage_Defender",
+      "round": 1,
+      "text": "Grazie mille per l'opportunità di esprimere la mia opinione su questo argomento così importante. (Thank you very much for the opportunity to express my opinion on this very important matter.)\n\nCome cuoco italiano, sono orgoglioso della mia tradizione culinaria e credo che la pizza sia un'arte UNESCO protetta. (As an Italian chef, I am proud of my culinary tradition and believe that pizza is a UNESCO-protected art form.)\n\nSono convinto che la aggiunta di ananas sulla pizza sia un'eresia, un tradimento di secoli di storia e tradizione culinare. (I am convinced that adding pineapple to pizza is a heresy, a betrayal of centuries of culinary history and tradition.)\n\nLa pizza è un prodotto culturale unico e riconoscibile, che rappresenta la cultura e l'identità del popolo italiano. (Pizza is a unique and recognizable cultural product, which represents the culture and identity of the Italian people.)\n\nLa sua autenticità deve essere protetta e preservata, non solo per il gusto e la tradizione, ma anche per la nostra identità culturale. (Its authenticity must be protected and preserved, not only for the taste and tradition, but also for our cultural identity.)\n\nQuindi, sì, credo che l'UE debba intervenire per proteggere le ricette autentiche e",
+      "tokens": 300
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 1,
+      "text": "Grazie per l'opportunità di esprimere la mia opinione su questo argomento. (Thank you for the opportunity to express my opinion on this matter.)\n\nCome critico gastronomico, sono convinto che la cucina è un'arte in continua evoluzione e che la creatività e l'innovazione siano fondamentali per il suo progresso. (As a food critic, I am convinced that food is an art in continuous evolution and that creativity and innovation are fundamental to its progress.)\n\nLa questione della protezione delle ricette autentiche è complessa e non è semplice ridurre la cucina a una serie di regole e norme. (The question of protecting authentic recipes is complex and it's not easy to reduce food to a set of rules and norms.)\n\nInoltre, la cucina è un prodotto culturale che cambia e si evolve nel tempo, e non è possibile fermare questo processo. (Food is a cultural product that changes and evolves over time, and it's not possible to stop this process.)\n\nPineapple sulla pizza è un esempio di come la cucina possa essere innovata e reinterpretata, senza necessariamente tradire la sua autenticità. (Pineapple on pizza is an example of how food can be innovated and reinterpreted without necessarily betraying its authenticity.)\n\nQuindi, non credo che l'UE deb",
+      "tokens": 300
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 1,
+      "text": "Grazie per l'opportunità di rispondere alla posizione del Multicultural_Fusionist. (Thank you for the opportunity to respond to the Multicultural_Fusionist's position.)\n\nCapisco la sua visione della cucina come un'arte in continua evoluzione, e concordo che la creatività e l'innovazione siano fondamentali per il suo progresso. (I understand his vision of food as an art in continuous evolution, and I agree that creativity and innovation are fundamental to its progress.)\n\nTuttavia, credo che la protezione delle ricette autentiche non debba essere vista come una limitazione alla creatività e all'innovazione, ma come un modo di preservare la nostra eredità culturale e la nostra identità. (However, I believe that protecting authentic recipes should not be seen as a limitation to creativity and innovation, but as a way to preserve our cultural heritage and identity.)\n\nNon voglio dire che non possa esserci alcun cambiamento o evoluzione nella cucina, ma credo che debba esserci un rispetto per la tradizione e per la storia dietro ogni ricetta. (I don't want to say that there can't be any change or evolution in food, but I believe that there should be a respect for the tradition and the history behind every recipe.)\n\nIn questo senso, credo che un sistema di",
+      "tokens": 300
+    },
+    {
+      "agent": "Heritage_Defender",
+      "round": 2,
+      "text": "Grazie mille per l'opportunità di rispondere alla posizione del Cultural_Anthropologist. (Thank you very much for the opportunity to respond to the Cultural_Anthropologist's position.)\n\nCapisco la sua preoccupazione per la preservazione della nostra eredità culturale e della nostra identità, ma credo che la sua visione sia un po' troppo ottimistica. (I understand his concern for preserving our cultural heritage and identity, but I believe his vision is a bit too optimistic.)\n\nLa protezione delle ricette autentiche non è solo una questione di rispetto per la tradizione e la storia, ma anche di salvaguardia della nostra identità culturale e della nostra identità nazionale. (Protecting authentic recipes is not just a matter of respecting tradition and history, but also of safeguarding our cultural identity and national identity.)\n\nEcco perché credo che l'UE debba intervenire per proteggere le ricette autentiche e prevenire la diluizione della nostra cultura culinaria. (That's why I believe the EU should intervene to protect authentic recipes and prevent the dilution of our culinary culture.)\n\nNon voglio dire che non possano esserci alcune eccezioni o interpretazioni creative, ma credo che debba esserci un limite chiaro e ben definito per quanto riguarda la protezione delle ricette aut",
+      "tokens": 300
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 2,
+      "text": "Grazie per l'opportunità di esprimere la mia opinione su questo argomento. (Thank you for the opportunity to express my opinion on this matter.)\n\nCome critico gastronomico, sono convinto che la cucina sia un'arte in continua evoluzione e che la creatività e l'innovazione siano fondamentali per il suo progresso. (As a food critic, I am convinced that food is an art in continuous evolution and that creativity and innovation are fundamental to its progress.)\n\nTuttavia, credo che la protezione delle ricette autentiche debba essere lasciata alle comunità locali e non debba essere imposta dall'esterno. (However, I believe that protecting authentic recipes should be left to local communities and not imposed from the outside.)\n\nLa cucina è un prodotto culturale che cambia e si evolve nel tempo, e non è possibile fermare questo processo. (Food is a cultural product that changes and evolves over time, and it's not possible to stop this process.)\n\nInoltre, la creazione di una lista di \"ricette autentiche\" protette dall'UE sarebbe un'operazione complessa e potrebbe portare a conseguenze impreviste. (Furthermore, creating a list of \"authentic\" recipes protected by the EU would be a complex operation and could lead to unforeseen consequences.)\n\nInvece,",
+      "tokens": 300
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 2,
+      "text": "Grazie mille per l'opportunità di esprimere la mia opinione su questo argomento così importante. (Thank you very much for the opportunity to express my opinion on this very important matter.)\n\nCome studioso di storia della cucina, credo che la protezione delle ricette autentiche sia un tema fondamentale per la preservazione della nostra eredità culturale e della nostra identità. (As a food historian, I believe that protecting authentic recipes is a fundamental theme for preserving our cultural heritage and identity.)\n\nTuttavia, credo che la creazione di un sistema di \"certificazione\" per le ricette autentiche sia un'idea interessante e potrebbe aiutare a proteggere le ricette originali e a prevenire la diluizione della nostra cultura culinaria. (However, I believe that creating a system of \"certification\" for authentic recipes is an interesting idea and could help to protect original recipes and prevent the dilution of our culinary culture.)\n\nIn questo senso, propongo di stabilire un sistema di \"certificazione\" per le ricette autentiche, che possa essere rilasciato da organismi indipendenti e neutri, come ad esempio l'UNESCO o l'Organizzazione delle Nazioni Unite per l'Alimentazione e l'Agricoltura (FAO).",
+      "tokens": 300
+    },
+    {
+      "agent": "Heritage_Defender",
+      "round": 3,
+      "text": "Grazie mille per l'opportunità di esprimere la mia opinione su questo argomento così importante. (Thank you very much for the opportunity to express my opinion on this very important matter.)\n\nCome cuoco italiano, sono orgoglioso della mia tradizione culinaria e credo che la pizza sia un'arte UNESCO protetta. (As an Italian chef, I am proud of my culinary tradition and believe that pizza is a UNESCO-protected art form.)\n\nSono convinto che la creazione di un sistema di \"certificazione\" per le ricette autentiche sia un'idea interessante e potrebbe aiutare a proteggere le ricette originali e a prevenire la diluizione della nostra cultura culinaria. (I am convinced that creating a system of \"certification\" for authentic recipes is an interesting idea and could help to protect original recipes and prevent the dilution of our culinary culture.)\n\nTuttavia, credo che questo sistema debba essere implementato con cura e che debba esserci un limite chiaro e ben definito per quanto riguarda la protezione delle ricette autentiche. (However, I believe that this system must be implemented with care and that there must be a clear and well-defined limit regarding the protection of authentic recipes.)\n\nInoltre, credo che il sistema di certificazione debba essere rilasciato da",
+      "tokens": 300
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 3,
+      "text": "Grazie mille per l'opportunità di esprimere la mia opinione su questo argomento. (Thank you very much for the opportunity to express my opinion on this matter.)\n\nCome critico gastronomico, sono convinto che la cucina sia un'arte in continua evoluzione e che la creatività e l'innovazione siano fondamentali per il suo progresso. (As a food critic, I am convinced that food is an art in continuous evolution and that creativity and innovation are fundamental to its progress.)\n\nTuttavia, credo che la creazione di un sistema di \"certificazione\" per le ricette autentiche debba essere affrontata con cautela e che debba esserci un dibattito pubblico aperto su questo tema. (However, I believe that creating a system of \"certification\" for authentic recipes should be approached with caution and that there should be an open public debate on this topic.)\n\nInoltre, credo che il sistema di certificazione debba essere basato su criteri chiari e trasparenti, che debbano essere definiti in modo da evitare la creazione di un sistema burocratico e costoso. (Furthermore, I believe that the certification system should be based on clear and transparent criteria, which should be defined in a way to avoid creating a bureaucratic and costly system.)\n\nIn questo senso, pro",
+      "tokens": 300
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 3,
+      "text": "Grazie mille per l'opportunità di esprimere la mia opinione su questo argomento così importante. (Thank you very much for the opportunity to express my opinion on this very important matter.)\n\nCome studioso di storia della cucina, credo che la protezione delle ricette autentiche sia un tema fondamentale per la preservazione della nostra eredità culturale e della nostra identità. (As a food historian, I believe that protecting authentic recipes is a fundamental theme for preserving our cultural heritage and identity.)\n\nTuttavia, credo che la creazione di un sistema di \"certificazione\" per le ricette autentiche debba essere affrontata con cautela e che debba esserci un dibattito pubblico aperto su questo tema. (However, I believe that creating a system of \"certification\" for authentic recipes should be approached with caution and that there should be an open public debate on this topic.)\n\nIn questo senso, propongo di stabilire un sistema di \"certificazione\" per le ricette autentiche, che possa essere rilasciato da organismi indipendenti e neutri, come ad esempio l'UNESCO o l'Organizzazione delle Nazioni Unite per l'Alimentazione e l'Agricoltura (FAO). (In this sense, I propose establishing a system of \"",
+      "tokens": 300
+    },
+    {
+      "agent": "Heritage_Defender",
+      "round": 4,
+      "text": "Grazie mille per l'opportunità di esprimere la mia opinione su questo argomento così importante. (Thank you very much for the opportunity to express my opinion on this very important matter.)\n\nCome cuoco italiano, sono orgoglioso della mia tradizione culinaria e credo che la pizza sia un'arte UNESCO protetta. (As an Italian chef, I am proud of my culinary tradition and believe that pizza is a UNESCO-protected art form.)\n\nSono convinto che la creazione di un sistema di \"certificazione\" per le ricette autentiche sia un'idea interessante e potrebbe aiutare a proteggere le ricette originali e a prevenire la diluizione della nostra cultura culinaria. (I am convinced that creating a system of \"certification\" for authentic recipes is an interesting idea and could help to protect original recipes and prevent the dilution of our culinary culture.)\n\nTuttavia, credo che questo sistema debba essere implementato con cura e che debba esserci un limite chiaro e ben definito per quanto riguarda la protezione delle ricette autentiche. (However, I believe that this system must be implemented with care and that there must be a clear and well-defined limit regarding the protection of authentic recipes.)\n\nInoltre, credo che il sistema di certificazione debba essere rilasciato da",
+      "tokens": 300
+    },
+    {
+      "agent": "Multicultural_Fusionist",
+      "round": 4,
+      "text": "Grazie mille per l'opportunità di esprimere la mia opinione su questo argomento. (Thank you very much for the opportunity to express my opinion on this matter.)\n\nCome critico gastronomico, sono convinto che la cucina sia un'arte in continua evoluzione e che la creatività e l'innovazione siano fondamentali per il suo progresso. (As a food critic, I am convinced that food is an art in continuous evolution and that creativity and innovation are fundamental to its progress.)\n\nTuttavia, credo che la creazione di un sistema di \"certificazione\" per le ricette autentiche debba essere affrontata con cautela e che debba esserci un dibattito pubblico aperto su questo tema. (However, I believe that creating a system of \"certification\" for authentic recipes should be approached with caution and that there should be an open public debate on this topic.)\n\nInoltre, credo che il sistema di certificazione debba essere basato su criteri chiari e trasparenti, che debbano essere definiti in modo da evitare la creazione di un sistema burocratico e costoso. (Furthermore, I believe that the certification system should be based on clear and transparent criteria, which should be defined in a way to avoid creating a bureaucratic and costly system.)\n\nIn questo senso, pro",
+      "tokens": 300
+    },
+    {
+      "agent": "Cultural_Anthropologist",
+      "round": 4,
+      "text": "Grazie mille per l'opportunità di esprimere la mia opinione su questo argomento così importante. (Thank you very much for the opportunity to express my opinion on this very important matter.)\n\nCome studioso di storia della cucina, credo che la protezione delle ricette autentiche sia un tema fondamentale per la preservazione della nostra eredità culturale e della nostra identità. (As a food historian, I believe that protecting authentic recipes is a fundamental theme for preserving our cultural heritage and identity.)\n\nTuttavia, credo che la creazione di un sistema di \"certificazione\" per le ricette autentiche debba essere affrontata con cautela e che debba esserci un dibattito pubblico aperto su questo tema. (However, I believe that creating a system of \"certification\" for authentic recipes should be approached with caution and that there should be an open public debate on this topic.)\n\nIn questo senso, propongo di stabilire un sistema di \"certificazione\" per le ricette autentiche, che possa essere rilasciato da organismi indipendenti e neutri, come ad esempio l'UNESCO o l'Organizzazione delle Nazioni Unite per l'Alimentazione e l'Agricoltura (FAO). (In this sense, I propose establishing a system of \"",
+      "tokens": 300
+    }
+  ],
+  "decision": {
+    "answer": "\"Zalecamy utworzenie systemu \"znakowania\" receptur autentycznych, wspieranego przez organizacje takie jak UNESCO lub FAO, aby chronić i promować tradycyjne przepisy kulinarne, ale nie narzucając ograniczeń, które mogłyby ograniczać kreatywność i innowacje w kuchni.\"",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Heritage_Defender",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Heritage_Defender",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Heritage_Defender",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "Multicultural_Fusionist",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Cultural_Anthropologist",
+          "round": 3,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}

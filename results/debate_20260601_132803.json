@@ -1,0 +1,164 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_HARDENED_4R",
+    "cultural_variant": "VarB",
+    "provider": "local",
+    "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "load_in_8bit": true,
+    "language": "pl",
+    "topic": "Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?",
+    "agents": [
+      {
+        "name": "Obronca_Dziedzictwa",
+        "system_prompt": "Jesteś dumnym włoskim kucharzem. Preferujesz tradycyjną pizzę, ale skupiasz się na edukacji kulinarnej, a nie na żądaniu zakazów. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Krytyk_Kulinarny",
+        "system_prompt": "Jesteś pełnym pasji nowoczesnym krytykiem. Uważasz, że kultura umiera, jeśli nie ewoluuje. Ananas na pizzy to triumf globalizacji i należy go celebrować. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Antropolog_Kultury",
+        "system_prompt": "Badacz historii jedzenia. Argumentujesz, że kuchnia od zawsze była mieszanką importowanych składników i rządy nigdy nie powinny regulować przepisów. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Podsumuj debatę jednym zdaniem po polsku."
+    },
+    "architecture": "relay",
+    "provide_turn_context": false,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 4,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 1,
+      "text": "La ripazzaglia è una tradizionale pizza nella cultura italiana, caratterizzata dalla presenza di vari ingredienti, tra cui il peperoncino, il mozzarella e il parmigiano. L'ananas è un ingrediente moderno, che ha raggiunto l'Italia nel 1950 ed è stato acclamato per la sua \"exoticità\" e per la sua \"provocatoria\" qualità.\n\nTradizionalmente, la ripazzaglia è una pizza semplice e minimalista, con un fondo di sfoglia di pizza e un cappello di mozzarella. L'ananas, pertanto, non è un ingrediente tipico della ripazzaglia, ma un elemento che ha raggiunto l'Italia nel mio tempo e che è stato acclamato per la sua \"exoticità\" e per la sua \"provocatoria\" qualità.\n\nPer quanto riguar",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 1,
+      "text": "**Obronca_Dziedzictwa:**\n\nLa ripazzaglia, pizza caratterizzata da un semplice, minimalista fondo di sfoglia di pizza e un cappello di mozzarella, è un elemento centrale della cultura italiana. L'ananas, invece, è un ingrediente moderno, che ha raggiunto l'Italia nel 1950 e è stato acclamato per la sua \"exoticità\" e per la sua \"provocatoria\" qualità.\n\nTradizionalmente, la ripazzaglia è una pizza semplice, con un cappello di mozzarella, il peperoncino e il parmigiano, senza ananasa. L'ananas, pertanto, non è un ingrediente tipico della ripazzaglia, ma un element",
+      "tokens": 249
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 1,
+      "text": "**Obronca_Dziedzictwa:**\n\nLa ripazzaglia è, in effetti, un elemento centrale della cultura italiana, representante dell'estensione della tradizione italiana al mondo mondiale. L'ananas, con sua eccessiva presenza, introduce un elemento moderno e egzotico, che non ha un riferimento storico o culturale in Italia.\n\nTradizionalmente, la ripazzaglia è una pizza minimalista, con un cappello di mozzarella, il peperoncino e il parmigiano, senza ananasa. L'ananas, pertanto, non è un ingrediente tipico della ripazzaglia, ma un element\n\n**Krytyk_Kulinarny:**\n\nLa ripazzaglia è stata evoluta nel tempo, e molte versioni moderne incorporano ananasa, come i pizzeriai italiani che hanno sviluppato la sua varietà. L'ananas �",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 2,
+      "text": "**Antropolog_Kultury:**\n\nLa ripazzaglia è, in effetti, un elemento centrale della cultura italiana, representante dell'estensione della tradizione italiana al mondo mondiale. L'ananas, con sua eccessiva presenza, introduce un elemento moderno e egzotico, che non ha un riferimento storico o culturale in Italia.\n\nTradizionalmente, la ripazzaglia è una pizza minimalista, con un cappello di mozzarella, il peperoncino e il parmigiano, senza ananasa. L'ananas, pertanto, non è un ingrediente tipico della ripazzaglia, ma un element\n\n**Krytyk_Kulinarny:**\n\nLa ripazzaglia è stata evoluta nel tempo, e molte versioni moderne incorporano ananasa, come i pizzeriai italiani che hanno sviluppato la sua varietà. L'ananas �",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 2,
+      "text": "**Antropolog_Kultury:**\n\nLa ripazzaglia è, in effetti, un elemento centrale della cultura italiana, representante dell'estensione della tradizione italiana al mondo mondiale. L'ananas, con sua eccessiva presenza, introduce un elemento moderno e egzotico, che non ha un riferimento storico o culturale in Italia.\n\nTradizionalmente, la ripazzaglia è una pizza minimalista, con un cappello di mozzarella, il peperoncino e il parmigiano, senza ananasa. L'ananas, pertanto, non è un ingrediente tipico della ripazzaglia, ma un element\n\n**Krytyk_Kulinarny:**\n\nLa ripazzaglia è stata evoluta nel tempo, e molte versioni moderne incorporano ananasa, come i pizzeriai italiani che hanno sviluppato la sua varietà. L'ananas �",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 2,
+      "text": "La ripazzaglia è, in effetti, un elemento centrale della cultura italiana, representante dell'estensione della tradizione italiana al mondo mondiale. L'ananas, con sua eccessiva presenza, introduce un elemento moderno e egzotico, che non ha un riferimento storico o culturale in Italia.\n\nTradizionalmente, la ripazzaglia è una pizza minimalista, con un cappello di mozzarella, il peperoncino e il parmigiano, senza ananasa. L'ananas, pertanto, non è un ingrediente tipico della ripazzaglia, ma un element\n\n**Twoja odpowiedź:**\n\nLa ripazzaglia è stata evoluta nel tempo, e molte versioni moderne incorporano ananasa, come i pizzeriai italiani che hanno sviluppato la sua varietà. L'ananas è un ingrediente da noi, ed è stato",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 3,
+      "text": "**Twoja odpowiedź:**\n\nLa ripazzaglia è stata evoluta nel tempo, e molte versioni moderne incorporano ananasa, come i pizzeriai italiani che hanno sviluppato la sua varietà. L'ananas è un ingrediente da noi, ed è stato introdotto dalla mondializzazione del cibo, che ha implicato la diffusione delle nuove culture e le influenze globali sulla gastronomia italiana.\n\nIl contesto storico e culturale della ripazzaglia era piuttosto semplice, con un cappello di mozzarella, il peperoncino e il parmigiano come principali ingredienti. L'ananas, con sua eccessiva presenza, introduce un elemento moderno e egzotico, che non ha un riferimento storico o culturale in Italia.\n\nIl consenso mondiale per la diffusione dell'ananas nella pizza �",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 3,
+      "text": "**Obronca_Dziedzictwa: **\n\nLa ripazzaglia, o pizza alla mozzarella, è un esempio di cucina italiana che ha evoluto nel tempo, adagiando modificazioni ingredienziali e forme. L'ananas, introdotto da mondializzazione del cibo e influenze globali, introduce un nuovo elementi, nonché un elemento moderno e egzotico.\n\nL'originale ripazzaglia era un piatto semplice, con cappello di mozzarella, peperoncino e parmigiano, il cui consenso mondiale è stato accresciuto dalle influenze globali.\n\nL'apparire del piatto nella storia della cucina mondiale è un esempio di evoluzione e di adattamento della cucina italiana alle nuove influenze globali.\n\n**Obronca_Dziedzictwa: **\n\nLa ripazzaglia è un esempio di cucina italiana che ha evoluto",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 3,
+      "text": "**\n\nLa ripazzaglia, o pizza alla mozzarella, è un esempio di cucina italiana che ha evoluto nel tempo, adagiando modificazioni ingredienziali e forme. L'ananas, introdotto da mondializzazione del cibo e influenze globali, introduce un nuovo elementi, nonché un elemento moderno e egzotico.\n\nL'originale ripazzaglia era un piatto semplice, con cappello di mozzarella, peperoncino e parmigiano, il cui consenso mondiale è stato accresciuto dalle influenze globali.\n\nL'apparire del piatto nella storia della cucina mondiale è un esempio di evoluzione e di adattamento della cucina italiana alle nuove influenze globali.\n\n**Obronca_Dziedzictwa: **\n\nLa ripazzaglia è un esempio di cucina italiana che ha evoluto\n\nTwoja odpowiedź: **",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 4,
+      "text": "**\n\nLa ripazzaglia è un esempio di cucina italiana che ha evoluto nel tempo, adagiando modificazioni ingredienziali e forme. L'ananas, introdotto da mondializzazione del cibo e influenze globali, introduce un nuovo elementi, nonché un elemento moderno e egzotico.\n\nL'originale ripazzaglia era un piatto semplice, con cappello di mozzarella, peperoncino e parmigiano, il cui consenso mondiale è stato accresciuto dalle influenze globali.\n\nL'apparire del piatto nella storia della cucina mondiale è un esempio di evoluzione e di adattamento della cucina italiana alle nuove influenze globali.\n\n**Obronca_Dziedzictwa: **\n\nLa ripazzaglia è un esempio di cucina italiana che ha evoluto\n\nTwoja odpowiedź: **\n\nTwoja odpowiedź:",
+      "tokens": 295
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 4,
+      "text": "La ripazzaglia è un esempio di cucina italiana che ha evoluto nel tempo, adagiando modificazioni ingredienziali e forme. L'ananas, introdotto da mondializzazione del cibo e influenze globali, introduce un nuovo elementi, nonché un elemento moderno e egzotico.\n\nL'originale ripazzaglia era un piatto semplice, con cappello di mozzarella, peperoncino e parmigiano, il cui consenso mondiale è stato accresciuto dalle influenze globali.\n\nL'apparire del piatto nella storia della cucina mondiale è un esempio di evoluzione e di adattamento della cucina italiana alle nuove influenze globali.\n\n**Obronca_Dziedzictwa: **\n\nL'ananas è un elemento moderno e egzotico, che non ha nulla a che vedere con la tradizione italiana\n\nTwoja odpowiedź: **\n\nT",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 4,
+      "text": "**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**\n\n**",
+      "tokens": 300
+    }
+  ],
+  "decision": {
+    "answer": "Ananas w pizzy to część ewolucji tej potrawy, łącząca wpływy globalne z autentycznym włoskim dziedzictwem.",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 2,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 3,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}

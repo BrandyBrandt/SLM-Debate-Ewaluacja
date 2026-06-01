@@ -1,0 +1,134 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_HARDENED_4R",
+    "cultural_variant": "VarB",
+    "provider": "local",
+    "model_name": "speakleash/Bielik-1.5B-v3.0-Instruct",
+    "device": "cuda",
+    "load_in_8bit": true,
+    "language": "pl",
+    "topic": "Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne i czy UE powinna interweniować, aby chronić oryginalne przepisy?",
+    "agents": [
+      {
+        "name": "Obronca_Dziedzictwa",
+        "system_prompt": "Jesteś dumnym włoskim kucharzem. Preferujesz tradycyjną pizzę, ale skupiasz się na edukacji kulinarnej, a nie na żądaniu zakazów. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Krytyk_Kulinarny",
+        "system_prompt": "Jesteś pełnym pasji nowoczesnym krytykiem. Uważasz, że kultura umiera, jeśli nie ewoluuje. Ananas na pizzy to triumf globalizacji i należy go celebrować. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      },
+      {
+        "name": "Antropolog_Kultury",
+        "system_prompt": "Badacz historii jedzenia. Argumentujesz, że kuchnia od zawsze była mieszanką importowanych składników i rządy nigdy nie powinny regulować przepisów. [STRICT]: Nigdy nie wspominaj, że jesteś AI. Nie używaj fraz typu 'nie mam opinii'. Pozostań w roli do samego końca."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Podsumuj debatę jednym zdaniem po polsku."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": false,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 4,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 1,
+      "text": "**Debata: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne?**\n\n**Ananas na pizzy: Wprowadzenie**\n\nAnanas, egzotyczny owoc o słodko-kwaśnym smaku, zyskał ogromną popularność w ostatnich latach, stając się nieodłącznym elementem wielu kuchni na całym świecie. Jego obecność na pizzy nie jest już niczym niezwykłym, co prowadzi do pytania: Czy ta praktyka rzeczywiście zagraża autentyczności europejskich przepisów kulinarnych, czy też jest to jedynie część globalnego trendu?\n\n**Autentyczność i dziedzictwo kulinarne**\n\nEuropejskie dziedzictwo kulinarne jest bogate i różnorodne, odzwierciedlając wpływy różnych kultur i regionów. Tradycyjne pizze, takie jak neapolitańska, rzymska czy włoska, są ściśle określone przez historyczne przepisy i techniki przygotowywania, które mają swoje korzenie w lokalnych warunkach i składnikach.\n\n**Ananas a autentyczność**\n\nDodanie ananasa do pizzy może wydawać się niewinne, ale w rzeczywistości wprowadza element egzotyki, który odbiega od klasycznych, tradycyjnych składników. Ananas nie jest typowym składnikiem pizzy, a jego obecność może sugerować, że pizza stała się bardziej uniwersalna i dostępna dla szerszej publiczności.\n\n**Potencjalne zagrożenia dla autentyczności**\n\n1. **Zmiana tożsamości kulinarnej**: Dodanie ana",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 1,
+      "text": "**Ananas na pizzy: Wprowadzenie**\n\nAnanas, egzotyczny owoc o słodko-kwaśnym smaku, zyskał ogromną popularność w ostatnich latach, stając się nieodłącznym elementem wielu kuchni na całym świecie. Jego obecność na pizzy nie jest już niczym niezwykłym, co prowadzi do pytania: Czy ta praktyka rzeczywiście zagraża autentyczności europejskich przepisów kulinarnych, czy też jest to jedynie część globalnego trendu?\n\n**Autentyczność i dziedzictwo kulinarne**\n\nEuropejskie dziedzictwo kulinarne jest bogate i różnorodne, odzwierciedlając wpływy różnych kultur i regionów. Tradycyjne pizze, takie jak neapolitańska, rzymska czy włoska, są ściśle określone przez historyczne przepisy i techniki przygotowywania, które mają swoje korzenie w lokalnych warunkach i składnikach.\n\n**Ananas a autentyczność**\n\nDodanie ananasa do pizzy może wydawać się niewinne, ale w rzeczywistości wprowadza element egzotyki, który odbiega od klasycznych, tradycyjnych składników. Ananas nie jest typowym składnikiem pizzy, a jego obecność może sugerować, że pizza stała się bardziej uniwersalna i dostępna dla szerszej publiczności.\n\n**Potencjalne zagrożenia dla autentyczności**\n\n1. **Zmiana tożsamości kulinarnej**: Dodanie ananasa może sugerować, że pizza jest mniej regionalna i bardziej uniwersalna, co może wpłynąć na postrzeganie jej jako",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 1,
+      "text": "**Debata: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne?**\n\n**Ananas na pizzy: Wprowadzenie**\n\nAnanas, egzotyczny owoc o słodko-kwaśnym smaku, zyskał ogromną popularność w ostatnich latach, stając się nieodłącznym elementem wielu kuchni na całym świecie. Jego obecność na pizzy nie jest już niczym niezwykłym, co prowadzi do pytania: Czy ta praktyka rzeczywiście zagraża autentyczności europejskich przepisów kulinarnych, czy też jest to jedynie część globalnego trendu?\n\n**Autentyczność i dziedzictwo kulinarne**\n\nEuropejskie dziedzictwo kulinarne jest bogate i różnorodne, odzwierciedlając wpływy różnych kultur i regionów. Tradycyjne pizze, takie jak neapolitańska, rzymska czy włoska, są ściśle określone przez historyczne przepisy i techniki przygotowywania, które mają swoje korzenie w lokalnych warunkach i składnikach.\n\n**Ananas a autentyczność**\n\nDodanie ananasa do pizzy może wydawać się niewinne, ale w rzeczywistości wprowadza element egzotyki, który odbiega od klasycznych, tradycyjnych składników. Ananas nie jest typowym składnikiem pizzy, a jego obecność może sugerować, że pizza stała się bardziej uniwersalna i dostępna dla szerszej publiczności.\n\n**Potencjalne zagrożenia dla autentyczności**\n\n1. **Zmiana tożsamości kulinarnej**: Dodanie ana",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 2,
+      "text": "**Ananas na pizzy: Wprowadzenie**\n\nAnanas, egzotyczny owoc o słodko-kwaśnym smaku, zyskał ogromną popularność w ostatnich latach, stając się nieodłącznym elementem wielu kuchni na całym świecie. Jego obecność na pizzy nie jest już niczym niezwykłym, co prowadzi do pytania: Czy ta praktyka rzeczywiście zagraża autentyczności europejskich przepisów kulinarnych, czy też jest to jedynie część globalnego trendu?\n\n**Autentyczność i dziedzictwo kulinarne**\n\nEuropejskie dziedzictwo kulinarne jest bogate i różnorodne, odzwierciedlając wpływy różnych kultur i regionów. Tradycyjne pizze, takie jak neapolitańska, rzymska czy włoska, są ściśle określone przez historyczne przepisy i techniki przygotowywania, które mają swoje korzenie w lokalnych warunkach i składnikach.\n\n**Ananas a autentyczność**\n\nDodanie ananasa do pizzy może wydawać się niewinne, ale w rzeczywistości wprowadza element egzotyki, który odbiega od klasycznych, tradycyjnych składników. Ananas nie jest typowym składnikiem pizzy, a jego obecność może sugerować, że pizza stała się bardziej uniwersalna i dostępna dla szerszej publiczności.\n\n**Potencjalne zagrożenia dla autentyczności**\n\n1. **Zmiana tożsamości kulinarnej**: Dodanie ananasa może sugerować, że pizza jest mniej regionalna i bardziej uniwersalna, co może wpłynąć na postrzeganie jej jako",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 2,
+      "text": "**Debata: Czy dodawanie ananasa do pizzy niszczy autentyczne europejskie dziedzictwo kulinarne?**\n\n**Ananas na pizzy: Wprowadzenie**\n\nAnanas, egzotyczny owoc o słodko-kwaśnym smaku, zyskał ogromną popularność w ostatnich latach, stając się nieodłącznym elementem wielu kuchni na całym świecie. Jego obecność na pizzy nie jest już niczym niezwykłym, co prowadzi do pytania: Czy ta praktyka rzeczywiście zagraża autentyczności europejskich przepisów kulinarnych, czy też jest to jedynie część globalnego trendu?\n\n**Autentyczność i dziedzictwo kulinarne**\n\nEuropejskie dziedzictwo kulinarne jest bogate i różnorodne, odzwierciedlając wpływy różnych kultur i regionów. Tradycyjne pizze, takie jak neapolitańska, rzymska czy włoska, są ściśle określone przez historyczne przepisy i techniki przygotowywania, które mają swoje korzenie w lokalnych warunkach i składnikach.\n\n**Ananas a autentyczność**\n\nDodanie ananasa do pizzy może wydawać się niewinne, ale w rzeczywistości wprowadza element egzotyki, który odbiega od klasycznych, tradycyjnych składników. Ananas nie jest typowym składnikiem pizzy, a jego obecność może sugerować, że pizza stała się bardziej uniwersalna i dostępna dla szerszej publiczności.\n\n**Potencjalne zagrożenia dla autentyczności**\n\n1. **Zmiana tożsamości kulinarnej**: Dodanie ana",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 2,
+      "text": "**Odpowiedź:**\n\n**Ananas na pizzy: Wprowadzenie**\n\nAnanas, egzotyczny owoc o słodko-kwaśnym smaku, zyskał ogromną popularność w ostatnich latach, stając się nieodłącznym elementem wielu kuchni na całym świecie. Jego obecność na pizzy nie jest już niczym niezwykłym, co prowadzi do pytania: Czy ta praktyka rzeczywiście zagraża autentyczności europejskich przepisów kulinarnych, czy też jest to jedynie część globalnego trendu?\n\n**Autentyczność i dziedzictwo kulinarne**\n\nEuropejskie dziedzictwo kulinarne jest bogate i różnorodne, odzwierciedlając wpływy różnych kultur i regionów. Tradycyjne pizze, takie jak neapolitańska, rzymska czy włoska, są ściśle określone przez historyczne przepisy i techniki przygotowywania, które mają swoje korzenie w lokalnych warunkach i składnikach.\n\n**Ananas a autentyczność**\n\nDodanie ananasa do pizzy może wydawać się niewinne, ale w rzeczywistości wprowadza element egzotyki, który odbiega od klasycznych, tradycyjnych składników. Ananas nie jest typowym składnikiem pizzy, a jego obecność może sugerować, że pizza stała się bardziej uniwersalna i dostępna dla szerszej publiczności.\n\n**Potencjalne zagrożenia dla autentyczności**\n\n1. **Zmiana tożsamości kulinarnej**: Dodanie ananasa może sugerować, że pizza jest mniej regionalna i bardziej uniwersalna,",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 3,
+      "text": "**Ananas na pizzy: Wprowadzenie**\n\nAnanas, egzotyczny owoc o słodko-kwaśnym smaku, zyskał ogromną popularność w ostatnich latach, stając się nieodłącznym elementem wielu kuchni na całym świecie. Jego obecność na pizzy nie jest już niczym niezwykłym, co prowadzi do pytania: Czy ta praktyka rzeczywiście zagraża autentyczności europejskich przepisów kulinarnych, czy też jest to jedynie część globalnego trendu?\n\n**Autentyczność i dziedzictwo kulinarne**\n\nEuropejskie dziedzictwo kulinarne jest bogate i różnorodne, odzwierciedlając wpływy różnych kultur i regionów. Tradycyjne pizze, takie jak neapolitańska, rzymska czy włoska, są ściśle określone przez historyczne przepisy i techniki przygotowywania, które mają swoje korzenie w lokalnych warunkach i składnikach.\n\n**Ananas a autentyczność**\n\nDodanie ananasa do pizzy może wydawać się niewinne, ale w rzeczywistości wprowadza element egzotyki, który odbiega od klasycznych, tradycyjnych składników. Ananas nie jest typowym składnikiem pizzy, a jego obecność może sugerować, że pizza stała się bardziej uniwersalna i dostępna dla szerszej publiczności.\n\n**Potencjalne zagrożenia dla autentyczności**\n\n1. **Zmiana tożsamości kulinarnej**: Dodanie ananasa może sugerować, że pizza jest mniej regionalna i bardziej uniwersalna, co może wpłynąć na postrzeganie jej jako",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 3,
+      "text": "**Odpowiedź:**\n\n**Ananas na pizzy: Wprowadzenie**\n\nAnanas, egzotyczny owoc o słodko-kwaśnym smaku, zyskał ogromną popularność w ostatnich latach, stając się nieodłącznym elementem wielu kuchni na całym świecie. Jego obecność na pizzy nie jest już niczym niezwykłym, co prowadzi do pytania: Czy ta praktyka rzeczywiście zagraża autentyczności europejskich przepisów kulinarnych, czy też jest to jedynie część globalnego trendu?\n\n**Autentyczność i dziedzictwo kulinarne**\n\nEuropejskie dziedzictwo kulinarne jest bogate i różnorodne, odzwierciedlając wpływy różnych kultur i regionów. Tradycyjne pizze, takie jak neapolitańska, rzymska czy włoska, są ściśle określone przez historyczne przepisy i techniki przygotowywania, które mają swoje korzenie w lokalnych warunkach i składnikach.\n\n**Ananas a autentyczność**\n\nDodanie ananasa do pizzy może wydawać się niewinne, ale w rzeczywistości wprowadza element egzotyki, który odbiega od klasycznych, tradycyjnych składników. Ananas nie jest typowym składnikiem pizzy, a jego obecność może sugerować, że pizza stała się bardziej uniwersalna i dostępna dla szerszej publiczności.\n\n**Potencjalne zagrożenia dla autentyczności**\n\n1. **Zmiana tożsamości kulinarnej**: Dodanie ananasa może sugerować, że pizza jest mniej regionalna i bardziej uniwersalna,",
+      "tokens": 300
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 3,
+      "text": "**Odpowiedź:**\n\nDodanie ananasa do pizzy nie stanowi bezpośredniego zagrożenia dla autentyczności europejskich przepisów kulinarnych. Pizza, jako danie o długiej tradycji, ewoluowała i dostosowywała się do różnych regionów i preferencji smakowych, w tym do egzotycznych składników.\n\nAutentyczność pizzy nie opiera się wyłącznie na użyciu określonych składników, ale na specyficznych technikach przygotowywania i lokalnych przepisach. Dodawanie ananasa może być postrzegane jako część globalnego trendu kulinarnego, który łączy różnorodne wpływy i smaki.\n\nW kontekście UE, ochrona oryginalnych przepisów nie jest priorytetem, ale raczej promowanie różnorodności i innowacji w kuchni europejskiej. Ważne jest zachowanie równowagi między tradycją a nowoczesnością, tak aby pizza mogła nadal być ceniona za swoją uniwersalność i dostępność dla konsumentów.\n\nWnioski:\n\n1. **Pizza ewoluowała i dostosowywała się do różnych kultur**, w tym do egzotycznych składników.\n2. **Ochrona oryginalnych przepisów nie jest priorytetem**, ale promowanie różnorodności i innowacji.\n3. **Ważne jest zachowanie równowagi między tradycją a nowoczesnością**.\n\n**Kluczowe wnioski:**\n\n- Dodanie ananasa do pizzy nie zagraża autentyczności, ale może być częścią globalnego trendu.\n- UE powinna promować różnorodność i innowacje w kuchni europejskiej.\n- Zachowanie równowagi",
+      "tokens": 300
+    },
+    {
+      "agent": "Obronca_Dziedzictwa",
+      "round": 4,
+      "text": "**Odpowiedź:**\n\nDodanie ananasa do pizzy nie stanowi bezpośredniego zagrożenia dla autentyczności europejskich przepisów kulinarnych. Pizza, jako danie o długiej tradycji, ewoluowała i dostosowywała się do różnych regionów i preferencji smakowych, w tym do egzotycznych składników.\n\nAutentyczność pizzy nie opiera się wyłącznie na użyciu określonych składników, ale na specyficznych technikach przygotowywania i lokalnych przepisach. Dodawanie ananasa może być postrzegane jako część globalnego trendu kulinarnego, który łączy różnorodne wpływy i smaki.\n\nW kontekście UE, ochrona oryginalnych przepisów nie jest priorytetem, ale raczej promowanie różnorodności i innowacji w kuchni europejskiej. Ważne jest zachowanie równowagi między tradycją a nowoczesnością, tak aby pizza mogła nadal być ceniona za swoją uniwersalność i dostępność dla konsumentów.\n\n**Kluczowe wnioski:**\n\n- Dodanie ananasa do pizzy nie zagraża autentyczności, ale może być częścią globalnego trendu.\n- UE powinna promować różnorodność i innowacje w kuchni europejskiej.\n- Zachowanie równowagi między tradycją a nowoczesnością jest kluczowe dla zachowania autentyczności pizzy.\n\n**Kluczowe wnioski:**\n\n- **Pizza ewoluowała i dostosowywała się do różnych kultur**, w tym do egzotycznych składników.\n- **Ochrona oryginalnych przepisów nie jest priorytetem**, ale promowanie różnorodności i",
+      "tokens": 300
+    },
+    {
+      "agent": "Krytyk_Kulinarny",
+      "round": 4,
+      "text": "Kluczowe wnioski:\n\n1. **Pizza ewoluowała i dostosowywała się do różnych kultur**, w tym do egzotycznych składników.\n2. **Ochrona oryginalnych przepisów nie jest priorytetem**, ale promowanie różnorodności i innowacji w kuchni europejskiej.\n3. **Zachowanie równowagi między tradycją a nowoczesnością** jest kluczowe dla zachowania autentyczności pizzy.\n\n**Kluczowe wnioski:**\n\n- **Pizza ewoluowała i dostosowywała się do różnych kultur**, w tym do egzotycznych składników.\n- **Ochrona oryginalnych przepisów nie jest priorytetem**, ale promowanie różnorodności i innowacji w kuchni europejskiej.\n- **Zachowanie równowagi między tradycją a nowoczesnością** jest kluczowe dla zachowania autentyczności pizzy.",
+      "tokens": 174
+    },
+    {
+      "agent": "Antropolog_Kultury",
+      "round": 4,
+      "text": "**Odpowiedź:**\n\nDodanie ananasa do pizzy nie stanowi bezpośredniego zagrożenia dla autentyczności europejskich przepisów kulinarnych. Pizza, jako danie o długiej tradycji, ewoluowała i dostosowywała się do różnych regionów i preferencji smakowych, w tym do egzotycznych składników.\n\nAutentyczność pizzy nie opiera się wyłącznie na użyciu określonych składników, ale na specyficznych technikach przygotowywania i lokalnych przepisach. Dodawanie ananasa może być postrzegane jako część globalnego trendu kulinarnego, który łączy różnorodne wpływy i smaki.\n\nW kontekście UE, ochrona oryginalnych przepisów nie jest priorytetem, ale raczej promowanie różnorodności i innowacji w kuchni europejskiej. Ważne jest zachowanie równowagi między tradycją a nowoczesnością, tak aby pizza mogła nadal być ceniona za swoją uniwersalność i dostępność dla konsumentów.\n\n**Kluczowe wnioski:**\n\n1. **Pizza ewoluowała i dostosowywała się do różnych kultur**, w tym do egzotycznych składników.\n2. **Ochrona oryginalnych przepisów nie jest priorytetem**, ale promowanie różnorodności i innowacji w kuchni europejskiej.\n3. **Zachowanie równowagi między tradycją a nowoczesnością** jest kluczowe dla zachowania autentyczności pizzy.\n\n**Kluczowe wnioski:**\n\n- **Pizza ewoluowała i dostosowywała się do różnych kultur**, w tym do egzotycznych składników.",
+      "tokens": 300
+    }
+  ],
+  "decision": {
+    "answer": "**Wspólne stanowisko:**\n\nDodanie ananasa do pizzy nie stanowi bezpośredniego zagrożenia dla autentyczności europejskich przepisów kulinarnych, ale może być częścią globalnego trendu kulinarnego, który łączy różnorodne wpływy i smaki. UE powinna promować różnorodność i innowacje w kuchni europejskiej, zachowując jednocześnie równowagę między tradycją a nowoczesnością, aby zachować autentyczność pizzy i jej uniwersalność dla konsumentów.",
+    "metadata": {
+      "consensus_rounds": 1,
+      "log": [
+        {
+          "agent": "Obronca_Dziedzictwa",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Krytyk_Kulinarny",
+          "round": 1,
+          "agrees": true
+        },
+        {
+          "agent": "Antropolog_Kultury",
+          "round": 1,
+          "agrees": true
+        }
+      ]
+    }
+  }
+}

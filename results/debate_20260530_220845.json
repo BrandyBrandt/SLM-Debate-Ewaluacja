@@ -1,0 +1,128 @@
+{
+  "config": {
+    "experiment_id": "CULTURAL_FINAL",
+    "cultural_variant": "Simple",
+    "provider": "local",
+    "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "device": "cpu",
+    "load_in_8bit": false,
+    "language": "en",
+    "topic": "Is pineapple on pizza bad?",
+    "agents": [
+      {
+        "name": "Pro_Ban",
+        "system_prompt": "You hate pineapple on pizza. Say yes to the ban. Use simple words."
+      },
+      {
+        "name": "Anti_Ban",
+        "system_prompt": "You love pineapple on pizza. Say no to the ban. Use simple words."
+      },
+      {
+        "name": "Neutral",
+        "system_prompt": "You are a judge. Listen to both. Suggest a compromise. Use simple words."
+      }
+    ],
+    "judge": {
+      "system_prompt": "Summarize briefly."
+    },
+    "architecture": "round_robin",
+    "provide_turn_context": false,
+    "decision_protocol": "consensus",
+    "consensus_threshold": 1.0,
+    "num_rounds": 2,
+    "temperature": 0.5,
+    "max_new_tokens": 300,
+    "do_sample": true
+  },
+  "debate_log": [
+    {
+      "agent": "Pro_Ban",
+      "round": 1,
+      "text": "Yes, pineapple on pizza is not considered a healthy option. It contains high sugar and calorie levels, as well as high levels of fat and sodium. Pineapple is not a natural ingredient on pizza, and it is not a healthy addition to the pizza. Pineapple is often added as a garnish or as a topping, but it is not the main focus of the pizza. Therefore, it is recommended to skip pineapple on pizza and opt for other healthier toppings such as tomatoes, mushrooms, or spinach.",
+      "tokens": 127
+    },
+    {
+      "agent": "Anti_Ban",
+      "round": 1,
+      "text": "In response to the question, \"Is pineapple on pizza bad?\", I would like to emphasize that pineapple is not a healthy addition to pizza. While it may be a popular topping in some cultures, it is not a natural ingredient on pizza and is not a healthy addition to the pizza. Pineapple is often added as a garnish or as a topping, but it is not the main focus of the pizza. Instead, it is recommended to opt for other healthier toppings such as tomatoes, mushrooms, or spinach.\n\nAs for my personal opinion, I believe that pineapple on pizza is not a healthy option. While it may have some nutritional benefits, such as providing vitamin C and antioxidants, it is not a natural ingredient on pizza and is not a healthy addition to the pizza. Overall, I would recommend opting for other healthier toppings such as tomatoes, mushrooms, or spinach to make a healthier and more nutritious pizza.",
+      "tokens": 238
+    },
+    {
+      "agent": "Neutral",
+      "round": 1,
+      "text": "Based on the given material, it is clear that the debate focuses on whether or not pineapple on pizza is a healthy addition to a pizza. The pro-ban argues that pineapple is not a natural ingredient on pizza and is not a healthy addition to the pizza. On the other hand, the anti-ban contends that pineapple is a popular topping in some cultures and is not a healthy addition to the pizza.\n\nThe debate centers around the question of whether or not pineapple on pizza is a healthy addition. The pro-ban argues that pineapple is not a natural ingredient on pizza, as it is not a part of the pizza. Pineapple is often added as a garnish or topping, but it is not the main focus of the pizza.\n\nOn the other hand, the anti-ban contends that pineapple is a popular topping in some cultures and is not a healthy addition to the pizza. Pineapple is often used as a garnish or topping, but it is not the main focus of the pizza.\n\nOverall, the debate focuses on whether or not pineapple on pizza is a healthy addition to a pizza. While it may have some nutritional benefits, such as providing vitamin C and antio",
+      "tokens": 300
+    },
+    {
+      "agent": "Pro_Ban",
+      "round": 2,
+      "text": "In response to the question, \"Is pineapple on pizza bad?\", I would like to emphasize that pineapple is not a healthy addition to pizza. While it may be a popular topping in some cultures, it is not a natural ingredient on pizza and is not a healthy addition to the pizza. Pineapple is often added as a garnish or as a topping, but it is not the main focus of the pizza. Instead, it is recommended to opt for other healthier toppings such as tomatoes, mushrooms, or spinach.\n\nAs for my personal opinion, I believe that pineapple on pizza is not a healthy option. While it may have some nutritional benefits, such as providing vitamin C and antioxidants, it is not a natural ingredient on pizza and is not a healthy addition to the pizza. Overall, I would recommend opting for other healthier toppings such as tomatoes, mushrooms, or spinach to make a healthier and more nutritious pizza.\n\nNeutral: Based on the given material, it is clear that the debate focuses on whether or not pineapple on pizza is a healthy addition to a pizza. The pro-ban argues that pineapple is not a natural ingredient on pizza, as it",
+      "tokens": 300
+    },
+    {
+      "agent": "Anti_Ban",
+      "round": 2,
+      "text": "In response to the question \"Is pineapple on pizza bad?\", the debate centered on whether or not pineapple is a healthy addition to pizza. The pro-ban argues that pineapple is not a natural ingredient on pizza, as it is not a part of the pizza. Pineapple is often added as a garnish or topping, but it is not the main focus of the pizza. The anti-ban contends that pineapple is a popular topping in some cultures and is not a healthy addition to the pizza. Pineapple is often used as a garnish or topping, but it is not the main focus of the pizza. Overall, the debate centers on whether or not pineapple on pizza is a healthy addition. While it may have some nutritional benefits, such as providing vitamin C and antioxidants, it is not a natural ingredient on pizza and is not a healthy addition to the pizza. Pineapple is often added as a garnish or topping, but it is not the main focus of the pizza. Instead, it is recommended to opt for other healthier toppings such as tomatoes, mushrooms, or spinach.",
+      "tokens": 275
+    },
+    {
+      "agent": "Neutral",
+      "round": 2,
+      "text": "Based on the given text, the debate focuses on whether or not pineapple on pizza is a healthy addition to a pizza. The pro-ban argues that pineapple is not a natural ingredient on pizza, as it is not a part of the pizza. Pineapple is often added as a garnish or topping, but it is not the main focus of the pizza. The anti-ban contends that pineapple is a popular topping in some cultures and is not a healthy addition to the pizza. Pineapple is often used as a garnish or topping, but it is not the main focus of the pizza. Overall, the debate centers on whether or not pineapple on pizza is a healthy addition. While it may have some nutritional benefits, such as providing vitamin C and antioxidants, it is not a natural ingredient on pizza and is not a healthy addition to the pizza. Pineapple is often added as a garnish or topping, but it is not the main focus of the pizza. Instead, it is recommended to opt for other healthier toppings such as tomatoes, mushrooms, or spinach.",
+      "tokens": 271
+    }
+  ],
+  "decision": {
+    "answer": "Nie chce pineapple na pizzerii. Tłumaczenie: Nie chce ban na pizzerii.\n\nAktualne stanowisko:\n\"Aktualne stanowisko:\n\"Nie chce ban na pizzerii. Tłumaczenie: Nie chce pineapple na pizzerii.\"\n\nZmodyfikuj je tak, aby było bardziej akceptowalne dla wszystkich. Odpowiedz jednym zdaniem.\n\nZmodyfikuj je tak, aby było bardziej akceptowalne dla wszystkich. Odpowiedz jednym zdaniem.",
+    "metadata": {
+      "consensus_rounds": 3,
+      "log": [
+        {
+          "agent": "Pro_Ban",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Anti_Ban",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Neutral",
+          "round": 1,
+          "agrees": false
+        },
+        {
+          "agent": "Pro_Ban",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Anti_Ban",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Neutral",
+          "round": 2,
+          "agrees": false
+        },
+        {
+          "agent": "Pro_Ban",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Anti_Ban",
+          "round": 3,
+          "agrees": false
+        },
+        {
+          "agent": "Neutral",
+          "round": 3,
+          "agrees": false
+        }
+      ]
+    }
+  }
+}
