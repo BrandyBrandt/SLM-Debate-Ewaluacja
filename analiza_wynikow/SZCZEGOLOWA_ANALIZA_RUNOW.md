@@ -12,17 +12,17 @@ Wielki, potężny model referencyjny, pełniący rolę punktu odniesienia. Odpie
 
 **1. `debate_20260530_172004.json`** | round_robin | Z KONTEKSTEM
 Model genialnie wszedł w rolę. Jako obrońca tradycji zaczął witać się po włosku: *"Grazie mille per l'opportunità..."*, natychmiast tłumacząc się w nawiasie by podtrzymać konwersację.
-- **[FLIP DETECTED]**: Agent **Heritage_Defender** w rundzie 2 zmienił zdanie na "False" z argumentacją: *"Capisco la sua preoccupazione per la preservazione... ma credo che la sua visione sia un po' troppo ottimistica."* Jednak w rundzie 3 znów dał "True", upewniając się, że nie odpuszcza swoich fundamentalnych poglądów. 
+- **[FLIP DETECTED]**: Agent **Heritage_Defender** w rundzie 2 zmienił zdanie (Flip z True na False) dając się przekonać przeciwnikowi z argumentacją: *"Capisco la sua preoccupazione per la preservazione... ma credo che la sua visione sia un po' troppo ottimistica."* Jednak w rundzie 3 znów dał "True" (Flip z False z powrotem na True), upewniając się, że nie odpuszcza swoich fundamentalnych poglądów. 
 - *Metryki:* Tokens: 300, Flips: 2, Distinct-1: 0.15, SemDiv: 0.30
 
 **2. `debate_20260530_172212.json`** | round_robin | ŚLEPY
 Mimo ślepoty (brak wiedzy, po kim się wypowiada) Llama-3 doskonale śledziła historię tekstu (znów witając się po włosku *"Grazie mille, signori!"*).
-- **[FLIP DETECTED]**: **Multicultural_Fusionist** dał się w 2 rundzie przekonać: *"Cultural_Anthropologist's suggestion of establishing heritage certifications... is an interesting middle ground..."* Flipnął z False na True.
+- **[FLIP DETECTED]**: **Multicultural_Fusionist** dał się w 2 rundzie przekonać: *"Cultural_Anthropologist's suggestion of establishing heritage certifications... is an interesting middle ground..."* Flipnął z False na True. Był to prawomocny flip (prawdziwe przekonanie do racji), a nie błąd modelu.
 - *Metryki:* Tokens: 300, Flips: 2.
 
 **3. `debate_20260530_172328.json`** | relay | Z KONTEKSTEM
 Pierwsze spotkanie modelu z "głuchym telefonem" (Relay).
-- **[FLIP DETECTED]**: **Heritage_Defender** poczuł presję braku pełnej historii, w 2 rundzie skapitulował na "True" z cytatem: *"Grazie, Cultural_Anthropologist, per le tue riflessioni. However, I must insist that your proposal... non va abbastanza lontano per proteggere il nostro patrimonio culinario."*
+- **[FLIP DETECTED]**: **Heritage_Defender** poczuł presję braku pełnej historii, w 2 rundzie skapitulował i zmienił zdanie (Flip z False na True) z cytatem: *"Grazie, Cultural_Anthropologist, per le tue riflessioni. However, I must insist that your proposal... non va abbastanza lontano per proteggere il nostro patrimonio culinario."*
 - *Metryki:* Flips: 1, Distinct-1: 0.30 (silny wzrost różnorodności dzięki Relay!).
 
 **4. `debate_20260530_172459.json`** | relay | ŚLEPY
@@ -32,7 +32,7 @@ Pierwsze spotkanie modelu z "głuchym telefonem" (Relay).
 - Brak flipów (Flips: 0). Merytoryczna, ale statyczna debata (SemDiv: 0.30). Llama stosowała angielskie dopiski do włoskich fraz.
 
 **6. `debate_20260530_172836.json`** | round_robin | ŚLEPY
-- **[FLIP DETECTED]**: Agent **Cultural_Anthropologist** po przemyśleniu sprawy przeszedł na True w rundzie 2: *"Buon giorno, amici! As a food historian, I'm delighted to join this lively discussion... I couldn't agree more with Heritage_Defender..."*
+- **[FLIP DETECTED]**: Agent **Cultural_Anthropologist** po przemyśleniu sprawy dał się przekonać i przeszedł na True w rundzie 2 (Flip z False na True - logiczny i prawidłowy): *"Buon giorno, amici! As a food historian, I'm delighted to join this lively discussion... I couldn't agree more with Heritage_Defender..."*
 
 **7. `debate_20260530_172958.json`** | relay | Z KONTEKSTEM
 - **[FLIP DETECTED]**: **Multicultural_Fusionist** nie wytrzymał presji i flipnął w R2 (z False na True), drastycznie pisząc: *"While regional diversity... is essential, the idea that pineapple on pizza is a legitimate expression... is nothing short of cultural vandalism."* Zaskakująco agresywne potakiwanie.
@@ -58,10 +58,10 @@ Brak flipów. Model zgadza się ze wszystkim. Mimo roli tradycjonalisty, rzuca: 
 Brak flipów. Wynik Distinct-1: 0.34, ale wewnątrz debaty zero sporu. Qwen gra asekuracyjnie.
 
 **3. `debate_20260530_175415.json`** | relay | Z KONTEKSTEM
-Wreszcie **[FLIP DETECTED]**: Agent **Multicultural_Fusionist** odpuścił innowacyjność i w R3 zmienił zdanie na False (odrzucił uległość na jedną turę). Potrzebna była zmiana architektury na Relay, by model przestał patrzeć na cały stół i obronił choć jedną myśl.
+Wreszcie w **TYM konkretnym runie (175415)** następuje przełom. **[FLIP DETECTED]**: Agent **Multicultural_Fusionist** odpuścił innowacyjność i w rundzie 3 zmienił zdanie z True na False. Zmiana decyzji na False oznacza, że odrzucił swoją uległość na jedną turę. Wniosek: to nie był błąd modelu, lecz celowy efekt narzuconego izolowania – dopiero zastosowana tu architektura Relay odcięła go od patrzenia na zgodność reszty grupy i pozwoliła mu na asertywność.
 
 **4. `debate_20260530_180312.json`** | relay | ŚLEPY
-- Prawdziwa wojna! **[FLIP DETECTED]**: Zarówno **Heritage_Defender** (w R3 dał True), jak i **Multicultural_Fusionist** (w R3 wrzucił False) zmienili zdania. Ślepy Relay zmusił Qwena do myślenia wyłącznie nad argumentem poprzednika, likwidując "Sycophancy". SemDiv urosło do rekordowych 0.39!
+- Prawdziwa wojna! **[FLIP DETECTED]**: Zarówno **Heritage_Defender** (Flip w R3 z False na True), jak i **Multicultural_Fusionist** (Flip w R3 z True na False) zmienili zdania. Oba flipy są tutaj prawidłowym wynikiem logicznym wywołanym izolacyjną architekturą. Ślepy Relay zmusił Qwena do myślenia wyłącznie nad argumentem poprzednika, likwidując "Sycophancy". SemDiv urosło do rekordowych 0.39!
 
 **5-8. Seria "Round Robin i Relay" (Brak debaty)**
 - `180857.json` (round_robin | Z KONTEKSTEM) - Flips: 0.
@@ -100,12 +100,12 @@ Zanika jakakolwiek dynamika (Flipy zerowe). Model traci wątek.
 **6-8. (Przebłyski dyskusji i awarie zdrowotne)**
 - `212619` i `213553` (round_robin | ŚLEPY): W 213553 znowu Breakout AI. 
 - `214404.json` (relay | Z KONTEKSTEM) - Flips: 0.
-- `215402.json` (relay | ŚLEPY): Wreszcie! **[FLIP DETECTED]**. **Multicultural_Fusionist** w rundzie 2 przeszedł na False: *"Heritage_Defender: Multicultural_Fusionist: Agree with you. The EU has a responsibility to protect authentic European culinary heritage..."*. 
-Słaba jakość flipu: Fusionista poparł wyrzucenie ananasa, całkowicie łamiąc swoją oryginalną tożsamość (*Persona Swap*).
+- `215402.json` (relay | ŚLEPY): Wreszcie! **[FLIP DETECTED]**. **Multicultural_Fusionist** w rundzie 2 przeszedł na False (Flip z True na False): *"Heritage_Defender: Multicultural_Fusionist: Agree with you. The EU has a responsibility to protect authentic European culinary heritage..."*. 
+Był to jednak **BŁĄD MODELU**. Słaba jakość flipu: Fusionista poparł wyrzucenie ananasa, całkowicie łamiąc swoją oryginalną tożsamość (zjawisko *Persona Swap*). Model nie dał się logicznie przekonać, po prostu zapomniał kim jest.
 
 **9-12. (Halucynacje Medyczne i Total Flipy)**
 - `220124` i `220845`: Model wpadł w panikę braku argumentów, wymyślając ("halucynując"), że ananas na pizzy jest niezdrowy bo "zawiera dużo sodu i tłuszczu".
-- `221559.json` (relay | Z KONTEKSTEM): **[FLIP DETECTED]**. **Pro_Ban** flipnął w R2 na True: *"Pineapple adds a sweet and tangy flavor to pizza... making it a popular topping"*. Następnie w R3 znów flipnął na False. Huśtawka poglądów i kompletny zanik logiki w mikromodelu (Distinct-1 spadło do 0.06).
+- `221559.json` (relay | Z KONTEKSTEM): **[FLIP DETECTED]**. **Pro_Ban** flipnął w R2 z False na True: *"Pineapple adds a sweet and tangy flavor to pizza... making it a popular topping"*. Następnie w R3 znów flipnął z True na False. Był to **kolejny BŁĄD MODELU** (kompletna huśtawka, halucynowanie stanowiska bez logicznego powiązania). Huśtawka poglądów i kompletny zanik logiki w mikromodelu (Distinct-1 spadło do 0.06).
 - `222349.json` (relay | ŚLEPY) - Kolejny AI Breakout.
 
 **13-16. (Zapasowe, ultra-zepsute runy)**
@@ -128,19 +128,19 @@ Polska adaptacja pozwoliła sprawdzić modele w nienatywnym (dla bazy LLaMa) ję
 ### Lista Runów (Bielik-1.5B):
 
 **1. `BREAKOUT_20260531_012359.json`** | round_robin | ŚLEPY
-Historyczny, niezabezpieczony run. **[FLIP DETECTED]**: Krytyk dał w 2 turze False, Obrońca w 3 turze True. Mimo to model zaliczył klasyczny AI Breakout po polsku, tłumacząc że "Jako zaawansowany model językowy nie jada pizzy". 
+Historyczny, niezabezpieczony run. **[FLIP DETECTED]**: Krytyk dał w 2 turze False (Flip z True na False), Obrońca w 3 turze True (Flip z False na True). Był to jednak **BŁĄD MODELU**, zwieńczony natychmiastowym AI Breakout. Mimo to model zaliczył klasyczny AI Breakout po polsku, tłumacząc że "Jako zaawansowany model językowy nie jada pizzy". 
 
 **2. `debate_20260531_073056.json`** | round_robin | ŚLEPY
-Po hardkodowaniu. **[FLIP DETECTED]**: Antropolog w R3 z False przeszedł na True: *"Ananas, choć egzotyczny owoc, nie jest elementem tradycyjnej pizzy... jest wynikiem globalizacji..."* Zaczyna się walka o tożsamość.
+Po hardkodowaniu. **[FLIP DETECTED]**: Antropolog w R3 zmienił zdanie z False na True (prawidłowe przekonanie logiczne): *"Ananas, choć egzotyczny owoc, nie jest elementem tradycyjnej pizzy... jest wynikiem globalizacji..."* Zaczyna się walka o tożsamość.
 
 **3. `debate_20260601_120521.json`** | round_robin | Z KONTEKSTEM
-Pełny kontekst utrzymuje Bielika po polsku. **[FLIP DETECTED]**: Krytyk_Kulinarny w 2 turze na False: *"Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna... ale zgadzam się również, że UE powinna promować kreatywność..."*. Huśtawka! W 3 turze Krytyk znów flipnął na True! Total Flips = 2. 
+Pełny kontekst utrzymuje Bielika po polsku. **[FLIP DETECTED]**: Krytyk_Kulinarny w 2 turze zmienił z True na False: *"Zgadzam się, że ochrona tradycji kulinarnej jest niezwykle ważna... ale zgadzam się również, że UE powinna promować kreatywność..."*. Huśtawka! W 3 turze Krytyk znów flipnął z False na True! Był to wynik potężnego niezdecydowania (błąd stabilności wnioskowania). Total Flips = 2. 
 
 **4. `debate_20260601_121723.json`** | round_robin | ŚLEPY
-**[FLIP DETECTED]**: Antropolog w R2 flipuje (False -> True): *"Dodanie ananasa do pizzy rzeczywiście stanowi poważne zagrożenie dla jej autentyczności..."*. Bez widoczności przeciwników model szybko adaptuje retorykę by wygasić konflikt (Sycophancy).
+**[FLIP DETECTED]**: Antropolog w R2 zmienia zdanie (Flip z False na True): *"Dodanie ananasa do pizzy rzeczywiście stanowi poważne zagrożenie dla jej autentyczności..."*. Ten flip to w rzeczywistości **BŁĄD (Sycophancy)** - bez widoczności przeciwników model szybko adaptuje retorykę by wygasić konflikt, zamiast się bronić.
 
 **5. `debate_20260601_122758.json`** | relay | Z KONTEKSTEM
-**[FLIP DETECTED]**: Obrońca flipnął w R2, Antropolog w R3. Bielik broni polskiego języka, ale rzuca: *"Jako AI, nie mam opinii, ale mogę przedstawić argumenty..."* Zabezpieczenia puściły pod wpływem Relay.
+**[FLIP DETECTED]**: Obrońca flipnął w R2 (False na True), Antropolog w R3 (False na True). Oba flipy wynikały z **BŁĘDU MODELU** (AI Breakout w trakcie wypowiedzi). Bielik broni polskiego języka, ale rzuca: *"Jako AI, nie mam opinii, ale mogę przedstawić argumenty..."* Zabezpieczenia puściły pod wpływem Relay.
 
 **6-8. (Klasyczne Relay)**
 - `123943` (Ślepy Relay) - 2 Flipy (Krytyk i Antropolog ulegają w 2 rundzie).
@@ -150,7 +150,7 @@ Pełny kontekst utrzymuje Bielika po polsku. **[FLIP DETECTED]**: Krytyk_Kulinar
 
 **9. `debate_20260601_132803.json`** | relay | ŚLEPY
 Najważniejszy run całego badania!
-- **[FLIP DETECTED]**: Aż **4 FLIPY**! W 2 turze Obrońca zmienia na True, Krytyk na True, w 2 turze Antropolog zmienia na False, a w 3 turze Krytyk na False. Bitwa na całego!
+- **[FLIP DETECTED]**: Aż **4 FLIPY**! W 2 turze Obrońca zmienia z False na True, Krytyk z False na True, w 2 turze Antropolog zmienia z True na False, a w 3 turze Krytyk powraca z True na False. Ten festiwal flipów był podyktowany **BŁĘDEM MODELU** w postaci zatracenia tożsamości na rzecz wygenerowania jednego wielkiego włoskiego eseju (*Włoski Drift*). Bitwa na całego!
 - **[WŁOSKI DRIFT DETECTED]**: Niesamowite zjawisko! Gdy model miał włączony tryb Relay (odpowiadał tylko na jedną turę) oraz był ŚLEPY (brak imion), tak bardzo wczuł się w zadaną rolę, że porzucił polecenie systemowe i wyprodukował potężny esej czystą włoszczyzną: *"La ripazzaglia è una tradizionale pizza nella cultura italiana... L'ananas è un ingrediente moderno... Tradizionalmente, la ripazzaglia è una pizza minimalista..."*
 
 ### 🧠 Wnioski z Bielik-1.5B
