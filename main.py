@@ -43,11 +43,21 @@ def main():
     else:
         device = config.get("device", "cpu")
         dtype = torch.float16 if device == "cuda" else torch.float32
-        print(f"Ładowanie modelu lokalnego: {config['model_name']} na {device}...")
+        load_in_8bit = config.get("load_in_8bit", False)
+        
+        print(f"Ładowanie modelu lokalnego: {config['model_name']} (8-bit: {load_in_8bit}) na {device}...")
         tokenizer = AutoTokenizer.from_pretrained(config["model_name"])
-        model = AutoModelForCausalLM.from_pretrained(
-            config["model_name"], dtype=dtype
-        ).to(device)
+        
+        if load_in_8bit:
+            model = AutoModelForCausalLM.from_pretrained(
+                config["model_name"],
+                load_in_8bit=True,
+                device_map="auto"
+            )
+        else:
+            model = AutoModelForCausalLM.from_pretrained(
+                config["model_name"], torch_dtype=dtype
+            ).to(device)
         print("Model załadowany.\n")
 
     # 3. Stwórz agentów

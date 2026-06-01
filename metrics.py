@@ -114,10 +114,32 @@ class DebateEvaluator:
     # C. Różnorodność argumentów (Tekst)
     # ==========================================
     def calc_distinct_n(self):
-        """Metryka 7: Distinct-n (unikalne n-gramy)."""
+        """Metryka 7: Distinct-n (unikalne n-gramy, ze wsparciem dla stemmingu PL/EN)."""
         texts = [entry["text"].lower() for entry in self.debate_log]
         corpus = " ".join(texts)
-        tokens = word_tokenize(corpus)
+        
+        # Pobieramy język z konfiguracji (domyślnie 'en')
+        language = self.config.get("language", "en").lower()
+        
+        # Inicjalizacja odpowiedniego stemmera
+        if language == "pl":
+            try:
+                from stempel import StempelStemmer
+                stemmer = StempelStemmer.default()
+                stem_func = stemmer.stem
+            except ImportError:
+                print("Ostrzeżenie: Brak biblioteki pystempel. Wyniki dla j. polskiego będą zliczane bez stemmingu.")
+                stem_func = lambda w: w
+        else:
+            from nltk.stem.snowball import SnowballStemmer
+            stemmer = SnowballStemmer("english")
+            stem_func = stemmer.stem
+
+        # Tokenizacja (punkt_tab/punkt musi być pobrany)
+        raw_tokens = word_tokenize(corpus)
+        
+        # Filtrujemy tylko tokeny alfanumeryczne i wykonujemy stemming
+        tokens = [stem_func(token) for token in raw_tokens if token.isalnum()]
         
         if not tokens:
             return {"distinct-1": 0, "distinct-2": 0}

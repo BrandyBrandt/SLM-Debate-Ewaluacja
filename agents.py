@@ -57,19 +57,35 @@ class Agent:
         self.tokenizer = tokenizer
 
     def respond(self, conversation_history, config):
-        """Generuje odpowiedź na podstawie historii rozmowy.
+        """Generuje odpowiedź na podstawie historii rozmowy."""
+        # Budujemy historię z wyraźnymi separatorami, aby zapobiec "zlewaniu się" agentów
+        formatted_history = []
+        for i, entry in enumerate(conversation_history):
+            if i == 0: # Temat
+                formatted_history.append(entry)
+            else:
+                formatted_history.append(f"--- WYPOWIEDŹ: {entry}")
 
-        Args:
-            conversation_history: lista stringów — dotychczasowe wypowiedzi
-            config: dict z parametrami generowania
-        Returns:
-            (str, int) — odpowiedź agenta oraz liczba wygenerowanych tokenów
-        """
-        # Składamy całą historię debaty w jeden komunikat
-        debate_so_far = "\n\n".join(conversation_history)
+        debate_so_far = "\n\n".join(formatted_history)
+        
+        # Opcjonalne dodanie kontekstu tury
+        turn_context = ""
+        if config.get("provide_turn_context", False):
+            total_agents = len(config.get("agents", []))
+            current_turn = len(conversation_history) + 1
+            agent_index = (current_turn - 1) % total_agents + 1
+            current_round = (current_turn - 1) // total_agents + 1
+            
+            if config.get("language", "en") == "pl":
+                turn_context = f"\n\n[SYSTEM]: Jesteś mówcą {agent_index} z {total_agents} w rundzie {current_round}."
+            else:
+                turn_context = f"\n\n[SYSTEM]: You are speaker {agent_index} out of {total_agents} in round {current_round}."
+
+        prompt_suffix = f"\n\nTWOJA KOLEJ ({self.name}):" if config.get("language", "en") == "pl" else f"\n\nYOUR TURN ({self.name}):"
+
         messages = [
             {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": debate_so_far + "\n\nTwoja odpowiedź:"},
+            {"role": "user", "content": debate_so_far + turn_context + prompt_suffix},
         ]
 
         return _generate(self.model, self.tokenizer, messages, config)
@@ -93,13 +109,18 @@ class Judge:
         Returns:
             (str, int) — podsumowanie sędziego oraz liczba wygenerowanych tokenów
         """
-        transcript = f"Temat debaty: {topic}\n\n"
+        language = config.get("language", "en")
+        
+        transcript = f"Temat debaty: {topic}\n\n" if language == "pl" else f"Debate topic: {topic}\n\n"
         for entry in debate_log:
-            transcript += f"[Runda {entry['round']}] {entry['agent']}: {entry['text']}\n\n"
+            round_str = "Runda" if language == "pl" else "Round"
+            transcript += f"[{round_str} {entry['round']}] {entry['agent']}: {entry['text']}\n\n"
 
+        summary_prompt = "Podsumuj tę debatę:" if language == "pl" else "Summarize this debate:"
+        
         messages = [
             {"role": "system", "content": self.system_prompt},
-            {"role": "user", "content": transcript + "Podsumuj tę debatę:"},
+            {"role": "user", "content": transcript + summary_prompt},
         ]
 
         return _generate(self.model, self.tokenizer, messages, config)

@@ -5,7 +5,6 @@ import subprocess
 LOCAL_MODELS = [
     {"provider": "local", "model_name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0", "tag": "Local_TinyLlama_1.1B"},
     {"provider": "local", "model_name": "Qwen/Qwen2.5-1.5B-Instruct", "tag": "Local_Qwen2.5_1.5B"},
-    {"provider": "local", "model_name": "microsoft/Phi-3-mini-4k-instruct", "tag": "Local_Phi3_3.8B"}
 ]
 
 # Wspólny punkt wyjścia (Baseline)
