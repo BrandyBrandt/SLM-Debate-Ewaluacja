@@ -1,0 +1,40 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Deshpande et~al.(2023)Deshpande, Murahari, Rajpurohit, Kalyan, and
+  Narasimhan]{deshpande2023}
+Ameet Deshpande, Vishvak Murahari, Tanmay Rajpurohit, Ashwin Kalyan, and
+  Karthik Narasimhan.
+\newblock Toxicity in {ChatGPT}: Analyzing persona-assigned language models.
+\newblock In \emph{Findings of EMNLP}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2304.05335}.
+
+\bibitem[Du et~al.(2023)Du, Li, Torralba, Tenenbaum, and Mordatch]{du2023}
+Yilun Du, Shuang Li, Antonio Torralba, Joshua~B. Tenenbaum, and Igor Mordatch.
+\newblock Improving factuality and reasoning in language models through
+  multiagent debate.
+\newblock In \emph{arXiv:2305.14325}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2305.14325}.
+
+\bibitem[Navigli et~al.(2023)Navigli, Conia, and Ross]{navigli2023}
+Roberto Navigli, Simone Conia, and Bj\"orn Ross.
+\newblock Biases in large language models: Origins, inventory, and discussion.
+\newblock \emph{ACM Journal of Data and Information Quality}, 15\penalty0
+  (2):\penalty0 1--21, 2023.
+\newblock URL \url{https://dl.acm.org/doi/10.1145/3597307}.
+
+\bibitem[Salewski et~al.(2023)Salewski, Alaniz, Rio-Torto, Schulz, and
+  Akata]{salewski2023}
+Leonard Salewski, Stephan Alaniz, Isabel Rio-Torto, Eric Schulz, and Zeynep
+  Akata.
+\newblock In-context impersonation reveals large language models' strengths and
+  biases.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2305.14930}.
+
+\end{thebibliography}
